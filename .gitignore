@@ -2,3 +2,5 @@
 /.bundle
 /log
 /tmp
+.DS_Store
+.keep

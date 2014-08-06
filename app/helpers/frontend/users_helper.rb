@@ -1,0 +1,2 @@
+module Frontend::UsersHelper
+end

@@ -12,6 +12,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'mysql2', '~> 0.3.16'
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails', '~> 2.2.0'
         
 group :development do |group|
   gem 'hirb', '~> 0.7.2'
