@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 ROW_SIZE = 80
 APP_NAME = "ruby-eye"
+RAILS_ENVS = %w(development test production)
 
 class String
   COLORS = {
@@ -38,14 +39,13 @@ puts "="*ROW_SIZE
 puts ""
 
 # Config environment
-rails_env = "development"
+rails_env = RAILS_ENVS.first
 puts_section "Configure" do
-  print "Choose environment(default development):"
-  env = gets.strip
-  if %w(production development test).include?(env)
-    rails_env = env
-  end
-  puts "RAILS_ENV: #{rails_env}"
+  print "Choose environment(default #{rails_env}):\n"
+  print "0: #{RAILS_ENVS[0]}, 1: #{RAILS_ENVS[1]}, 2: #{RAILS_ENVS[2]} "
+  env = gets.strip.to_i
+  rails_env = RAILS_ENVS[env % RAILS_ENVS.length]
+  puts "Selected environment: #{rails_env}"
 end
 
 puts_line "Install gems..." do
@@ -53,14 +53,16 @@ puts_line "Install gems..." do
 end
 
 puts_line "Create databases...\n" do
-  `cp config/secrets.yml.sample config/secrets.yml`
-  `cp config/database.yml.sample config/database.yml`
-
   `RAILS_ENV=#{rails_env} bundle exec rake db:create`
   `RAILS_ENV=#{rails_env} bundle exec rake db:migrate`
   # unless rails_env == "test"
   #   `RAILS_ENV=#{rails_env} bundle exec rake db:seed`
   # end
+  if rails_env == "production"
+    puts "Now running RAILS_ENV=#{rails_env} rake assets:precompile..."
+    `RAILS_ENV=#{rails_env} rake assets:precompile`
+  end
+  `RAILS_ENV=#{rails_env} rails s`
 end
 
 puts "\n#{APP_NAME} Successfully Installed."

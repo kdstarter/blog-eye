@@ -1,4 +1,4 @@
-class Frontend::UsersController < ApplicationController
+class Frontend::UsersController < FrontendController
   def index
     
   end
