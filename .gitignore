@@ -4,3 +4,8 @@
 /tmp
 .DS_Store
 .keep
+
+secrets.yml
+database.yml
+
+/public/assets

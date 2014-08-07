@@ -53,6 +53,9 @@ puts_line "Install gems..." do
 end
 
 puts_line "Create databases...\n" do
+  `cp config/secrets.yml.sample config/secrets.yml`
+  `cp config/database.yml.sample config/database.yml`
+
   `RAILS_ENV=#{rails_env} bundle exec rake db:create`
   `RAILS_ENV=#{rails_env} bundle exec rake db:migrate`
   # unless rails_env == "test"
