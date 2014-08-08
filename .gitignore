@@ -7,5 +7,6 @@
 
 secrets.yml
 database.yml
+config/deploy/production.rb
 
 /public/assets
