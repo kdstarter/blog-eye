@@ -7,7 +7,6 @@ set :server_name, "xxx"
 
 set :rbenv_type, :system
 set :rbenv_ruby, '2.0.0'
-set :keep_releases, 3
 
 ask_secretly(:password)
 server fetch(:server_name), user: fetch(:deploy_user), port: 22, password: fetch(:password), roles: %w{web app db}
