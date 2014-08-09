@@ -1,8 +1,10 @@
 
 Rails.application.config.assets.precompile += %w(
-  frontend/application.css frontend/blog_home.css
+  frontend/home.css frontend/blog_home.css
+  admin/home.css
 )
 
 Rails.application.config.assets.precompile += %w(
-  frontend/application.js frontend/blog_home.js
+  frontend/home.js frontend/blog_home.js
+  admin/home.js
 )

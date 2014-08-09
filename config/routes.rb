@@ -5,4 +5,9 @@ Rails.application.routes.draw do
 
     resources :users
   end
+
+  namespace :admin, path: '/admin' do
+    root 'home#index'
+  end
+  
 end
