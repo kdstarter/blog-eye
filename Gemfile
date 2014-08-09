@@ -15,12 +15,17 @@ gem 'mysql2', '~> 0.3.16'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails', '~> 2.2.0'
 
+# for deploy by capistrano
 gem 'capistrano', '~> 3.1.0'
 gem 'capistrano-rails', '~> 1.1.0'
 gem 'capistrano-bundler', '~> 1.1.3'
 gem 'unicorn', '~> 4.8.3'
-
 gem 'highline', '~> 1.6.21'
+
+gem 'devise', '~> 3.2.4'
+gem 'simple_form', '~> 3.0.2'
+# gem 'country_select', '~> 2.0.0.beta2', github: 'stefanpenner/country_select'
+# gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 4.x
         
 # for group [:development, :test]
 group :development, :test do
