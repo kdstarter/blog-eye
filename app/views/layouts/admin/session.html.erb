@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RubyEye</title>
-  <%= stylesheet_link_tag    'admin/session', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'admin/session', 'data-turbolinks-track' => true %>
+  <%= page_title_tag %>
+  <%= stylesheet_link_tag    'admin/sessions', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'admin/sessions', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<div class="container">
-  <%= render partial: 'layouts/admin/flash' %>
-  <%= yield %>
 </div>
+	<%= render partial: 'layouts/admin/sessions/topbar' %>
+
+  <div class="container">
+    <%= render partial: 'layouts/admin/flash' %>
+    <%= yield %>
+  </div><!-- /.container -->
+
+  <%= render partial: 'layouts/frontend/home/footer' %>
 
 </body>
 </html>

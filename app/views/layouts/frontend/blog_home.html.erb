@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RubyEye</title>
+  <%= page_title_tag %>
   <%= stylesheet_link_tag    'frontend/blog_home', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'frontend/blog_home', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= render partial: 'layouts/frontend/flash' %>
-<%= yield %>
+<%= render partial: 'layouts/frontend/blog/topbar' %>
+
+<div class="container">
+  <%= render partial: 'layouts/frontend/flash' %>
+  <%= yield %>
+</div><!-- /.container -->
+
+<%= render partial: 'layouts/frontend/blog/footer' %>
 
 </body>
 </html>

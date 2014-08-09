@@ -27,6 +27,8 @@ gem 'devise-i18n', '~> 0.10.4'
 gem 'simple_form', '~> 3.0.2'
 # gem 'country_select', '~> 2.0.0.beta2', github: 'stefanpenner/country_select'
 gem 'rails-i18n', '>= 4.0.2'#, github: 'svenfuchs/rails-i18n', branch: 'master' # For 4.x
+
+gem 'rails_config', '~> 0.4.2'
         
 # for group [:development, :test]
 group :development, :test do
