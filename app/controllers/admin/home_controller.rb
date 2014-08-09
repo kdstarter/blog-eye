@@ -1,5 +1,7 @@
 class Admin::HomeController < AdminController
-	def index
-		
-	end
+  
+  def index
+    
+  end
+  
 end

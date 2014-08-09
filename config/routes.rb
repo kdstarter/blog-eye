@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  devise_for :users, path: 'admin'
 
   namespace :frontend, path: '/' do
     root 'home#index'
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
 
   namespace :admin, path: '/admin' do
     root 'home#index'
+    
   end
   
 end
