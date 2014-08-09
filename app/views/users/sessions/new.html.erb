@@ -1,3 +1,29 @@
+
+
+  
+<form class="form-signin">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2 class="form-signin-heading">Please sign in</h2>
+    </div>
+
+    <div class="panel-body">
+      <input type="text" class="form-control" placeholder="Email address" autofocus="">
+      <input type="password" class="form-control" placeholder="Password">
+      <label class="checkbox">
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    
+    <div class="panel-footer">
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </div>
+  </div>
+</form>
+   
+
+    
+    
 <h2>Sign in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

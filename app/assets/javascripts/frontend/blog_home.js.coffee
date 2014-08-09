@@ -1,6 +1,4 @@
 
-#= require common/underscore
-#= require common/backbone
-#= require jquery
+#= require shared/utils
 #= require bootstrap
-#= require frontend/ie10-viewport-bug-workaround
+#= require shared/ie10-viewport-bug
