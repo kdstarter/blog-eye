@@ -29,7 +29,6 @@ group :development, :test do
 	gem 'minitest', '~> 5.4.0'
 	gem 'rspec-rails', '~> 3.0.0'
 	gem 'rspec-expectations', '~> 3.0.0'
-	gem 'byebug', '~> 3.2.0'
-	# gem 'debugger-pry', '~> 0.1.1'
+	gem 'debugger-pry', '~> 0.1.1'
 end
 
