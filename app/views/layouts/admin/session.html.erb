@@ -9,14 +9,15 @@
 <body>
 
 </div>
-	<%= render partial: 'layouts/admin/sessions/topbar' %>
+
+  <%= render partial: 'layouts/shared/topbar' %>
 
   <div class="container">
-    <%= render partial: 'layouts/admin/flash' %>
+    <%= render partial: 'layouts/shared/flash' %>
     <%= yield %>
   </div><!-- /.container -->
 
-  <%= render partial: 'layouts/frontend/home/footer' %>
+  <%= render partial: 'layouts/shared/footer' %>
 
 </body>
 </html>

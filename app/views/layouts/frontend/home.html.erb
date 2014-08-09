@@ -8,10 +8,10 @@
 </head>
 
 <body>
-  <%= render partial: 'layouts/frontend/home/topbar' %>
+  <%= render partial: 'layouts/shared/topbar' %>
 
   <div class="container">
-    <%= render partial: 'layouts/frontend/flash' %>
+    <%= render partial: 'layouts/shared/flash' %>
     
     <div class="jumbotron" style="margin-top:-20px;">
       <div class="container">
@@ -27,6 +27,6 @@
     <%= yield %>
   </div><!-- /.container -->
 
-  <%= render partial: 'layouts/frontend/home/footer' %>
+  <%= render partial: 'layouts/shared/footer' %>
 </body>
 </html>

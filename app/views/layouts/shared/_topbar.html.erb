@@ -1,0 +1,28 @@
+
+<div class="blog-masthead">
+  <div class="container">
+    <nav class="blog-nav">
+
+      <a class="<%= 'active' if params[:controller] == 'frontend/home' %>" href="<%= frontend_root_path %>"><%= Settings.site_name %></a>
+
+      <a class="<%= 'active' if params[:controller] == 'frontend/users' %>" href="<%= frontend_user_path(1) %>">My Blog</a>
+
+      <a class="" href="#">New features</a>
+      <a class="" href="#">New hires</a>
+      <a class="" href="#">About</a>
+      
+      <span class="pull-right">
+        <% if current_user %>
+          <a class="<%= 'active' if params[:controller] == 'admin/home' %>" href="<%= admin_root_path %>">Admin</a>
+          
+          <a class="" href="<%= destroy_user_session_path %>">注销</a>
+        <% else %>
+          <a class="<%= 'active' if controller_name == 'registrations' && params[:action] == 'new' %>" href="<%= new_user_registration_path %>">注册</a>
+
+          <a class="<%= 'active' if controller_name == 'sessions' && params[:action] == 'new' %>" href="<%= new_user_session_path %>">登录</a>
+        <% end %>
+      </span>
+
+    </nav>
+  </div>
+</div>

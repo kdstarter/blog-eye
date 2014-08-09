@@ -8,8 +8,14 @@
 </head>
 <body>
 
-<%= render partial: 'layouts/admin/flash' %>
-<%= yield %>
+	<%= render partial: 'layouts/shared/topbar' %>
+
+  <div class="container">
+    <%= render partial: 'layouts/shared/flash' %>
+    <%= yield %>
+  </div><!-- /.container -->
+
+  <%= render partial: 'layouts/shared/footer' %>
 
 </body>
 </html>
