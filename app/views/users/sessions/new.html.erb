@@ -10,8 +10,8 @@
       <div class="panel-body">     
         <div class="form-inputs">
           <%= devise_error_messages! %>
-          <%= f.input :email, required: false, autofocus: true %>
-          <%= f.input :password, required: false %>
+          <%= f.input :login, autofocus: true %>
+          <%= f.input :password %>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
 
