@@ -9,6 +9,7 @@
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-inline '}) do |f| %>
       <div class="panel-body">     
         <div class="form-inputs">
+          <%= devise_error_messages! %>
           <%= f.input :email, required: false, autofocus: true %>
           <%= f.input :password, required: false %>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
