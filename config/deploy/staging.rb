@@ -5,11 +5,6 @@ set :enable_ssl, false
 set :deploy_user, "xxx"
 set :server_name, "xxx"
 
-set :rvm_type, :system
-set :rvm_ruby, 'xxx'
-set :rvm_path, '/usr/local/rvm'
-set :rvm_bin_path, '/usr/local/rvm/bin'
-
 ask_secretly(:password)
 server fetch(:server_name), user: fetch(:deploy_user), port: 22, password: fetch(:password), roles: %w{web app db}
 
