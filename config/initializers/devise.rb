@@ -10,7 +10,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'ruby_eye_cn@163.com'
+  config.mailer_sender = Settings.site_mailer.user_name
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
