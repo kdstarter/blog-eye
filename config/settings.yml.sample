@@ -1,0 +1,9 @@
+
+site_name: 'RubyEye'
+site_ip: '121.40.94.192'
+site_domain: 'ruby-eye.cn'
+
+site_mailer: 
+  address: 'xxx'
+  user_name: 'xxx'
+  password: 'xxx'
