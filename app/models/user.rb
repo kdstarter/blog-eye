@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :categories, dependent: :destroy
 
   before_create :update_ranking
+  before_create :set_default_name, if: Proc.new { |u| u.name.blank? }
 
   attr_accessor :login
 
@@ -34,5 +35,9 @@ class User < ActiveRecord::Base
   def update_ranking
     current_ranking = User.maximum(:ranking).to_i
     self.ranking = current_ranking + 1
+  end
+
+  def set_default_name
+    self.name = self.email.split('@').first
   end
 end
