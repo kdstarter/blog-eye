@@ -5,4 +5,14 @@ ActiveAdmin.register Category do
     permitted
   end
 
+   index do
+    selectable_column
+    column :id
+    column :point_id
+    column :name
+    column :description
+    column :created_at
+    column :updated_at
+    actions
+  end
 end

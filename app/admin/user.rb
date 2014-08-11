@@ -6,10 +6,16 @@ ActiveAdmin.register User do
   end
 
    index do
-    selectable_fields = User.attribute_names.reject {|field| 
-      ['encrypted_password', 'reset_password_token'].include?(field) 
-    }
-    selectable_fields.each { |field| column field }
+    # selectable_column
+    column :id # column_id
+    column :ranking
+    column :visits
+    column :name
+    column :email
+    column :uid
+    column :city_name
+    column :homepage
+    column :company
     actions
   end
 

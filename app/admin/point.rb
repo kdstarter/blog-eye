@@ -5,4 +5,14 @@ ActiveAdmin.register Point do
     permitted
   end
 
+  index do
+    # selectable_column
+    column :id
+    column :name
+    column :description
+    column :created_at
+    column :updated_at
+    actions
+  end
+
 end
