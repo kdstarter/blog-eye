@@ -27,6 +27,8 @@ gem 'simple_form', '~> 3.0.2'
 # gem 'country_select', '~> 2.0.0.beta2', github: 'stefanpenner/country_select'
 gem 'rails-i18n', '>= 4.0.2'#, github: 'svenfuchs/rails-i18n', branch: 'master' # For 4.x
 gem 'rails_config', '~> 0.4.2'
+gem 'kaminari', '~> 0.16.1'
+gem 'activeadmin', '~> 1.0.0.pre', github: 'gregbell/active_admin'
 
 # for group [:development, :test]
 group :development, :test do
@@ -37,4 +39,3 @@ group :development, :test do
   gem 'rspec-expectations', '~> 3.0.0'
   gem 'debugger-pry', '~> 0.1.1'
 end
-
