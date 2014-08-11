@@ -5,4 +5,15 @@ ActiveAdmin.register Reply do
     permitted
   end
 
+  index do
+    column :id
+    column :user_id
+    column :post_id
+    column :last_reply_id
+    column :is_public
+    column :content
+    column :created_at
+    actions
+  end
+
 end

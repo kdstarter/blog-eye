@@ -25,8 +25,8 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Recent Posts" do
           ul do
             Post.order("created_at desc").map do |post|
-              omited_content = post.title.truncate(99, separator: ' ', omission: '...')
-              li link_to(omited_content, system_post_path(post))
+              omited_title = post.title.truncate(99, separator: ' ', omission: '...')
+              li link_to(omited_title, system_post_path(post))
             end
           end
         end

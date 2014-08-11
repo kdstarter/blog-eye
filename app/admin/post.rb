@@ -5,4 +5,20 @@ ActiveAdmin.register Post do
     permitted
   end
 
+  index do
+    # selectable_fields = Post.attribute_names.reject {|field| field == 'content' }
+    # selectable_fields.each { |field| column field }
+    column :id
+    column :user_id
+    column :point_id
+    column :category_id
+    column :source
+    column :title
+    column :tags
+    column :visits
+    column :likes
+    column :created_at
+    actions
+  end
+
 end
