@@ -1,0 +1,11 @@
+
+<label>
+  分类 <%= @category.name %> 下的文章列表: 
+</label>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to post.title, admin_post_path(post) %>
+  <% end %>
+</ul>

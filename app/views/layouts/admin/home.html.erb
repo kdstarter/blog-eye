@@ -8,11 +8,20 @@
 </head>
 <body>
 
-	<%= render partial: 'layouts/shared/topbar' %>
+  <%= render partial: 'layouts/shared/topbar' %>
+  <%= render partial: 'layouts/admin/hero_content' %>
 
   <div class="container">
-    <%= render partial: 'layouts/shared/flash' %>
-    <%= yield %>
+    <div class="row-fluid">
+      <div class="col-md-9" role="main">
+        <%= render partial: 'layouts/shared/flash' %>
+        <%= yield %>
+      </div>
+
+      <div class="col-md-3">
+        <%= render partial: 'layouts/admin/rightbar' %>
+      </div>
+    </div>
   </div><!-- /.container -->
 
   <%= render partial: 'layouts/shared/footer' %>

@@ -1,3 +1,21 @@
 
 @import "bootstrap";
 @import "shared/utils";
+
+.jumbotron {
+  padding: 30px;
+  margin-bottom: 0px;
+
+  a.admin_home_link {
+    font-size: x-large;
+    text-decoration: none;
+  }
+
+  a.mainpage_link {
+    font-size: large;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}

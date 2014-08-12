@@ -1,6 +1,6 @@
 class Frontend::UsersController < FrontendController
 
-	layout 'frontend/blog_home'
+  layout 'frontend/blog_home'
 
   def index
     

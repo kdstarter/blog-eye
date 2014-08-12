@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   namespace :admin, path: '/admin' do
     root 'home#index'
     
+    resources :posts
+
+    resources :categories
   end
   
 end

@@ -2,7 +2,9 @@ ActiveAdmin.register User do
 
   permit_params do
     permitted = User.attribute_names.reject {|field| field == 'id' }
-    permitted.delete('reset_password_token') if params[:user][:reset_password_token].blank?
+    if params[:user].present? && [:reset_password_token].blank?
+      permitted.delete('reset_password_token')
+    end
     permitted
   end
 
