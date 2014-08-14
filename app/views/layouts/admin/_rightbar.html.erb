@@ -1,4 +1,24 @@
 <div class="panel-group" id="accordion">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          博客管理
+        </a>
+      </h4>
+    </div>
+
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <ul>
+          <li>
+            <%= link_to '发表文章', new_admin_post_path %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
   
   <div class="panel panel-default">
     <div class="panel-heading">

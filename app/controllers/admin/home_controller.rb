@@ -1,9 +1,7 @@
 class Admin::HomeController < AdminController
   
   def index
-    @categories = Category.where(user: @current_user)
-    @posts = Post.where(user: @current_user)
-
+    @posts = current_user.posts
   end
   
 end
