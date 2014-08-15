@@ -13,13 +13,13 @@
 
   <div class="container">
     <div class="row-fluid">
+      <div class="col-md-3">
+        <%= render partial: 'layouts/admin/menubar' %>
+      </div>
+
       <div class="col-md-9" role="main">
         <%= render partial: 'layouts/shared/flash' %>
         <%= yield %>
-      </div>
-
-      <div class="col-md-3">
-        <%= render partial: 'layouts/admin/rightbar' %>
       </div>
     </div>
   </div><!-- /.container -->

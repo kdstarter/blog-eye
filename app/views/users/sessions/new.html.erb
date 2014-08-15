@@ -1,11 +1,11 @@
 
 <div class="session-form">
   <div class="panel panel-default">
-    
+
     <div class="panel-heading">
       <div class="heading">登 录</div>
     </div>
-   
+
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal'}) do |f| %>
       <div class="panel-body">
         <%= devise_error_messages! %>
@@ -17,7 +17,7 @@
           <%= f.button :submit, "登 录" %>
         </div>
       </div>
-      
+
       <div class="panel-footer">
         <%= render "users/shared/links" %>
       </div>

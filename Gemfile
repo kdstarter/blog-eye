@@ -24,12 +24,16 @@ gem 'highline', '~> 1.6.21'
 gem 'devise', '~> 3.2.4'
 gem 'devise-i18n', '~> 0.10.4'
 gem 'simple_form', '~> 3.1.0.rc2'#, github: 'plataformatec/simple_form'
-gem 'ckeditor', '~> 4.1.0'
+# gem 'client_side_validations', '~> 3.2.6'
 
 gem 'rails-i18n', '>= 4.0.2'#, github: 'svenfuchs/rails-i18n', branch: 'master' # For 4.x
 gem 'rails_config', '~> 0.4.2'
 gem 'kaminari', '~> 0.16.1'
 gem 'activeadmin', '~> 1.0.0.pre', github: 'gregbell/active_admin'
+
+gem 'ckeditor', '~> 4.0.11'
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 3.8.0'
 
 # for group [:development, :test]
 group :development, :test do
@@ -37,5 +41,10 @@ group :development, :test do
   gem 'minitest', '~> 5.4.0'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'rspec-expectations', '~> 3.0.0'
+
   gem 'debugger-pry', '~> 0.1.1'
+  gem 'better_errors', '~> 1.1.0'
+  gem 'binding_of_caller', '~> 0.7.2'
+  gem 'rails_best_practices', '~> 1.15.4'
 end
+

@@ -21,6 +21,8 @@ module RubyEye
     config.i18n.default_locale = :'zh-CN'
     config.i18n.available_locales = [:'zh-CN', :en]
 
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+
     config.to_prepare do
       devise_layout = 'admin/session'
       Devise::SessionsController.layout devise_layout

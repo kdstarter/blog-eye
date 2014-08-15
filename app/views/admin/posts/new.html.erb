@@ -2,6 +2,21 @@
 <%= simple_form_for [:admin, @post], html: {class: "form-horizontal"} do |f| %>
   <%= f.association :point, collection: Point.all %>
   <%= f.association :category, collection: @categories %>
-  <%= f.input :title, as: :string %>
-  <%= f.input :content, as: :string %>
+
+  <%= f.input :source %>
+  <%= f.input :title %>
+  <%= f.cktext_area :content, as: :ckeditor, input_html: { class: "span12", toolbar: "Basic" } %>
+
+  <%= f.input :tags %>
+
+  <div class="form-actions text-center">
+    <%= f.button :submit, "发 布", class: "btn btn-primary" %>
+  </div>
 <% end %>
+
+<script type="text/javascript">
+  $(function(){
+    // clear footer sticky
+    $('.footer').css('position', 'relative');
+  })
+</script>
