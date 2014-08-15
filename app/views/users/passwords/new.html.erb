@@ -6,12 +6,10 @@
       <div class="heading">忘记密码？</div>
     </div>
    
-    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: {class: 'form-horizontal'}) do |f| %>
       <div class="panel-body">     
         <%= f.error_notification %>
-        <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
-        </div>
+        <%= f.input :email, required: true, autofocus: true %>
 
         <div class="form-actions">
           <%= f.button :submit, "给我发送重置密码邮件" %>

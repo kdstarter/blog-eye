@@ -1,5 +1,4 @@
 
-@import "bootstrap";
 @import "shared/utils";
 
 .jumbotron {
@@ -19,3 +18,14 @@
     text-decoration: none;
   }
 }
+
+.form-group {
+  select {
+    max-width: 200px;
+  }
+
+  input[type="text"] {
+    max-width: 400px;
+  }
+}
+

@@ -1,7 +1,7 @@
   
-<%= simple_form_for [:admin, @post], html: {class: "form-vertical"} do |f| %>
-  <%= f.association :point, collection: Point.all, wrapper_html: { class: "form-group" } %>
-  <%= f.association :category, collection: @categories, wrapper_html: { class: "form-group" } %>
-  <%= f.input :title, as: :string, wrapper_html: { class: "form-group" } %>
-  <%= f.input :content, as: :string, wrapper_html: { class: "form-group" } %>
+<%= simple_form_for [:admin, @post], html: {class: "form-horizontal"} do |f| %>
+  <%= f.association :point, collection: Point.all %>
+  <%= f.association :category, collection: @categories %>
+  <%= f.input :title, as: :string %>
+  <%= f.input :content, as: :string %>
 <% end %>
