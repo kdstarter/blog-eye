@@ -52,6 +52,11 @@ puts_line "Install gems..." do
   `bundle install`
 end
 
+puts_line "Copy settings from sample files...\n" do
+  `cp config/settings.yml.sample config/settings.yml`
+  `cp config/database.yml.sample config/database.yml`
+end
+
 puts_line "Create databases...\n" do
   `RAILS_ENV=#{rails_env} bundle exec rake db:create`
   `RAILS_ENV=#{rails_env} bundle exec rake db:migrate`
@@ -62,7 +67,7 @@ puts_line "Create databases...\n" do
     puts "Now running RAILS_ENV=#{rails_env} rake assets:precompile..."
     `RAILS_ENV=#{rails_env} rake assets:precompile`
   end
-  `RAILS_ENV=#{rails_env} rails s`
+  # `RAILS_ENV=#{rails_env} rails s`
 end
 
 puts "\n#{APP_NAME} Successfully Installed."
