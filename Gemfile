@@ -10,7 +10,9 @@ gem 'uglifier', '~> 1.3.0'
 gem 'sass-rails', '~> 4.0.3'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails', '~> 3.1.1'
+
 gem 'bootstrap-sass', '~> 3.0.1.0.rc'
+# gem 'font-awesome-sass-rails', '~> 3.0.2.2'
 gem 'bootstrap-wysihtml5-rails', '~> 0.3.2.100'
 gem 'autoprefixer-rails', '~> 2.2.0'
 

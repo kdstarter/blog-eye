@@ -10,4 +10,10 @@ class Post < ActiveRecord::Base
   validates :title, presence: true, allow_blank: false
   validates :content, presence: true, allow_blank: false
 
+  SOURCES = ['原创或翻译', '转载或分享']
+
+  def published_time
+    self.created_at.strftime('%Y-%m-%d %H:%M')
+  end
+
 end

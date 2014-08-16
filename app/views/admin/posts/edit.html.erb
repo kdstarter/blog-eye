@@ -1,4 +1,4 @@
-  
+
 <%= simple_form_for [:admin, @post], html: {class: "form-horizontal"} do |f| %>
   <%= f.association :point, collection: Point.all %>
   <%= f.association :category, collection: @categories %>
@@ -10,6 +10,7 @@
   <%= f.input :tags %>
 
   <div class="form-actions text-center">
-    <%= f.button :submit, "发 布", class: "btn btn-primary" %>
+    <%= link_to "取 消", :back, class: "btn btn-inverse" %>
+    <%= f.button :submit, "保 存", class: "btn btn-primary" %>
   </div>
 <% end %>
