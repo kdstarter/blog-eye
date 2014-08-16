@@ -130,6 +130,16 @@ zh-CN:
         one: 长度非法（必须为一个字符）
         other: 长度非法（必须为 %{count} 个字符）
       other_than: 长度非法（不可为 %{count} 个字符
+
+      carrierwave_processing_error: "不能重新调整文件尺寸"
+      carrierwave_integrity_error: "不是一张图"
+      carrierwave_download_error: "不能下载文件"
+      extension_white_list_error: "不能上传%{extension}类的文件, 允许的类型: %{allowed_types}"
+      extension_black_list_error: "不能上传%{extension}类的文件, 不允许的类型: %{prohibited_types}"
+      wrong_size: "错误的文件大小 (应该为 %{file_size})"
+      size_too_small: "文件太小了 (应该至少 %{file_size})"
+      size_too_big: "文件太大了 (不能超过 %{file_size})"
+
     template:
       body: 如下字段出现错误：
       header:

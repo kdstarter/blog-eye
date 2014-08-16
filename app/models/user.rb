@@ -1,4 +1,7 @@
+require 'file_size_validator' 
 class User < ActiveRecord::Base
+
+  mount_uploader :avatar, UserAvatarUploader
 
   has_many :posts, dependent: :destroy
   has_many :replies, dependent: :destroy
@@ -21,6 +24,13 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :uid, case_sensitive: false
   validates_uniqueness_of :email, case_sensitive: false
+
+  validates :avatar, presence: true, file_size: { 
+    minimum: 3.kilobytes.to_i, maximum: 1.megabytes.to_i } 
+
+  def avatar_url
+    self.avatar.url
+  end
 
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup

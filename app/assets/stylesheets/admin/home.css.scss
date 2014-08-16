@@ -24,11 +24,15 @@
     max-width: 200px;
   }
 
+  input.string {
+    max-width: 400px;
+  }
+
   input[type="number"] {
     max-width: 200px;
   }
 
-  input.string {
+  input[type="file"] {
     max-width: 400px;
   }
 }

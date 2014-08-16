@@ -13,6 +13,7 @@
 
     labels:
       user:
+        avatar: 个人头像
         uid: 用户名
         name: 真实姓名
         email: Email

@@ -2,7 +2,7 @@
 
   <div class="panel panel-default">
     <div class="panel-body text-center">
-      <%= image_tag(gravatar_url(current_user.email), class: 'bloger_photo') %>
+      <%= image_tag(current_user.avatar_url, class: 'bloger_photo') %>
       <div>
         <%= current_user.name || current_user.email %>
       </div>
