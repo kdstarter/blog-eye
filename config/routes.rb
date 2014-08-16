@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   namespace :admin, path: '/admin' do
     root 'home#index'
+
+    get '/profile', to: 'home#profile'
+    post '/update_profile', to: 'home#update_profile'
     
     resources :posts
 

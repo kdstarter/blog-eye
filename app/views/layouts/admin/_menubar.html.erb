@@ -1,6 +1,15 @@
 <div class="panel-group">
 
   <div class="panel panel-default">
+    <div class="panel-body text-center">
+      <%= image_tag(gravatar_url(current_user.email), class: 'bloger_photo') %>
+      <div>
+        <%= current_user.name || current_user.email %>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">

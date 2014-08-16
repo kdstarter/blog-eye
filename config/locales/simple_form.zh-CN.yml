@@ -1,0 +1,38 @@
+'zh-CN':
+  simple_form:
+    "yes": '是'
+    "no": '否'
+    required:
+      text: '必需'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: '请查看以下的错误: '
+
+    labels:
+      user:
+        uid: 用户名
+        name: 真实姓名
+        email: Email
+        is_email_public: 是否公开
+        signature: 个性签名
+        city_name:  城市名
+        company: 公司名
+        github: Github主页
+        homepage: 个人主页
+        description: 个人简介
+
+    placeholders:
+      user:
+        uid: 用户名
+        name: 真实姓名
+        email: 使用常用的邮箱地址
+        signature: 用一句话来彰显个性
+        city_name: 用中文填写所在城市
+        company: 所在公司名
+        github: Github主页
+        homepage: 个人主页
+        description: 一段话的个人简介
+
