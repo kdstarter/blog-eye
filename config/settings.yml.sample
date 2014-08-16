@@ -8,4 +8,11 @@ site_mailer:
   user_name: 'ruby_eye_cn@163.com'
   password: 'xxx'
 
+cdn:
+  storage: 'qiniu'
+  access_key: 'xxx'
+  secret_key: 'xxx'
+  bucket: 'ruby-eye'
+  bucket_domain: 'ruby-eye.qiniudn.com'
+
 SECRET_KEY_BASE: 'a2a3871d452f6429eda890c4353683137bbd5e03758b79948e0903d1edab7451aae28a48444fcd76ca1ef445f7c21b2f4994a764d7f454ee0024c86b162c4052'

@@ -32,6 +32,10 @@ class User < ActiveRecord::Base
     self.avatar.url
   end
 
+  def email_md5
+    Digest::MD5.hexdigest(self.email.downcase)
+  end
+
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
