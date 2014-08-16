@@ -32,6 +32,7 @@ gem 'kaminari', '~> 0.16.1'
 gem 'activeadmin', '~> 1.0.0.pre', github: 'gregbell/active_admin'
 
 gem 'ckeditor', '~> 4.0.11'
+gem 'non-stupid-digest-assets', '~> 1.0.4'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 3.8.0'
 
