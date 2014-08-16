@@ -1,4 +1,7 @@
+
+require 'open-uri'
 require 'file_size_validator' 
+
 class User < ActiveRecord::Base
 
   mount_uploader :avatar, UserAvatarUploader
@@ -8,7 +11,8 @@ class User < ActiveRecord::Base
   has_many :categories, dependent: :destroy
 
   before_create :update_ranking
-  before_create :set_default_name, if: Proc.new { |u| u.name.blank? }
+  before_create :init_name, if: Proc.new { |u| u.name.blank? }
+  after_create :init_avatar, if: Proc.new { |u| u.email.present? }
 
   attr_accessor :login
 
@@ -25,15 +29,22 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :uid, case_sensitive: false
   validates_uniqueness_of :email, case_sensitive: false
 
-  validates :avatar, presence: true, file_size: { 
-    minimum: 3.kilobytes.to_i, maximum: 1.megabytes.to_i } 
+  validates :avatar, file_size: { maximum: 1.megabytes.to_i }, on: [:update]#, if: Proc.new { |u| u.avatar_changed? }
+
+  def human_name
+    self.name || self.uid
+  end
 
   def avatar_url
-    self.avatar.url
+    "#{self.avatar.url}?rand=#{Random.rand}" || "#{self.gravatar_url}?s=120"
   end
 
   def email_md5
     Digest::MD5.hexdigest(self.email.downcase)
+  end
+
+  def gravatar_url
+    "http://www.gravatar.com/avatar/#{self.email_md5}" 
   end
 
   def self.find_for_database_authentication(warden_conditions)
@@ -51,7 +62,16 @@ class User < ActiveRecord::Base
     self.ranking = current_ranking + 1
   end
 
-  def set_default_name
+  def init_name
     self.name = self.email.split('@').first
+  end
+
+  def init_avatar
+    temp_url = "#{self.gravatar_url}?s=512"
+    self.update_attributes(remote_avatar_url: temp_url)
+    # tempfile = open(temp_url)    
+
+    # uploader = UserAvatarUploader.new
+    # uploader.store! tempfile
   end
 end

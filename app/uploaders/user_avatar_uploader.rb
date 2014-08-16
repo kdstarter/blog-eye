@@ -20,7 +20,11 @@ class UserAvatarUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    "#{model.id}_#{model.email_md5}.#{model.avatar.file.path.split('.').last}" if original_filename.present?
+    if original_filename.present?
+      file_suffix = model.avatar.file.path.split('.').last.downcase
+      file_suffix = 'jpg' if file_suffix == 'jpeg'
+      "#{model.id}_#{model.email_md5}.#{file_suffix}"
+    end
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -31,14 +35,14 @@ class UserAvatarUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
-  # Process files as they are uploaded:
-  process :resize_to_fill => [120, 120]
-
   # Create different versions of your uploaded files:
   version :large do
+    # Process files as they are uploaded:
     # process :quality => 80
     process :resize_to_fit => [500, 500]
   end
+
+  process :resize_to_fill => [120, 120]
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

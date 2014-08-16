@@ -4,7 +4,7 @@
     <div class="panel-body text-center">
       <%= image_tag(current_user.avatar_url, class: 'bloger_photo') %>
       <div>
-        <%= current_user.name || current_user.email %>
+        <%= link_to current_user.human_name, admin_profile_path %>
       </div>
     </div>
   </div>

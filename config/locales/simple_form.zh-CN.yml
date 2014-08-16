@@ -29,7 +29,10 @@
       user:
         uid: 用户名
         name: 真实姓名
-        email: 使用常用的邮箱地址
+        email: 常用的邮箱地址
+        login: 用户名或Email
+        password: 8位以上的密码
+        password_confirmation: 确认上面的密码
         signature: 用一句话来彰显个性
         city_name: 用中文填写所在城市
         company: 所在公司名
