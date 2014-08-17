@@ -145,6 +145,7 @@ zh-CN:
       header:
         one: 有 1 个错误发生导致「%{model}」无法被保存。
         other: 有 %{count} 个错误发生导致「%{model}」无法被保存。
+  
   helpers:
     select:
       prompt: 请选择
@@ -152,6 +153,15 @@ zh-CN:
       create: 新增%{model}
       submit: 储存%{model}
       update: 更新%{model}
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "没找到 %{entry_name}"
+          one: "显示 <b>1个</b> %{entry_name}"
+          other: "显示 <b>所有 %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "显示 %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> 中的 <b>%{total}</b> 一共"
+
   number:
     currency:
       format:
@@ -211,4 +221,12 @@ zh-CN:
       long: ! '%Y年%b%d日 %H:%M'
       short: ! '%b%d日 %H:%M'
     pm: 下午
+
+  views:
+    pagination:
+      first: "&laquo; 首页"
+      last: "末页 &raquo;"
+      previous: "&lsaquo; 上一页"
+      next: "下一页 &rsaquo;"
+      truncate: "&hellip;"
 

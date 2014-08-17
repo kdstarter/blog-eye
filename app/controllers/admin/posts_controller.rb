@@ -1,6 +1,11 @@
 # encoding: utf-8
 class Admin::PostsController < AdminController
 
+  def index
+    @posts = current_user.posts
+    @posts = @posts.page(params[:page])
+  end
+
   def show
     @post = Post.find(params[:id])
   end

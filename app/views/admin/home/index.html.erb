@@ -1,1 +1,13 @@
-Welcome, <%= current_user.email %>
+<div class="row-fluid">
+  <div class="col-xs-9">
+    <label>最新文章列表: </label>
+  </div>
+
+  <div class="col-xs-3 text-right">
+    <%= link_to '发布新文章', new_admin_post_path %>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <%= render 'admin/shared/posts', posts: @posts %>
+</div>

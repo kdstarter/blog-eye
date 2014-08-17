@@ -3,8 +3,8 @@
   <div class="panel panel-default">
     <div class="panel-body text-center">
       <%= image_tag(current_user.avatar_url, class: 'bloger_photo') %>
-      <div>
-        <%= link_to current_user.human_name, admin_profile_path %>
+      <div class="bloger_name">
+        <%= current_user.human_name %>
       </div>
     </div>
   </div>
@@ -21,9 +21,8 @@
     <div id="collapse1" class="panel-collapse collapse in">
       <div class="panel-body">
         <ul>
-          <li>
-            <%= link_to '发表文章', new_admin_post_path %>
-          </li>
+          <li><%= link_to '发布文章', new_admin_post_path %></li>
+          <li><%= link_to '我的资料', admin_profile_path %></li>
         </ul>
       </div>
     </div>
@@ -41,6 +40,7 @@
     <div id="collapse2" class="panel-collapse collapse in">
       <div class="panel-body">
         <ul>
+          <li><%= link_to "全部文章 (#{current_user.posts.count})", admin_posts_path %></li>
         <% @categories.each do |category| %>
           <li>
             <%= link_to category.name, admin_category_path(category) %>

@@ -8,4 +8,8 @@ module ApplicationHelper
     "<title>#{action_title || default_title} - #{Settings.site_name}</title>".html_safe
   end
 
+  def omited_str(str, length=60)
+    str.truncate(length, separator: ' ', omission: '...')
+  end
+
 end

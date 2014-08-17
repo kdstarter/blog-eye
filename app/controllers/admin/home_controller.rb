@@ -3,6 +3,7 @@ class Admin::HomeController < AdminController
   
   def index
     @posts = current_user.posts
+    @posts = @posts.page(params[:page]).per(5)
   end
 
   def profile
