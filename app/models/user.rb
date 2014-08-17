@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   end
 
   def avatar_url
-    "#{self.avatar.url}?rand=#{Random.rand}" || "#{self.gravatar_url}?s=120"
+    self.avatar.url || "#{self.gravatar_url}?s=120"
   end
 
   def email_md5
