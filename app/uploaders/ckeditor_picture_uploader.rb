@@ -20,6 +20,13 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
     "#{Settings.cdn.dir_prefix}/pictures/#{model.id}"
   end
 
+  def filename
+    if original_filename.present?
+      file_prefix = model.data.file.path.split('.').last.downcase
+      "#{secure_token}.#{file_prefix}"
+    end
+  end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
@@ -36,11 +43,11 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fill => [118, 100]
+    process :resize_to_fill => [120, 100]
   end
 
   version :content do
-    process :resize_to_limit => [800, 800]
+    process :resize_to_limit => [500, 500]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
