@@ -51,8 +51,8 @@ namespace :deploy do
       within release_path do
         execute :rake, 'assets:clean'
         execute :rake, 'tmp:clear'
-        execute :rake, 'assets:precompile'
-        # `RAILS_ENV=production rake assets:precompile`
+        # execute :rake, 'assets:precompile'
+        `RAILS_ENV=production rake assets:precompile`
       end
     end
   end

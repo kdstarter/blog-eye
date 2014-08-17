@@ -8,12 +8,16 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::ImageScience
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
+
+  def url(param={})
+    "http://#{Settings.cdn.bucket_domain}/#{self.path}" unless self.blank?
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/ckeditor/pictures/#{model.id}"
+    "#{Settings.cdn.dir_prefix}/pictures/#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -43,5 +47,11 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   def extension_white_list
     Ckeditor.image_file_types
+  end
+
+  protected
+  def secure_token(length=16)
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.hex(length/2))
   end
 end
