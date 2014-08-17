@@ -1,0 +1,38 @@
+<div class="row-fluid">
+  <div class="col-xs-9">
+    <label>博客分类管理: </label>
+  </div>
+
+  <div class="col-xs-3 text-right">
+    <%= link_to '添加新分类', new_admin_category_path %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>名称</th>
+        <th>文章数量</th>
+        <th>描述</th>
+        <th>创建时间</th>
+        <th>管理</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.name %></td>
+          <td><%= category.posts.size %></td>
+          <td><%= omited_str(category.description) %></td>
+          <td><%= category.created_time %></td>
+          <td>
+            <%= link_to '编 辑', edit_admin_category_path(category), class: "btn btn-xs btn-primary" %>
+            <%= link_to '删 除', admin_category_path(category), data: { confirm: "你确定要删除这个分类吗？" }, method: :delete, class: "btn btn-xs btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

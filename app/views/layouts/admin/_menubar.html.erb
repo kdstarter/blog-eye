@@ -2,7 +2,10 @@
 
   <div class="panel panel-default">
     <div class="panel-body text-center">
-      <%= image_tag(current_user.avatar_url, class: 'bloger_photo') %>
+      <a target="_blank" href="<%= frontend_user_path(current_user) %>">
+        <%= image_tag(current_user.avatar_url, class: 'bloger_photo') %>
+      </a>
+
       <div class="bloger_name">
         <%= current_user.human_name %>
       </div>
@@ -22,6 +25,8 @@
       <div class="panel-body">
         <ul>
           <li><%= link_to '发布文章', new_admin_post_path %></li>
+          <li><%= link_to '评论管理', admin_replies_path %></li>
+          <li><%= link_to '分类管理', admin_categories_path %></li>
           <li><%= link_to '我的资料', admin_profile_path %></li>
         </ul>
       </div>
@@ -41,12 +46,13 @@
       <div class="panel-body">
         <ul>
           <li><%= link_to "全部文章 (#{current_user.posts.count})", admin_posts_path %></li>
-        <% @categories.each do |category| %>
-          <li>
-            <%= link_to category.name, admin_category_path(category) %>
-             (<%= Post.where(category: category).count %>)
-          </li>
-        <% end %>
+          <% @categories.each do |category| %>
+            <li>
+              <%= link_to category.name, admin_category_path(category) %>
+               (<%= Post.where(category: category).count %>)
+            </li>
+          <% end %>
+          <li><%= link_to "回收站 (0)", admin_posts_path %></li>
         </ul>
       </div>
     </div>

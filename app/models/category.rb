@@ -6,4 +6,7 @@ class Category < ActiveRecord::Base
   validates :name, presence: true, allow_blank: false
   validates_uniqueness_of :name, scope: :user_id, case_sensitive: false
 
+  def created_time
+    self.created_at.strftime('%Y-%m-%d %H:%M')
+  end
 end

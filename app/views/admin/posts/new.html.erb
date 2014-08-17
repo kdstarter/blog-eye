@@ -5,9 +5,9 @@
 
   <%= f.input :source, collection: sources_collection %>
   <%= f.input :title %>
-  <%= f.input_field :content, as: :ckeditor, ckeditor: { toolbar: "Easy", height: 300 }  %>
 
   <%= f.input :tags %>
+  <%= f.input_field :content, as: :ckeditor, ckeditor: { toolbar: "Easy", height: 300 }  %>
 
   <div class="form-actions text-center">
     <%= f.button :submit, "发 布", class: "btn btn-primary" %>
