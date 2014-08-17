@@ -6,4 +6,8 @@ class Reply < ActiveRecord::Base
   validates :post_id, presence: true
   validates :content, presence: true, allow_blank: false
 
+  def published_time
+    self.created_at.strftime('%Y-%m-%d %H:%M')
+  end
+  
 end

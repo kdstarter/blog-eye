@@ -1,0 +1,37 @@
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th class="col-xs-5">内容</th>
+        <th>评论人</th>
+        <th>发布时间</th>
+        <th>管理</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @replies.each do |reply| %>
+        <tr>
+          <td>
+            <%= link_to omited_str(reply.content), frontend_post_path(reply.post) %>
+          </td>
+          <td><%= reply.user.human_name %></td>
+          <td><%= reply.published_time %></td>
+          <td>
+            <%= link_to '删 除', admin_reply_path(reply), data: { confirm: "你确定要删除这条评论吗？" }, method: :delete, class: "btn btn-xs btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+
+      <tr>
+        <td colspan='2'><%= paginate @replies %></td>
+        <td colspan='2' class="text_middle">
+          <div class="pull-right">
+            <%= link_to('查看所有', admin_replies_path) unless url_for == admin_replies_path %>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

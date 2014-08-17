@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     
     resources :posts
 
+    resources :replies
+
     resources :categories
   end
   

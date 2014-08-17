@@ -1,6 +1,18 @@
 
 @import "shared/utils";
 
+.pagination {
+  margin: 10px 0px;
+
+  span {
+    margin-right: 8px;
+  }
+}
+
+.text_middle {
+  vertical-align: middle!important;
+}
+
 .jumbotron {
   padding: 30px;
   margin-bottom: 0px;

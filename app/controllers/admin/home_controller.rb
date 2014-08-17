@@ -3,7 +3,10 @@ class Admin::HomeController < AdminController
   
   def index
     @posts = current_user.posts
-    @posts = @posts.page(params[:page]).per(5)
+    @replies = Reply.where(post_id: @posts.pluck(:id))
+
+    @posts = @posts.page(params[:page])
+    @replies = @replies.page(params[:page])
   end
 
   def profile
