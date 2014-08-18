@@ -22,7 +22,7 @@ Make sure mysql already started.
 git clone git@github.com:agilejzl/ruby-eye.git
 cd ruby-eye
 # A ruby script to RTF
-ruby setup.rb # 
+ruby setup.rb
 rails s
 ```
 

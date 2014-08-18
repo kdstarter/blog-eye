@@ -14,7 +14,7 @@
       
       <span class="pull-right">
         <% if current_user %>
-          <a class="<%= 'active' if params[:controller].include?('admin/') %>" href="<%= admin_root_path %>">Admin</a>
+          <a class="<%= 'active' if params[:controller].include?('admin/') %>" href="<%= admin_root_path %>"><%= current_user.human_name %></a>
 
           <a class="" href="<%= destroy_user_session_path %>">注销</a>
         <% else %>

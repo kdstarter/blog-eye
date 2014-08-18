@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :users
 
     resources :posts
+
+    resources :categories
   end
 
   namespace :admin, path: '/admin' do

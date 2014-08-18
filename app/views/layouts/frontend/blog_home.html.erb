@@ -8,14 +8,24 @@
 </head>
 <body>
 
-<%= render partial: 'layouts/shared/topbar' %>
+  <%= render partial: 'layouts/shared/topbar' %>
 
-<div class="container">
-  <%= render partial: 'layouts/shared/flash' %>
-  <%= yield %>
-</div><!-- /.container -->
+  <div class="container">
+    <%= render partial: 'layouts/frontend/blog/hero_content' %>
 
-<%= render partial: 'layouts/shared/footer' %>
+    <div class="row-fluid">
+      <div class="col-md-9 blog-main">
+        <%= render partial: 'layouts/shared/flash' %>
+        <%= yield %>
+      </div>
+      
+      <div class="col-md-3 blog-sidebar">
+        <%= render partial: 'layouts/frontend/blog/menubar' %>
+      </div>
+    </div>
+  </div>
+
+  <%= render partial: 'layouts/shared/footer' %>
 
 </body>
 </html>

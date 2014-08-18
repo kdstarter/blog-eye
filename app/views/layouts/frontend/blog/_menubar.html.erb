@@ -1,0 +1,40 @@
+
+<div class="sidebar-module sidebar-module-inset">
+  <div class="text-center">
+    <a target="_blank" href="<%= frontend_user_path(@blogger) %>">
+      <%= image_tag(@blogger.avatar_url, class: 'bloger_photo') %>
+    </a>
+
+    <div class="bloger_name">
+      <%= @blogger.human_name %>
+    </div>
+  </div>
+
+  <div class="blogger_info">
+    <p class="text-center"><%= "第 #{@blogger.ranking} 位会员" %></p>
+    <p>浏览: <%= @blogger.visits %></p>
+    <p>城市: <%= @blogger.city_name %></p>
+  </div>
+</div>
+
+<div class="sidebar-module">
+  <h4>全部分类</h4>
+  <ol class="list-unstyled">
+    <li><%= link_to "全部文章 (#{@blogger.posts.count})", frontend_posts_path %></li>
+    <% @categories.each do |category| %>
+      <li>
+        <%= link_to category.name, frontend_category_path(category) %>
+         (<%= Post.where(category: category).count %>)
+      </li>
+    <% end %>
+  </ol>
+</div>
+
+<div class="sidebar-module">
+  <h4>Elsewhere</h4>
+  <ol class="list-unstyled">
+    <li><a href="#">GitHub</a></li>
+    <li><a href="#">Twitter</a></li>
+    <li><a href="#">Facebook</a></li>
+  </ol>
+</div>
