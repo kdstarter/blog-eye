@@ -41,14 +41,20 @@ class UserAvatarUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
+  process :resize_to_fill => [460, 460]
+
   # Create different versions of your uploaded files:
+  version :thumb do
+    # Process files as they are uploaded:
+    # process :quality => 80
+    process :resize_to_fit => [40, 40]
+  end
+
   version :content do
     # Process files as they are uploaded:
     # process :quality => 80
-    process :resize_to_fit => [500, 500]
+    process :resize_to_fit => [800, 800]
   end
-
-  process :resize_to_fill => [120, 120]
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

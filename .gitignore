@@ -2,14 +2,15 @@
 /.bundle
 /log
 /tmp
+
 .DS_Store
 .keep
+.coveralls.yml
 
-/public/assets
 config/deploy/production.rb
-
 config/database.yml
 config/settings.yml
 
-public/assets/
-public/uploads/
+public/assets
+public/uploads
+coverage
