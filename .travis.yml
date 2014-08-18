@@ -1,0 +1,19 @@
+bundler_args: --without development
+env:
+  global:
+    - JRUBY_OPTS="$JRUBY_OPTS --debug"
+gemfile:
+  - Gemfile
+  - Gemfile.rack-1.5.x
+language: ruby
+rvm:
+  - 2.0.0
+  - 2.1
+  - jruby-19mode
+  - jruby-head
+  - ruby-head
+matrix:
+  allow_failures:
+    - rvm: jruby-head
+    - rvm: ruby-head
+  fast_finish: true
