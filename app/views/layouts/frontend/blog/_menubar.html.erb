@@ -11,8 +11,12 @@
   </div>
 
   <div class="blogger_info">
-    <p class="text-center"><%= "第 #{@blogger.ranking} 位会员" %></p>
-    <p>浏览: <%= @blogger.visits %></p>
+    <p class="text-center">
+      第 <span class="ranking_number"><%= @blogger.ranking %></span> 位会员
+    </p>
+    <p>
+      浏览: <span class="visits_number"><%= @blogger.visits %></span> 次
+    </p>
     <p>城市: <%= @blogger.city_name || '未知' %></p>
   </div>
 </div>

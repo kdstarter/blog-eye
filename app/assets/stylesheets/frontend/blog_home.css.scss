@@ -6,8 +6,21 @@ body {
     padding: 0px 15px;
 
     .blog-sidebar {
+      .bloger_name {
+        font-size: larger;
+      }
+
       .blogger_info {
         margin-left: 10px;
+
+        .ranking_number {
+          font-size: larger;
+          color: yellowgreen;
+        }
+
+        .visits_number {
+          font-size: larger;
+        }
       }
     }
 
