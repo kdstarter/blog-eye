@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   namespace :frontend, path: '/' do
     root 'home#index'
 
-    resources :users
+    resources :users#, param: :uid
 
     resources :posts
 

@@ -17,6 +17,7 @@ gem 'autoprefixer-rails', '~> 2.2.0'
 
 gem 'devise', '~> 3.2.4'
 gem 'devise-i18n', '~> 0.10.4'
+# gem 'friendly_id', '~> 5.0.4'
 gem 'simple_form', '~> 3.1.0.rc2'#, github: 'plataformatec/simple_form'
 # gem 'client_side_validations', '~> 3.2.6'
 

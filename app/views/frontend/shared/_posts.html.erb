@@ -1,20 +1,24 @@
 
 <div class="blog-posts">
-  <% posts.each do |post| %>
-    <div class="blog-post">
-      <h3 class="blog-post-title"><%= omited_str(post.title) %></h3>
-      <p class="blog-post-meta">
-        <%= post.published_time %>
-        <a href="#"><%= post.tags %></a>
-      </p>
+  <% if @posts.size > 0 %>
+    <% posts.each do |post| %>
+      <div class="blog-post">
+        <h3 class="blog-post-title"><%= omited_str(post.title) %></h3>
+        <p class="blog-post-meta">
+          <%= post.published_time %>
+          <a href="#"><%= post.tags %></a>
+        </p>
 
-      <div class="blog-post-content">
-        <%= omited_str(post.content, 150) %>
+        <div class="blog-post-content">
+          <%= omited_str(post.content, 150) %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
 
-  <div class="pager">
-    <%= paginate posts %>
-  </div>
+    <div class="pager">
+      <%= paginate posts %>
+    </div>
+  <% else %>
+    这里还是一片处女地，就等着你来开垦咯！
+  <% end %>
 </div>

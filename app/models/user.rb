@@ -4,6 +4,9 @@ require 'file_size_validator'
 
 class User < ActiveRecord::Base
 
+  # extend FriendlyId
+  # friendly_id :uid, use: :finders
+
   mount_uploader :avatar, UserAvatarUploader
 
   has_many :posts, dependent: :destroy
@@ -26,7 +29,7 @@ class User < ActiveRecord::Base
   validates :uid, presence: true, allow_blank: false
   validates :email, presence: true, allow_blank: false
 
-  validates_uniqueness_of :uid, case_sensitive: false
+  validates_uniqueness_of :uid, case_sensitive: true
   validates_uniqueness_of :email, case_sensitive: false
 
   validates :avatar, file_size: { maximum: 1.megabytes.to_i }, on: [:update]#, if: Proc.new { |u| u.avatar_changed? }
@@ -50,7 +53,7 @@ class User < ActiveRecord::Base
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
-      where(conditions).where(["lower(uid) = :value OR lower(email) = :value", { value: login.downcase }]).first
+      where(conditions).where(["uid = :value OR email = :value", { value: login }]).first
     else
       where(conditions).first
     end
