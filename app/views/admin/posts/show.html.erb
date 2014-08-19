@@ -13,5 +13,6 @@
 
 <%= @post.published_time %>
 <br/>文章分类: <%= @post.category.name %>
+
 <br/>标签: <a href="#"><span class="badge"><%= @post.tags %></span></a>
 <br/> <%= @post.content.html_safe %>

@@ -11,9 +11,9 @@
         <a class="<%= 'active' if params[:controller] == 'frontend/users' %>" href="<%= frontend_user_path(current_user) %>">我的主页</a>
       <% end %>
 
-      <a class="" href="#">New features</a>
-      <a class="" href="#">New hires</a>
-      <a class="" href="#">About</a>
+      <a class="" href="/bloggers">博 客</a>
+      <a class="" href="/features">新功能</a>
+      <a class="" href="/about_us">关 于</a>
       
       <span class="pull-right">
         <% if current_user %>
