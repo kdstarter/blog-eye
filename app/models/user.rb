@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   end
 
   def avatar_url
-    self.avatar.url
+    self.avatar.url || self.avatar.default_url
   end
 
   def email_md5

@@ -2,7 +2,7 @@
 <div class="sidebar-module sidebar-module-inset">
   <div class="text-center">
     <a target="_blank" href="<%= frontend_user_path(@blogger) %>">
-      <%= image_tag(avatar_url(@blogger), class: 'bloger_photo') %>
+      <%= image_tag(@blogger.avatar_url, class: 'bloger_photo') %>
     </a>
 
     <div class="bloger_name">
@@ -13,7 +13,7 @@
   <div class="blogger_info">
     <p class="text-center"><%= "第 #{@blogger.ranking} 位会员" %></p>
     <p>浏览: <%= @blogger.visits %></p>
-    <p>城市: <%= @blogger.city_name %></p>
+    <p>城市: <%= @blogger.city_name || '未知' %></p>
   </div>
 </div>
 
