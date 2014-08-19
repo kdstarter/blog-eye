@@ -21,7 +21,7 @@ class UserAvatarUploader < CarrierWave::Uploader::Base
   def filename
     if original_filename.present?
       file_prefix = model.avatar.file.path.split('.').last.downcase
-      "#{mounted_as}_#{secure_token}.#{file_prefix}"
+      "#{secure_token}.#{file_prefix}"
     end
   end
 

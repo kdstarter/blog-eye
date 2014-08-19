@@ -4,8 +4,8 @@ require 'file_size_validator'
 
 class User < ActiveRecord::Base
 
-  # extend FriendlyId
-  # friendly_id :uid, use: :finders
+  extend FriendlyId
+  friendly_id :uid, use: :finders
 
   mount_uploader :avatar, UserAvatarUploader
 
@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
   before_create :update_ranking
   before_create :init_name, if: Proc.new { |u| u.name.blank? }
-  after_create :init_avatar, if: Proc.new { |u| u.email.present? }
+  after_create :init_avatar, if: Proc.new { |u| u.email =~ %r(@gmail.com$) }
 
   attr_accessor :login
 
@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   end
 
   def avatar_url
-    self.avatar.url || "#{self.gravatar_url}?s=120"
+    self.avatar.url
   end
 
   def email_md5
@@ -72,9 +72,5 @@ class User < ActiveRecord::Base
   def init_avatar
     temp_url = "#{self.gravatar_url}?s=512"
     self.update_attributes(remote_avatar_url: temp_url)
-    # tempfile = open(temp_url)    
-
-    # uploader = UserAvatarUploader.new
-    # uploader.store! tempfile
   end
 end

@@ -12,4 +12,8 @@ module ApplicationHelper
     str.truncate(length, separator: ' ', omission: '...')
   end
 
+  def avatar_url(user, size='default')
+    user.avatar_url || "shared/users/avatar_#{size}.jpg"
+  end
+
 end
