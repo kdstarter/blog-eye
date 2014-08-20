@@ -12,12 +12,12 @@ default: &default
 
 development:
   <<: *default
-  database: ruby-eye_dev
+  database: blog-eye_dev
 
 test:
   <<: *default
-  database: ruby-eye_test
+  database: blog-eye_test
 
 production:
   <<: *default
-  database: ruby-eye_pro
+  database: blog-eye_pro
