@@ -40,3 +40,7 @@
         homepage: 个人主页
         description: 一段话的个人简介
 
+      category:
+        name: 分类名
+        description: 分类描述
+

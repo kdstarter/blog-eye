@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   validates :avatar, file_size: { maximum: 1.megabytes.to_i }, on: [:update]#, if: Proc.new { |u| u.avatar_changed? }
 
   def human_name
-    self.name || self.uid
+    self.uid
   end
 
   def avatar_url

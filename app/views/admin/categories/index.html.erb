@@ -4,7 +4,18 @@
   </div>
 
   <div class="col-xs-3 text-right">
-    <%= link_to '添加新分类', new_admin_category_path %>
+    <%= link_to "添加新分类", "#", class: "btn_new_category" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 template_new_category display_none">
+    <%= simple_form_for [:admin, Category.new], html: {class: "form-inline form_new_category"} do |f| %>
+      <%= f.input_field :name, class: "form-control" %>
+      <%= f.input_field :description, class: "form-control" %>
+
+      <%= f.button :submit, "保 存", class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
 
@@ -28,11 +39,19 @@
           <td><%= omited_str(category.description) %></td>
           <td><%= category.created_time %></td>
           <td>
-            <%= link_to '编 辑', edit_admin_category_path(category), class: "btn btn-xs btn-primary" %>
-            <%= link_to '删 除', admin_category_path(category), data: { confirm: "你确定要删除这个分类吗？" }, method: :delete, class: "btn btn-xs btn-danger" %>
+            <%= link_to "编 辑", edit_admin_category_path(category), class: "btn btn-xs btn-primary" %>
+            <%= link_to "删 除", admin_category_path(category), data: { confirm: "你确定要删除这个分类吗？" }, method: :delete, remote: true, class: "btn btn-xs btn-danger" %>
           </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
+
+<script type="text/javascript">
+  $(function(){
+    new CategoryListView({
+      el: $("#main_content")
+    });
+  });
+</script>
