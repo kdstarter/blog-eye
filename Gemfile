@@ -2,7 +2,7 @@
 source 'http://ruby.taobao.org'
 
 gem 'rails', '4.1.5'
-gem 'turbolinks', '~> 2.2.2'
+gem 'turbolinks', '~> 2.3.0'
 gem 'jbuilder', '~> 2.0'
 gem 'mysql2', '~> 0.3.16'
 
