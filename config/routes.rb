@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users, path: 'admin'
+
+  # devise_for :users, path: 'user'
+  devise_for :users, path: 'user', controllers: {registrations: "users/registrations"}
+  devise_scope :user do
+    post '/admin/is_uid_exist', to: 'users/registrations#is_uid_exist'
+  end
 
   namespace :frontend, path: '/' do
     root 'home#index'
