@@ -26,13 +26,14 @@ class User < ActiveRecord::Base
          authentication_keys: [:login]
 
   validates :ranking, uniqueness: true
-  validates :uid, presence: true, allow_blank: false
-  validates :email, presence: true, allow_blank: false
-
-  validates_uniqueness_of :uid, case_sensitive: true
-  validates_uniqueness_of :email, case_sensitive: false
-
   validates :avatar, file_size: { maximum: 1.megabytes.to_i }, on: [:update]#, if: Proc.new { |u| u.avatar_changed? }
+
+  validates :uid, presence: true, allow_blank: false, uniqueness: { case_sensitive: true },
+            length: { minimum: 3, maximum: 24 }, exclusion: { in: Settings.exclusions },
+            format: { with: /\A([a-zA-Z0-9])([\w|-]+)([a-zA-Z0-9])\z/, message: '是无效的，必须以字母或数字开头和结尾，可包含 "-" 或 "_"' }
+
+  validates :email, presence: true, allow_blank: false, uniqueness: { case_sensitive: false },
+            format: { with: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i, message: 'Email格式不正确' }
 
   def human_name
     self.uid

@@ -2,14 +2,13 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
   def is_uid_exist
-    uid = params[:uid]
-    user = User.find_by(uid: uid)
+    user = User.new(uid: params[:uid])
 
     respond_to do |format|
-      if user.nil?
-        format.json{ render json: { message: "用户名 #{uid} 可以使用" } }
+      if !user.valid? && user.errors[:uid].present?
+        format.json { render json: { message: "用户名 #{user.uid} #{user.errors[:uid].first}" }, status: 403}
       else
-        format.json { render json: { message: "用户名 #{uid} 已经存在" }, status: 403}
+        format.json{ render json: { message: "用户名 #{user.uid} 可以使用" } }
       end
     end
   end
