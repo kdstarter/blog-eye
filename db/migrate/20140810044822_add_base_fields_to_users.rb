@@ -3,7 +3,7 @@ class AddBaseFieldsToUsers < ActiveRecord::Migration
     add_column :users, :uid, :string
     add_column :users, :name, :string
 
-    add_column :users, :is_email_public, :boolean
+    add_column :users, :is_email_public, :boolean, default: true
     add_column :users, :city_name, :string
     add_column :users, :company, :string
 
@@ -14,5 +14,6 @@ class AddBaseFieldsToUsers < ActiveRecord::Migration
 
     add_column :users, :ranking, :integer
     add_column :users, :visits, :integer, default: 0
+    add_column :users, :avatar, :string
   end
 end

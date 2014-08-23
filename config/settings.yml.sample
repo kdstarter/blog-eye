@@ -5,7 +5,7 @@ site_ip: '121.40.94.192'
 site_domain: 'blog-eye.com'
 
 site_mailer: 
-  address: 'smtp.163.com'
+  address: 'smtp.126.com'
   user_name: 'blog_eye@126.com'
   password: 'xxx'
 
@@ -27,4 +27,7 @@ exclusions:
   - status
   - api
 
-SECRET_KEY_BASE: 'a2a3871d452f6429eda890c4353683137bbd5e03758b79948e0903d1edab7451aae28a48444fcd76ca1ef445f7c21b2f4994a764d7f454ee0024c86b162c4052'
+devise:
+  secret_key: 'xxx'
+
+SECRET_KEY_BASE: 'xxx'

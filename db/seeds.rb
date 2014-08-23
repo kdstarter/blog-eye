@@ -11,7 +11,7 @@ poins = [
   { name: '编程语言', description: 'Ruby, Java etc.' },
   { name: '移动开发', description: 'iOS, Android etc.' },
   { name: '操作系统', description: 'Mac, Linux, Windows etc.' },
-  { name: '数据库', description: 'Mysql, Oracle, Mongodb etc.' },
+  { name: '数据仓库', description: 'Redis, Mysql, Mongodb etc.' },
   { name: '其它类别', description: '找不到类别时就选这个吧' }
 ]
 

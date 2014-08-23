@@ -14,7 +14,12 @@
 
   <div class="container">
     <%= render partial: 'layouts/shared/flash' %>
-    <%= yield %>
+
+    <div class="session-form">
+     <div class="panel panel-default">
+        <%= yield %>
+      </div>
+    </div>
   </div><!-- /.container -->
 
   <%= render partial: 'layouts/shared/footer' %>

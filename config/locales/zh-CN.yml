@@ -230,3 +230,11 @@ zh-CN:
       next: "下一页 &rsaquo;"
       truncate: "&hellip;"
 
+  active_admin:
+    devise:
+      password_confirmation:
+        title: 确认密码
+
+      change_password:
+        submit: 确 认
+

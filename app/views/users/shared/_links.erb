@@ -14,7 +14,7 @@
   <%= link_to "没有收到重置密码的邮件？", new_confirmation_path(resource_name) %><br />
 <% end -%>
 
-<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' && resource.reset_password_token.present? %>
   <%= link_to "没有收到账号解锁的邮件？", new_unlock_path(resource_name) %><br />
 <% end -%>
 
