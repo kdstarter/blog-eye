@@ -29,8 +29,8 @@ gem 'activeadmin', '~> 1.0.0.pre', github: 'gregbell/active_admin'
 gem 'ckeditor', '~> 4.1.0'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 3.8.0'
-gem 'qiniu-rs', '~> 3.4.10'
-gem 'carrierwave-qiniu', '~> 0.1.3'
+gem 'qiniu-rs', '~> 3.0.6'
+gem 'carrierwave-qiniu', '~> 0.0.7.1'
 
 group :development do
   gem 'hirb', '~> 0.7.2'

@@ -17,6 +17,9 @@
         uid: 用户名
         name: 真实姓名
         email: Email
+        login: 用户名
+        password: 密 码
+        password_confirmation: 确认密码
         is_email_public: 是否公开
         signature: 个性签名
         city_name:  城市名
@@ -24,6 +27,7 @@
         github: Github主页
         homepage: 个人主页
         description: 个人简介
+        remember_me: 记住我
 
     placeholders:
       user:
