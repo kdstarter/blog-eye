@@ -42,6 +42,11 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
+  config.action_dispatch.rack_cache = {
+    metastore:   'redis://localhost:6379/1/metastore',
+    entitystore: 'redis://localhost:6379/1/entitystore'
+  }
+
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
