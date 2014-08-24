@@ -20,10 +20,6 @@ class CkeditorAttachmentFileUploader < CarrierWave::Uploader::Base
     "#{Settings.cdn.dir_prefix}/files/#{model.id}"
   end
 
-  def cache_path
-    "#{Settings.cache_store.store_dir}/files/#{self.path}" unless self.blank?
-  end
-
   def filename
     if original_filename.present?
       file_prefix = model.data.file.path.split('.').last.downcase

@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
   before_create :update_ranking
   before_create :init_name, if: Proc.new { |u| u.name.blank? }
-  after_create :init_avatar, if: Proc.new { |u| u.email =~ %r(@gmail.com$) }
+  after_create :init_avatar, if: Proc.new { |u| u.email =~ %r(@gmail.com\z) }
 
   attr_accessor :login
 

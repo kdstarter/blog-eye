@@ -18,9 +18,9 @@ class UserAvatarUploader < CarrierWave::Uploader::Base
     "#{Settings.cdn.dir_prefix}/users/#{model.id}"
   end
 
-  def cache_path
-    "#{Settings.cache_store.store_dir}/users/#{self.path}" unless self.blank?
-  end
+  # def cache_path
+  #   "#{Settings.cache_store.store_dir}/#{self.path}" unless self.blank?
+  # end
 
   def filename
     if original_filename.present?
