@@ -8,6 +8,7 @@
     <%= devise_error_messages! %>
     <%= f.input :login, autofocus: true %>
     <%= f.input :password %>
+
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
     <div class="form-actions">

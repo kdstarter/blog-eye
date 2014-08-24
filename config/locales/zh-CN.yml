@@ -234,7 +234,19 @@ zh-CN:
     devise:
       password_confirmation:
         title: 确认密码
-
       change_password:
         submit: 确 认
+      links:
+        sign_up: 注 册
+        resend_unlock_instructions: 重发解锁邮件
+      sign_up:
+        title: 注 册
+        submit: 提 交
+
+  simple_captcha:
+    placeholder: 输入图片上的字符
+    label: 输入文本框中的字符
+    message:
+      default: 输入的字符不匹配
+      user: 验证码不正确
 

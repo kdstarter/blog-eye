@@ -25,8 +25,10 @@ gem 'rails-i18n', '>= 4.0.2'#, github: 'svenfuchs/rails-i18n', branch: 'master' 
 gem 'rails_config', '~> 0.4.2'
 gem 'kaminari', '~> 0.16.1'
 gem 'activeadmin', '~> 1.0.0.pre', github: 'gregbell/active_admin'
-# gem 'recaptcha', '~> 0.3.6', :require => 'recaptcha/rails'
-gem 'simple_captcha', '~> 0.1.6', github: 'galetahub/simple-captcha' # www.google.com/recaptcha/api
+
+# gem 'recaptcha', '~> 0.3.6', :require => 'recaptcha/rails' # www.google.com/recaptcha/api
+gem 'simple_captcha', '~> 0.1.6', github: 'galetahub/simple-captcha'
+# gem 'simple_captcha2', '~> 0.3.2', require: 'simple_captcha'
 
 gem 'ckeditor', '~> 4.1.0'
 gem 'carrierwave', '~> 0.10.0'

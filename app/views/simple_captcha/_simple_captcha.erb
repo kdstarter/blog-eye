@@ -1,0 +1,25 @@
+
+<div class="form-group string user_captcha">
+  <label class="string col-sm-3 control-label" for="user_captcha">验证码</label>
+
+  <div class="col-sm-9">
+    <div class='simple_captcha'>
+      <div class='simple_captcha_image'>
+        <%= simple_captcha_options[:image] %>
+      </div>
+
+      <div class='simple_captcha_field'>
+        <%= simple_captcha_options[:field] %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function(){
+    $(".simple_captcha_image img").click(function(e){
+       $('.captcha_content').load("/update_captcha");
+    });
+  });
+</script>
+

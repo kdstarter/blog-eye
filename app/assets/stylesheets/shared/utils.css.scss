@@ -43,3 +43,26 @@ ul, ol {
     margin-right: 8px;
   }
 }
+
+.simple_captcha {
+  padding: 5px;
+  border: 1px solid #ccc;
+
+  div {
+    display: table;
+  }
+
+  .simple_captcha_field, .simple_captcha_image {
+    padding: 0px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    margin: 0px 0px 2px 0px;
+  }
+
+  .simple_captcha_image img {
+    margin: 0px;
+    padding: 0px;
+    height: 36px;
+  }
+}
+

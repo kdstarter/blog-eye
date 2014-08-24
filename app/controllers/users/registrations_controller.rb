@@ -1,6 +1,18 @@
 # encoding: utf-8
 class Users::RegistrationsController < Devise::RegistrationsController
 
+  def create
+    if simple_captcha_valid?
+      super
+    else
+      build_resource(sign_up_params)
+      clean_up_passwords(resource)
+      flash.now[:alert] = "验证码不匹配，请重新输入"
+      flash.delete :captcha_error
+      render :new
+    end
+  end
+
   def is_uid_exist
     user = User.new(uid: params[:uid])
 
