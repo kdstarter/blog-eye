@@ -23,8 +23,8 @@ module BlogEye
 
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
 
-    SimpleCaptcha.store = 'redis'
-    config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
+    SimpleCaptcha.store = Settings.cache_store.name
+    config.cache_store = Settings.cache_store.store, Settings.cache_store.store_dir, { expires_in: Settings.cache_store.expires_in.to_f.minutes }
 
     config.to_prepare do
       devise_layout = 'admin/session'

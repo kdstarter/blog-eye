@@ -9,6 +9,12 @@ site_mailer:
   user_name: blog_eye@126.com
   password: xxx
 
+cache_store:
+  name: redis
+  expires_in: 90
+  store: redis_store
+  store_dir: redis://localhost:6379/0/cache
+
 cdn:
   storage: qiniu
   dir_prefix: pro
