@@ -64,7 +64,7 @@ namespace :deploy do
     end
   end
   
-  before :publishing, :compile_assets
+  # before :publishing, :compile_assets
 
   after :publishing, :restart
 

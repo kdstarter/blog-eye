@@ -1,16 +1,16 @@
 
-log/
-tmp/
+/log
+/tmp
 
 .keep
-.bundle/
+.bundle
 .DS_Store
 .coveralls.yml
 
-config/deploy/production.rb
-config/database.yml
-config/settings.yml
+/config/deploy/production.rb
+/config/database.yml
+/config/settings.yml
 
-public/assets/
-public/uploads/
-coverage/
+/public/assets
+
+/coverage
