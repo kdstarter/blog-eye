@@ -2,7 +2,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
-    if simple_captcha_valid?
+    if Settings.user.skip_captcha || simple_captcha_valid?
       super
     else
       build_resource(sign_up_params)

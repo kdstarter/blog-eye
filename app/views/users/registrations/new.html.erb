@@ -12,9 +12,11 @@
     <%= f.input :password, required: true %>
     <%= f.input :password_confirmation, required: true %>
 
-    <div class="captcha_content">
-      <%= show_simple_captcha %>
-    </div>
+    <% unless Settings.user.skip_captcha %>
+      <div class="captcha_content">
+        <%= show_simple_captcha %>
+      </div>
+    <% end %>
 
     <div class="form-actions">
       <%= f.button :submit, "注 册" %>

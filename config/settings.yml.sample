@@ -27,6 +27,9 @@ exclusions:
   - status
   - api
 
+user:
+  skip_captcha: true
+
 devise:
   secret_key: xxx
 
