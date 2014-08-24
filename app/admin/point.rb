@@ -9,6 +9,7 @@ ActiveAdmin.register Point do
     # selectable_column
     column :id
     column :name
+    column :code
     column :description
     column :created_at
     column :updated_at

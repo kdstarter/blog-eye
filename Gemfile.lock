@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/galetahub/simple-captcha.git
+  revision: 2602bf19a63df25929960b5a7721a9d265281ec1
+  specs:
+    simple_captcha (0.1.6)
+
+GIT
   remote: git://github.com/gregbell/active_admin.git
   revision: 36edd084f277f21900a768a0384196b57d2931ee
   specs:
@@ -340,6 +346,7 @@ DEPENDENCIES
   rspec-expectations (~> 3.0.0)
   rspec-rails (~> 3.0.0)
   sass-rails (~> 4.0.3)
+  simple_captcha (~> 0.1.6)!
   simple_form (~> 3.1.0.rc2)
   turbolinks (~> 2.3.0)
   uglifier (~> 2.5.3)

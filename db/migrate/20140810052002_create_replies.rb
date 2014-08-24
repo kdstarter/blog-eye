@@ -5,7 +5,7 @@ class CreateReplies < ActiveRecord::Migration
       t.integer :post_id
       t.integer :last_reply_id
       t.text :content
-      t.boolean :is_public
+      t.boolean :is_public, default: true
 
       t.timestamps
     end

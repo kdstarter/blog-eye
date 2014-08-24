@@ -19,6 +19,7 @@ ActiveAdmin.register Post do
     column :visits
     column :likes
     column :created_at
+    column :status
     actions
   end
 

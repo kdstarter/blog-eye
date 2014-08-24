@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20140816015308) do
 
   create_table "points", force: true do |t|
     t.string   "name"
+    t.string   "code"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -91,6 +92,7 @@ ActiveRecord::Schema.define(version: 20140816015308) do
     t.string   "title"
     t.text     "content"
     t.string   "tags"
+    t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -100,7 +102,7 @@ ActiveRecord::Schema.define(version: 20140816015308) do
     t.integer  "post_id"
     t.integer  "last_reply_id"
     t.text     "content"
-    t.boolean  "is_public"
+    t.boolean  "is_public",     default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
