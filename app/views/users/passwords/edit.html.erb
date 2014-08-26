@@ -1,20 +1,26 @@
-<h2>更改你的密码</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%#= f.error_notification %>
+<div class="panel-heading">
+  <div class="heading">更改你的密码</div>
+</div>
 
-  <%= f.input :reset_password_token, as: :hidden %>
-  <%= f.full_error :reset_password_token %>
-
-  <div class="form-inputs">
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'form-horizontal', method: :put }) do |f| %>
+  <div class="panel-body">
     <%= devise_error_messages! %>
+    <%= f.input :reset_password_token, as: :hidden %>
+    <%= f.full_error :reset_password_token %>
+
     <%= f.input :password, label: "新密码", required: true, autofocus: true %>
     <%= f.input :password_confirmation, label: "重复密码", required: true %>
+
+    <div class="form-group form-actions">
+      <label class="col-sm-3"> </label>
+      <div class="col-sm-9">
+        <%= f.button :submit, "确认更改" %>
+      </div>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "确认更改" %>
+  <div class="panel-footer">
+    <%= render "users/shared/links" %>
   </div>
 <% end %>
-
-<%= render "users/shared/links" %>

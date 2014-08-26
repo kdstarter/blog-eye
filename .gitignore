@@ -3,6 +3,7 @@
 /tmp
 
 .keep
+*.tgz
 .bundle
 .DS_Store
 .coveralls.yml

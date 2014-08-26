@@ -1,7 +1,7 @@
 
 <p><%= Settings.site_name_zh %>用户 <%= @resource.email %>，你好!</p>
 
-<p>你在我们的网站 <%= Settings.site_domain %> 尝试登录多次失败，为了保护你的账号安全，我们已经将你的账号锁定。</p>
+<p>你在我们的网站 <%= link_to Settings.site_domain, frontend_root_url %> 尝试登录多次失败，为了保护你的账号安全，我们已经将你的账号锁定。</p>
 
 <p>你可以点击下面的链接解锁你的账号</p>
 
