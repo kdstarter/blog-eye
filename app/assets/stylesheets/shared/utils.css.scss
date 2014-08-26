@@ -1,8 +1,21 @@
 
+@import "shared/_variables";
 @import "shared/blog";
 @import "shared/sticky-footer-navbar";
 @import "shared/bootstrap";
 @import "shared/pnotify.all.min";
+
+body {
+  background: url(asset_path('shared/bg.png')) repeat 0 0;
+}
+
+.panel-body {
+  background-color: $text-bgcolor;
+}
+
+.form-control {
+  background-color: $text-bgcolor;
+}
 
 .display_none {
   display: none;

@@ -1,18 +1,27 @@
 
-<h4>文章链接: <%= link_to frontend_post_url(@post), frontend_post_path(@post) %></h4>
-<br/>
-<div class="row-fluid">
-  <h4><%= @post.title %></h4>
+<div class="panel-heading">
+  <div class="heading">
+    <h4>文章链接: <%= link_to frontend_post_url(@post), frontend_post_path(@post) %></h4>
+    <h4><%= @post.title %></h4>
 
-  <a href="<%= edit_admin_post_path(@post) %>" class="btn btn-default">
-    <span class="glyphicon glyphicon-edit"></span>编辑
-  </a>
+    发布时间: <%= @post.published_time %>
+    <br/>文章分类: <%= @post.category.name %>
 
-  <%= link_to '删 除', admin_post_path(@post), data: { confirm: "你确定要删除这篇文章吗？" }, method: :delete, class: "btn btn-danger" %>
+    <br/>文章标签: <a href="#"><span class="badge"><%= @post.tags %></span></a>
+  </div>
 </div>
 
-<%= @post.published_time %>
-<br/>文章分类: <%= @post.category.name %>
+<div class="panel-body">
+  <%= @post.content.html_safe %>
+</div>
 
-<br/>标签: <a href="#"><span class="badge"><%= @post.tags %></span></a>
-<br/> <%= @post.content.html_safe %>
+<div class="panel-footer">
+  <div class="row-fluid pull-right">
+    <a href="<%= edit_admin_post_path(@post) %>" class="btn btn-sm btn-default">
+      <span class="glyphicon glyphicon-edit"></span>编辑
+    </a>
+
+    <%= link_to '删 除', admin_post_path(@post), data: { confirm: "你确定要删除这篇文章吗？" }, method: :delete, class: "btn btn-sm btn-danger" %>
+  </div>
+</div>
+

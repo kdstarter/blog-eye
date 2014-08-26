@@ -5,11 +5,18 @@
 
   <%= f.input :source, collection: sources_collection %>
   <%= f.input :title %>
-
   <%= f.input :tags %>
-  <%= f.input_field :content, as: :ckeditor, ckeditor: { toolbar: "Easy", height: 300 }  %>
+  
+  <div class="form-group">
+    <div class="col-sm-12">
+      <%= f.input_field :content, as: :ckeditor, ckeditor: { toolbar: "Easy", height: 380 }  %>
+    </div>
+  </div>
 
-  <div class="form-actions text-center">
-    <%= f.button :submit, "发 布", class: "btn btn-primary" %>
+  <div class="form-group form-actions">
+    <label class="col-sm-3"> </label>
+    <div class="col-sm-9">
+      <%= f.button :submit, "发 布", class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>

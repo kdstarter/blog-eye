@@ -1,6 +1,6 @@
 
 <div class="panel-heading">
-  <div class="heading">忘记密码？</div>
+  <div class="heading">发送重置密码邮件</div>
 </div>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: {class: 'form-horizontal'}) do |f| %>
@@ -11,7 +11,7 @@
     <div class="form-group form-actions">
       <label class="col-sm-3"> </label>
       <div class="col-sm-9">
-        <%= f.button :submit, "给我发送重置密码邮件" %>
+        <%= f.button :submit, "确 认" %>
       </div>
     </div>
   </div>

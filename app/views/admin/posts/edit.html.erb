@@ -5,11 +5,15 @@
 
   <%= f.input :source, collection: sources_collection %>
   <%= f.input :title %>
-  <%= f.input_field :content, as: :ckeditor, ckeditor: { toolbar: "Easy", height: 300 }  %>
-
   <%= f.input :tags %>
 
-  <div class="form-actions text-center">
+  <div class="form-group">
+    <div class="col-sm-12">
+      <%= f.input_field :content, as: :ckeditor, ckeditor: { toolbar: "Easy", height: 380 }  %>
+    </div>
+  </div>  
+
+  <div class="form-group form-actions">
     <%= link_to "取 消", :back, class: "btn btn-inverse" %>
     <%= f.button :submit, "保 存", class: "btn btn-primary" %>
   </div>

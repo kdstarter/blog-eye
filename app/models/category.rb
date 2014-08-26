@@ -1,4 +1,8 @@
 class Category < ActiveRecord::Base
+
+  extend FriendlyId
+  friendly_id :name, use: :finders
+
   belongs_to :user
   has_many :posts#, dependent: :destroy
 

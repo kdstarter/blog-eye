@@ -28,12 +28,18 @@
         homepage: 个人主页
         description: 个人简介
         remember_me: 记住我
+      post:
+        point: 全站分类
+        category: 文章分类
+        source: 文章来源
+        title: 文章标题
+        tags: 标 签
 
     placeholders:
       user:
         uid: 用户名
         name: 真实姓名
-        email: 常用的邮箱地址
+        email: 你的邮箱地址
         login: 用户名或Email
         password: 8位以上的密码
         password_confirmation: 确认上面的密码

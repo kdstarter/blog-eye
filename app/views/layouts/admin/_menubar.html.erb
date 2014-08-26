@@ -7,7 +7,7 @@
       </a>
 
       <div class="bloger_name">
-        <%= current_user.human_name %>
+        <label><%= current_user.human_name %></label>
       </div>
     </div>
   </div>
@@ -48,8 +48,7 @@
           <li><%= link_to "全部文章 (#{current_user.posts.count})", admin_posts_path %></li>
           <% @categories.each do |category| %>
             <li>
-              <%= link_to category.name, admin_category_path(category) %>
-               (<%= Post.where(category: category).count %>)
+              <%= link_to "#{category.name} (#{Post.where(category: category).count})", admin_category_path(category) %>
             </li>
           <% end %>
           <li><%= link_to "回收站 (0)", admin_posts_path %></li>
