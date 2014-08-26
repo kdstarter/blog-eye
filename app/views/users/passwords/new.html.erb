@@ -8,8 +8,11 @@
     <%= f.error_notification %>
     <%= f.input :email, required: true, autofocus: true %>
 
-    <div class="form-actions">
-      <%= f.button :submit, "给我发送重置密码邮件" %>
+    <div class="form-group form-actions">
+      <label class="col-sm-3"> </label>
+      <div class="col-sm-9">
+        <%= f.button :submit, "给我发送重置密码邮件" %>
+      </div>
     </div>
   </div>
 

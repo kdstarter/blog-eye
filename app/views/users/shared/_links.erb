@@ -1,25 +1,29 @@
-<%- if controller_name != 'sessions' %>
-  <%= link_to "登 录", new_session_path(resource_name) %><br />
-<% end -%>
+<div class="row">
+	<div class="col-sm-12">
+		<%- if controller_name != 'sessions' %>
+		  <%= link_to "登 录", new_session_path(resource_name), class: "pull-right" %>
+		<% end -%>
 
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "注 册", new_registration_path(resource_name) %><br />
-<% end -%>
+		<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+		  <%= link_to "注 册", new_registration_path(resource_name) %>
+		<% end -%>
 
-<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "忘记密码？", new_password_path(resource_name) %><br />
-<% end -%>
+		<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+		  <%= link_to "忘记密码？", new_password_path(resource_name), class: "pull-right" %>
+		<% end -%>
 
-<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "没有收到重置密码的邮件？", new_confirmation_path(resource_name) %><br />
-<% end -%>
+		<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+		  <%= link_to "没有收到重置密码的邮件？", new_confirmation_path(resource_name) %>
+		<% end -%>
 
-<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' && resource.reset_password_token.present? %>
-  <%= link_to "没有收到账号解锁的邮件？", new_unlock_path(resource_name) %><br />
-<% end -%>
+		<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' && resource.reset_password_token.present? %>
+		  <%= link_to "没有收到账号解锁的邮件？", new_unlock_path(resource_name) %>
+		<% end -%>
 
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "使用 #{provider.to_s.titleize} 账号登录", omniauth_authorize_path(resource_name, provider) %><br />
-  <% end -%>
-<% end -%>
+		<%- if devise_mapping.omniauthable? %>
+		  <%- resource_class.omniauth_providers.each do |provider| %>
+		    <%= link_to "使用 #{provider.to_s.titleize} 账号登录", omniauth_authorize_path(resource_name, provider) %>
+		  <% end -%>
+		<% end -%>
+	</div>
+</div>

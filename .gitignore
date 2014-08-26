@@ -12,5 +12,5 @@
 /config/settings.yml
 
 /public/assets
-
+/public/uploads
 /coverage

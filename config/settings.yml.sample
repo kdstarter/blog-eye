@@ -32,6 +32,8 @@ exclusions:
   - backend
   - status
   - api
+  - service
+  - noreply
 
 user:
   skip_captcha: true
