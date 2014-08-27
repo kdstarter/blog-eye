@@ -4,6 +4,9 @@ site_name_zh: "\u535a\u5ba2\u773c"
 site_ip: 121.40.94.192
 site_domain: blog-eye.com
 
+baidu:
+  tongji_ua: xxx
+
 site_mailer: 
   address: smtp.126.com
   user_name: blog_eye@126.com

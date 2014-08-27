@@ -30,3 +30,7 @@
     </nav>
   </div>
 </div>
+
+<% if Rails.env.production? || request.domain == Settings.site_domain %>
+  <%= render partial: 'layouts/shared/javascript' %>
+<% end %>
