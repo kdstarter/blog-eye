@@ -4,7 +4,7 @@
     <% posts.each do |post| %>
       <div class="blog-post">
         <h3 class="blog-post-title">
-          <%= link_to omited_str(post.title), frontend_user_post_path(@blogger, post) %>
+          <%= link_to omited_str(post.title), frontend_post_path(post) %>
         </h3>
         <p class="blog-post-meta">
           <%= post.published_time %>

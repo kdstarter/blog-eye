@@ -11,13 +11,15 @@ Rails.application.routes.draw do
     post '/admin/is_uid_exist', to: 'users/registrations#is_uid_exist'
   end
 
-  get  'update_captcha', to: 'simple_captcha#update_captcha'
+  get 'update_captcha', to: 'simple_captcha#update_captcha'
 
   namespace :frontend, path: '/' do
     root 'home#index'
 
+    resources :posts
+
     resources :users, path: 'u' do
-      resources :posts
+      # resources :posts
 
       resources :categories
     end
