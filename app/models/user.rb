@@ -39,6 +39,10 @@ class User < ActiveRecord::Base
     self.uid
   end
 
+  def created_time
+    self.created_at.strftime('%Y-%m-%d %H:%M')
+  end
+
   def city
     self.city_name.blank? ? '未知' : self.city_name
   end

@@ -9,7 +9,7 @@
 </div>
 
 <div class="row-fluid">
-  <%= render 'admin/shared/posts', posts: @posts %>
+  <%= render partial: 'admin/shared/posts', locals: { posts: @posts } %>
 </div>
 
 <div class="row">
@@ -19,5 +19,5 @@
 </div>
 
 <div class="row-fluid">
-  <%= render 'admin/shared/replies', replies: @replies %>
+  <%= render partial: 'admin/shared/replies', locals: { replies: @replies } %>
 </div>

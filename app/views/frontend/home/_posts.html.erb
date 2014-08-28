@@ -1,11 +1,12 @@
 
 <div class="blog-posts">
+  <h4>最近的文章: </h4>
   <% if posts.size > 0 %>
     <% posts.each do |post| %>
-      <div class="blog-post">
-        <h3 class="blog-post-title">
+      <div class="newer_row blog-post">
+        <h4 class="blog-post-title">
           <%= link_to omited_str(post.title), frontend_post_path(post) %>
-        </h3>
+        </h4>
         <p class="blog-post-meta">
           <%= post.published_time %>
           <a href="#"><%= post.tags %></a>
@@ -16,11 +17,7 @@
         </div>
       </div>
     <% end %>
-
-    <div class="pager">
-      <%= paginate posts %>
-    </div>
   <% else %>
-    暂时没有任何文章。
+    最近没有任何文章。
   <% end %>
 </div>

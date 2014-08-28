@@ -34,7 +34,9 @@
     <tbody>
       <% @categories.each do |category| %>
         <tr>
-          <td><%= category.name %></td>
+          <td>
+            <%= link_to category.name, admin_category_path(category) %>
+          </td>
           <td><%= category.posts.size %></td>
           <td><%= omited_str(category.description) %></td>
           <td><%= category.created_time %></td>

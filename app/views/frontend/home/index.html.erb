@@ -1,0 +1,14 @@
+
+<div class="row newer_content">
+  <div class="col-sm-4 well newer_users">
+    <%= render partial: 'frontend/home/users', locals: { users: @users } %>
+  </div>
+
+  <div class="col-sm-4 well newer_posts">
+    <%= render partial: 'frontend/home/posts', locals: { posts: @posts } %>
+  </div>
+
+  <div class="col-sm-4 well newer_replies">
+    <%= render partial: 'frontend/home/replies', locals: { replies: @replies } %>
+  </div>
+</div>

@@ -8,5 +8,5 @@
 </div>
 
 <div class="row-fluid">
-  <%= render 'frontend/shared/posts', posts: @posts %>
+  <%= render partial: 'frontend/shared/posts', locals: { posts: @posts } %>
 </div>

@@ -10,5 +10,5 @@
 </div>
 
 <div class="row-fluid">
-  <%= render 'admin/shared/posts', posts: @posts %>
+  <%= render partial: 'admin/shared/posts', locals: { posts: @posts } %>
 </div>

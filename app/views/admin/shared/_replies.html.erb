@@ -11,7 +11,7 @@
     </thead>
 
     <tbody>
-      <% @replies.each do |reply| %>
+      <% replies.each do |reply| %>
         <tr>
           <td>
             <%= link_to omited_str(reply.content), frontend_post_path(reply.post) %>
@@ -25,7 +25,7 @@
       <% end %>
 
       <tr>
-        <td colspan='2'><%= paginate @replies %></td>
+        <td colspan='2'><%= paginate replies %></td>
         <td colspan='2' class="text_middle">
           <div class="pull-right">
             <%= link_to('查看所有', admin_replies_path) unless url_for == admin_replies_path %>
