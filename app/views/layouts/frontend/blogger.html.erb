@@ -2,8 +2,8 @@
 <html>
 <head>
   <%= page_title_tag %>
-  <%= stylesheet_link_tag    'frontend/blog_home', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'frontend/blog_home', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'frontend/blogger', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'frontend/blogger', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -11,7 +11,7 @@
   <%= render partial: 'layouts/shared/topbar' %>
 
   <div class="container">
-    <%= render partial: 'layouts/frontend/blog/hero_content' %>
+    <%= render partial: 'layouts/frontend/blogger/hero_content' %>
 
     <div class="row-fluid">
       <div class="col-md-9 blog-main">
@@ -20,7 +20,7 @@
       </div>
       
       <div class="col-md-3 blog-sidebar">
-        <%= render partial: 'layouts/frontend/blog/menubar' %>
+        <%= render partial: 'layouts/frontend/blogger/menubar' %>
       </div>
     </div>
   </div>

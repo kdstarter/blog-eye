@@ -1,7 +1,7 @@
 
 class BloggerController < FrontendController
 
-  layout 'frontend/blog_home'
+  layout 'frontend/blogger'
 
   before_action :load_blogger
 

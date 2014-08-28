@@ -21,7 +21,7 @@
 
           <a class="" href="<%= destroy_user_session_path %>">注销</a>
         <% else %>
-          <a class="<%= 'active' if params[:controller] == 'devise/registrations' %>" href="<%= new_user_registration_path %>">注册</a>
+          <a class="<%= 'active' if params[:controller] == 'users/registrations' %>" href="<%= new_user_registration_path %>">注册</a>
 
           <a class="<%= 'active' if params[:controller] == 'devise/sessions' %>" href="<%= new_user_session_path %>">登录</a>
         <% end %>
