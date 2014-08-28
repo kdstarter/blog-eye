@@ -7,7 +7,7 @@
   <div class="panel-body">
     <%= f.error_notification %>
     <%#= devise_error_messages! %>
-    <%= f.input :uid, required: true %>
+    <%= f.input :uid, required: true, input_html: { class: "uid" } %>
     <%= f.input :email, required: true %>
     <%= f.input :password, required: true %>
     <%= f.input :password_confirmation, required: true %>

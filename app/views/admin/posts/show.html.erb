@@ -1,7 +1,7 @@
 
 <div class="panel-heading">
   <div class="heading">
-    <h4>文章链接: <%= link_to frontend_post_url(@post), frontend_post_path(@post) %></h4>
+    <h4>文章链接: <%= link_to frontend_user_post_url(current_user, @post), frontend_user_post_path(current_user, @post) %></h4>
     <h4><%= @post.title %></h4>
 
     发布时间: <%= @post.published_time %>

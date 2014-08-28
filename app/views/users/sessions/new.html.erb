@@ -6,7 +6,7 @@
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }) do |f| %>
   <div class="panel-body">
     <%= devise_error_messages! %>
-    <%= f.input :login, autofocus: true %>
+    <%= f.input :login, autofocus: true, input_html: { class: "login" } %>
     <%= f.input :password %>
 
     <div class="form-group">

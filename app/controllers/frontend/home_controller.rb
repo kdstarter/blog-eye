@@ -1,3 +1,4 @@
+
 class Frontend::HomeController < FrontendController
   def index
     

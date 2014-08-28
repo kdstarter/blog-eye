@@ -3,7 +3,9 @@
   <% if @posts.size > 0 %>
     <% posts.each do |post| %>
       <div class="blog-post">
-        <h3 class="blog-post-title"><%= omited_str(post.title) %></h3>
+        <h3 class="blog-post-title">
+          <%= link_to omited_str(post.title), frontend_user_post_path(@blogger, post) %>
+        </h3>
         <p class="blog-post-meta">
           <%= post.published_time %>
           <a href="#"><%= post.tags %></a>

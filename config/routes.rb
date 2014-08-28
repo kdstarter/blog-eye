@@ -16,11 +16,11 @@ Rails.application.routes.draw do
   namespace :frontend, path: '/' do
     root 'home#index'
 
-    resources :users, path: 'u'#, param: :uid
+    resources :users, path: 'u' do
+      resources :posts
 
-    resources :posts
-
-    resources :categories
+      resources :categories
+    end
   end
 
   namespace :admin, path: '/admin' do
