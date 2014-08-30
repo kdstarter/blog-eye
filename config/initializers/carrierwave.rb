@@ -10,7 +10,7 @@ CarrierWave.configure do |config|
 
     config.qiniu_bucket        = Settings.cdn.bucket
     config.qiniu_bucket_domain = Settings.cdn.bucket_domain
-  elsif Rails.env.test? || Rails.env.rspec?
+  elsif Rails.env.test?
     config.storage = :file
     config.enable_processing = false
   else

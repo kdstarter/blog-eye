@@ -55,14 +55,18 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 2.4.1'
-  gem 'factory_girl_rails', '~> 4.4.1'
-  gem 'shoulda-matchers', '~> 2.6.2'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'rspec-expectations', '~> 3.0.0'
+  gem 'database_cleaner', '~> 1.3.0'
+  gem 'factory_girl_rails', '~> 4.4.1'
+
+  # gem 'shoulda-matchers', '~> 2.6.2'
+  gem 'capybara', '~> 2.4.1'
+  gem 'watir-webdriver', '~> 0.6.10'
+  gem 'rspec-example_steps', '~> 3.0.2'
 
   gem 'rails_best_practices', '~> 1.15.4'
-  gem 'minitest', '~> 5.4.0', require: false
-  gem 'coveralls', '~> 0.7.1', require: false
+  gem 'minitest', '~> 5.4.0'
+  gem 'coveralls', '~> 0.7.1'
 end
 
