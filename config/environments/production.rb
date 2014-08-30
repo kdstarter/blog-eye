@@ -1,5 +1,5 @@
 
-require 'yui/compressor'
+# require 'yui/compressor'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -26,10 +26,10 @@ Rails.application.configure do
   config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
-  # config.assets.js_compressor = :uglifier
-  # config.assets.css_compressor = :sass
-  config.assets.js_compressor = YUI::JavaScriptCompressor.new(munge: true)
-  config.assets.css_compressor = YUI::CssCompressor.new
+  config.assets.js_compressor = :uglifier
+  config.assets.css_compressor = :sass
+  # config.assets.js_compressor = YUI::JavaScriptCompressor.new(munge: true)
+  # config.assets.css_compressor = YUI::CssCompressor.new
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
