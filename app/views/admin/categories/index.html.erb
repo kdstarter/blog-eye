@@ -4,7 +4,7 @@
   </div>
 
   <div class="col-xs-3 text-right">
-    <%= link_to "添加新分类", "#", class: "btn_new_category" %>
+    <%= link_to "添加新分类", "#", class: "link_new_category" %>
   </div>
 </div>
 
@@ -14,7 +14,7 @@
       <%= f.input_field :name, class: "form-control" %>
       <%= f.input_field :description, class: "form-control" %>
 
-      <%= f.button :submit, "保 存", class: "btn btn-primary" %>
+      <%= f.button :submit, "保 存", class: "btn btn-primary btn_new_category" %>
     <% end %>
   </div>
 </div>
@@ -35,7 +35,7 @@
       <% @categories.each do |category| %>
         <tr>
           <td>
-            <%= link_to category.name, admin_category_path(category) %>
+            <%= link_to category.name, admin_category_path(category), class: "category_#{category.name}" %>
           </td>
           <td><%= category.posts.size %></td>
           <td><%= omited_str(category.description) %></td>

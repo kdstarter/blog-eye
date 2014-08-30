@@ -1,9 +1,5 @@
 
-require 'rails_helper'
-require 'watir-webdriver'
-require 'rspec/example_steps'
-
-context 'User session flows', type: :feature do
+context 'User session operation flows', type: :feature do
 
   before :all do
     browser.goto "http://localhost:3000"
@@ -15,44 +11,44 @@ context 'User session flows', type: :feature do
   end
 
   Steps 'User sign up and sign in' do
-    Given 'I am on portal page' do
-      expect(sign_up_link.exists?).to be(true)
-      expect(sign_in_link.exists?).to be(true)
+    Given 'I am on portal page now' do
+      expect(link_sign_up.exists?).to be(true)
+      expect(link_sign_in.exists?).to be(true)
     end
 
     When 'sign up with invalid uid' do
       invalid_user = attributes_for(:invalid_uid_user)
       sign_up_with invalid_user
       
-      expect(sign_up_btn.exists?).to be(true)
+      expect(btn_sign_up.exists?).to be(true)
     end
 
     Then 'sign up with invalid email' do
       invalid_user = attributes_for(:invalid_email_user)
       sign_up_with invalid_user
 
-      expect(sign_up_btn.exists?).to be(true)
+      expect(btn_sign_up.exists?).to be(true)
     end
 
     Then 'sign up with too short password' do
       invalid_user = attributes_for(:invalid_password_user)
       sign_up_with invalid_user
 
-      expect(sign_up_btn.exists?).to be(true)
+      expect(btn_sign_up.exists?).to be(true)
     end
 
     Then 'sign up with password confirmation failed' do
       invalid_user = attributes_for(:invalid_repassword_user)
       sign_up_with invalid_user
 
-      expect(sign_up_btn.exists?).to be(true)
+      expect(btn_sign_up.exists?).to be(true)
     end
 
     Then 'sign up with valid info' do
       valid_user = attributes_for(:valid_register_user)
       sign_up_with valid_user
 
-      expect(sign_up_btn.exists?).to be(false)
+      expect(btn_sign_up.exists?).to be(false)
     end
 
     include_steps 'sign_out_step'
@@ -63,7 +59,7 @@ context 'User session flows', type: :feature do
     Then 'sign out current user' do
       sign_out
 
-      expect(sign_out_link.exists?).to be(false)      
+      expect(link_sign_out.exists?).to be(false)      
     end
   end
 
@@ -72,28 +68,28 @@ context 'User session flows', type: :feature do
       invalid_user = attributes_for(:invalid_uid_login_user)
       sign_in_with invalid_user
 
-      expect(sign_in_btn.exists?).to be(true)
+      expect(btn_sign_in.exists?).to be(true)
     end
 
     Then 'sign in with invalid email' do
       invalid_user = attributes_for(:invalid_email_login_user)
       sign_in_with invalid_user
 
-      expect(sign_in_btn.exists?).to be(true)
+      expect(btn_sign_in.exists?).to be(true)
     end
 
     Then 'sign in with invalid password' do
       invalid_user = attributes_for(:invalid_password_login_user)
       sign_in_with invalid_user
 
-      expect(sign_in_btn.exists?).to be(true)
+      expect(btn_sign_in.exists?).to be(true)
     end
 
     Then 'sign in with valid uid' do
       valid_user = attributes_for(:valid_uid_login_user)
       sign_in_with valid_user
 
-      expect(sign_in_btn.exists?).to be(false)
+      expect(btn_sign_in.exists?).to be(false)
     end
 
     include_steps 'sign_out_step'
@@ -102,7 +98,7 @@ context 'User session flows', type: :feature do
       valid_user = attributes_for(:valid_email_login_user)
       sign_in_with valid_user
 
-      expect(page).not_to have_button('sign_in_btn')
+      expect(page).not_to have_button('btn_sign_in')
     end
   end
 end

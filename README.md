@@ -28,5 +28,7 @@ rails s
 
 We use rspec to test.
 ```bash
+RAILS_ENV=test rails s
+# Make sure already installed firefox
 bundle exec rake rspec
 ```

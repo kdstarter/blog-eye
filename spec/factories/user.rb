@@ -10,6 +10,13 @@ FactoryGirl.define do
   invalid_password = 'invalid'
   invalid_password_confirmation = 'repassword'
 
+  factory :valid_random_user, class: User do
+    sequence(:uid) { |n| "person#{n}" }
+    sequence(:email) { |n| "person#{n}@example.com" }
+    password valid_password
+    password_confirmation valid_password_confirmation
+  end
+
   # for invalid register
   factory :invalid_uid_user, class: User do
     uid invalid_uid

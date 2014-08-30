@@ -4,7 +4,7 @@ root = window || @
 class root.CategoryListView extends Backbone.View
 
   events:
-    'click .btn_new_category'   : 'new_one'
+    'click .link_new_category'   : 'new_one'
     'submit .form_new_category' : 'create_one'
 
   initialize: (options) ->
