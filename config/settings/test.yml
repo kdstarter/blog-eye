@@ -1,3 +1,6 @@
 
 cdn:
-  dir_prefix: 'test'
+  dir_prefix: test
+
+user:
+  skip_captcha: true
