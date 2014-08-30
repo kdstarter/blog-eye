@@ -19,11 +19,11 @@
         <% if current_user %>
           <a class="<%= 'active' if params[:controller].include?('admin/') %>" href="<%= admin_root_path %>"><%= current_user.human_name %></a>
 
-          <a class="" href="<%= destroy_user_session_path %>">注销</a>
+          <a class="" href="<%= destroy_user_session_path %>" id="sign_out_link">注销</a>
         <% else %>
-          <a class="<%= 'active' if params[:controller] == 'users/registrations' %>" href="<%= new_user_registration_path %>">注册</a>
+          <a class="<%= 'active' if params[:controller] == 'users/registrations' %>" href="<%= new_user_registration_path %>" id="sign_up_link">注册</a>
 
-          <a class="<%= 'active' if params[:controller] == 'devise/sessions' %>" href="<%= new_user_session_path %>">登录</a>
+          <a class="<%= 'active' if params[:controller] == 'devise/sessions' %>" href="<%= new_user_session_path %>" id="sign_in_link">登录</a>
         <% end %>
       </span>
 

@@ -56,7 +56,8 @@ end
 
 group :test do
   gem 'capybara', '~> 2.4.1'
-  gem 'factory_girl'
+  gem 'factory_girl_rails', '~> 4.4.1'
+  gem 'shoulda-matchers', '~> 2.6.2'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'rspec-expectations', '~> 3.0.0'
 
