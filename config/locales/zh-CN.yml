@@ -250,3 +250,12 @@ zh-CN:
       default: 输入的字符不匹配
       user: 验证码不正确
 
+  ckeditor:
+    page_title: CKEditor文件管理器
+    confirm_delete: 删除文件？
+    buttons:
+      cancel: 取消
+      upload: 上传
+      delete: 删除
+      next: 下一个
+

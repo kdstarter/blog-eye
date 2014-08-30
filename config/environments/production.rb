@@ -1,3 +1,6 @@
+
+require 'yui/compressor'
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -23,8 +26,10 @@ Rails.application.configure do
   config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
-  config.assets.js_compressor = :uglifier
-  config.assets.css_compressor = :sass
+  # config.assets.js_compressor = :uglifier
+  # config.assets.css_compressor = :sass
+  config.assets.js_compressor = YUI::JavaScriptCompressor.new(munge: true)
+  config.assets.css_compressor = YUI::CssCompressor.new
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
@@ -42,10 +47,10 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
-  config.action_dispatch.rack_cache = {
-    metastore:   'redis://localhost:6379/1/metastore',
-    entitystore: 'redis://localhost:6379/1/entitystore'
-  }
+  # config.action_dispatch.rack_cache = {
+  #   metastore:   'redis://localhost:6379/1/metastore',
+  #   entitystore: 'redis://localhost:6379/1/entitystore'
+  # }
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
@@ -64,7 +69,15 @@ Rails.application.configure do
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-  # config.assets.precompile += %w( search.js )
+  config.assets.precompile += %w(
+    frontend/home.css frontend/blogger.css
+    admin/sessions.css admin/home.css
+  )
+  config.assets.precompile += %w(
+    frontend/home.js frontend/blogger.js
+    admin/sessions.js admin/home.js
+  )
+  config.assets.precompile += Ckeditor.assets
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

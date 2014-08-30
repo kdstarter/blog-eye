@@ -6,6 +6,7 @@
 #= require shared/backbone
 #= require shared/bootstrap
 #= require shared/pnotify.all.min
+#= require ckeditor/init
 
 # PNotify.prototype.options.styling = "jqueryui"
 

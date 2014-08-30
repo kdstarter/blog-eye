@@ -113,8 +113,8 @@ CKEDITOR.editorConfig = function (config) {
       ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', 'Blockquote'],
       ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
       ['Link', 'Unlink', 'Anchor'],
-      // ['Image', 'SpecialChar'],
-      ['Table', 'Smiley']
+      // ['Image'],
+      ['Table', 'Smiley', 'SpecialChar']
     ];
 };
 
