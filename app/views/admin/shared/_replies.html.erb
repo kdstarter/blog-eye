@@ -14,7 +14,7 @@
       <% replies.each do |reply| %>
         <tr>
           <td>
-            <%= link_to omited_str(reply.content), frontend_post_path(reply.post) %>
+            <%= link_to omited_str(reply.content), "#{frontend_post_path(reply.post)}#reply#{reply.id}" %>
           </td>
           <td><%= reply.user.human_name %></td>
           <td><%= reply.published_time %></td>

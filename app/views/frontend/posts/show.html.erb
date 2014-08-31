@@ -28,6 +28,10 @@
   </div>
 
   <div class="box post-replies">
+    <div class="total">
+      一共 <b><%= @replies.count %></b> 条回复
+    </div>
+
     <% @replies.each_with_index do |reply, index| %>
       <% replier = reply.user %>
       <div class="post_reply" id="reply<%= reply.id %>">

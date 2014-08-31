@@ -99,6 +99,13 @@ body {
       }
 
       .post-replies {
+        .total {
+          color: #999;
+          margin: 0 -10px;
+          padding: 0 10px 6px 10px;
+          border-bottom: 1px solid #eaeaea;
+        }
+
         .post_reply {
           background: #FFF;
           padding: 8px 10px;
@@ -109,9 +116,10 @@ body {
             padding-left: 58px;
 
             .info {
+              font-size: 15px;
+
               .time {
                 color: #bbb;
-                font-size: 15px;
               }
             }
           }
