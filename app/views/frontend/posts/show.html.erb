@@ -1,21 +1,31 @@
 
-<div class="panel-heading">
-  <div class="heading">
-    <h2><%= @post.title %></h2>
+<div class="panel_post">
+  <div class="panel-heading">
+    <div class="heading">
+      <h2><%= @post.title %></h2>
 
-    发布时间: <%= @post.published_time %>
-    <br/>文章分类: <%= @post.category.name %>
+      发布时间: <%= @post.published_time %>
+      <br/>文章分类: <%= @post.category.name %>
 
-    <br/>文章标签: <a href="#"><span class="badge"><%= @post.tags %></span></a>
+      <br/>文章标签: <a href="#"><span class="badge"><%= @post.tags %></span></a>
+    </div>
   </div>
-</div>
 
-<div class="panel-body">
-  <%= @post.content.html_safe %>
-</div>
+  <div class="panel-body">
+    <%= @post.content.html_safe %>
+  </div>
 
-<div class="panel-footer">
-  <div class="row pull-right">
-    
+  <div class="panel-footer">
+    <div class="row post-replies">
+
+    </div>
+
+    <div class="col-xs-12 panel_new_reply">
+      <%= simple_form_for [:frontend, @post, Reply.new], html: {class: "form-inline form_new_reply"} do |f| %>
+        <%= f.input_field :content, as: :text, class: "form-control" %>
+
+        <%= f.button :submit, "提交回复", class: "btn btn-primary btn_new_reply" %>
+      <% end %>
+    </div>
   </div>
 </div>

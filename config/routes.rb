@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   namespace :frontend, path: '/' do
     root 'home#index'
 
-    resources :posts
+    resources :posts do
+      resources :replies
+    end
 
     resources :users, path: 'u' do
       # resources :posts

@@ -35,5 +35,15 @@ body {
       max-width: 500px!important;
       max-height: 500px!important;
     }
+
+    .panel_post {
+      .panel_new_reply {
+        #reply_content {
+          width: 80%;
+          height: 80px;
+        }
+
+      }
+    }
   }
 }

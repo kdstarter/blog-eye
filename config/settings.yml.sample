@@ -7,6 +7,12 @@ site_domain: blog-eye.com
 baidu:
   tongji_ua: xxx
 
+user:
+  skip_captcha: true
+
+test:
+  site_url: http://localhost:3000
+
 site_mailer: 
   address: smtp.126.com
   user_name: blog_eye@126.com
@@ -37,9 +43,6 @@ exclusions:
   - api
   - service
   - noreply
-
-user:
-  skip_captcha: true
 
 devise:
   secret_key: xxx

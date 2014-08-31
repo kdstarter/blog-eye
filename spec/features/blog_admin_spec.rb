@@ -5,7 +5,7 @@ require 'rspec/example_steps'
 context 'Blogger regular operation flows', type: :feature do
 
   before :all do
-    browser.goto "http://localhost:3000"
+    browser.goto Settings.test.site_url
   end
 
   after :all do
