@@ -19,10 +19,9 @@ gem 'autoprefixer-rails', '~> 2.2.0'
 gem 'devise', '~> 3.3.0'
 gem 'devise-i18n', '~> 0.11.0'
 gem 'friendly_id', '~> 5.0.4'
-gem 'simple_form', '~> 3.1.0.rc2'#, github: 'plataformatec/simple_form'
-# gem 'client_side_validations', '~> 3.2.6'
+gem 'simple_form', '~> 3.1.0.rc2'
 
-gem 'rails-i18n', '>= 4.0.2'#, github: 'svenfuchs/rails-i18n', branch: 'master' # For 4.x
+gem 'rails-i18n', '>= 4.0.2'
 gem 'rails_config', '~> 0.4.2'
 gem 'kaminari', '~> 0.16.1'
 gem 'activeadmin', '~> 1.0.0.pre', github: 'gregbell/active_admin'
@@ -41,6 +40,11 @@ gem 'redis-semaphore', '~> 0.2.2'
 # gem 'rack-cache', '~> 1.2'
 # gem 'redis-rack-cache', '~> 1.2.2'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl_rails', '~> 4.4.1'
+end
+
 group :development do
   gem 'hirb', '~> 0.7.2'
   gem 'debugger-pry', '~> 0.1.1'
@@ -55,18 +59,13 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails', '~> 3.0.0'
-  gem 'rspec-expectations', '~> 3.0.0'
-  gem 'factory_girl_rails', '~> 4.4.1'
-  gem 'database_cleaner', '~> 1.3.0', require: false
-
-  # gem 'shoulda-matchers', '~> 2.6.2'
   gem 'capybara', '~> 2.4.1'
+  gem 'database_cleaner', '~> 1.3.0'
   gem 'watir-webdriver', '~> 0.6.10'
   gem 'rspec-example_steps', '~> 3.0.2'
 
-  gem 'rails_best_practices', '~> 1.15.4'
-  gem 'minitest', '~> 5.4.0'
+  gem 'rspec-expectations', '~> 3.0.0'
   gem 'coveralls', '~> 0.7.1'
+  gem 'rails_best_practices', '~> 1.15.4'
 end
 

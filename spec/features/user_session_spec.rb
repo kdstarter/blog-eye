@@ -1,3 +1,6 @@
+require 'rails_helper'
+require 'watir-webdriver'
+require 'rspec/example_steps'
 
 context 'User session operation flows', type: :feature do
 
