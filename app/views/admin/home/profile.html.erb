@@ -1,8 +1,13 @@
 
-<h3>个人资料</h3>
+<div class="row">
+  <label class="col-sm-3"> </label>
+  <div class="col-sm-9">
+    <h3>个人资料</h3>
+  </div>
+</div>
 
 <%= simple_form_for @user, url: admin_update_profile_path, method: :post, 
-    html: {class: "form-horizontal", multipart: true} do |f| %>
+    html: { class: "form-horizontal", multipart: true } do |f| %>
   <%= f.input :avatar, as: :file %>
   <%= f.input :uid, disabled: true, hint: '用户名注册后不能更改' %>
   <%= f.input :name %>

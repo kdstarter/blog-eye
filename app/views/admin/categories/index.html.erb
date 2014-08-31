@@ -41,7 +41,7 @@
           <td><%= omited_str(category.description) %></td>
           <td><%= category.created_time %></td>
           <td>
-            <%= link_to "编 辑", edit_admin_category_path(category), class: "btn btn-xs btn-primary" %>
+            <%#= link_to "编 辑", edit_admin_category_path(category), class: "btn btn-xs btn-primary" %>
             <%= link_to "删 除", admin_category_path(category), data: { confirm: "你确定要删除这个分类吗？" }, method: :delete, remote: true, class: "btn btn-xs btn-danger" %>
           </td>
         </tr>

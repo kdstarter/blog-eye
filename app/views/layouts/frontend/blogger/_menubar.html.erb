@@ -1,34 +1,48 @@
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-body text-center">
+      <a target="_blank" href="<%= frontend_user_path(@blogger) %>">
+        <%= image_tag(@blogger.avatar_url, class: 'bloger_photo') %>
+      </a>
 
-<div class="sidebar-module sidebar-module-inset">
-  <div class="text-center">
-    <a target="_blank" href="<%= frontend_user_path(@blogger) %>">
-      <%= image_tag(@blogger.avatar_url, class: 'bloger_photo') %>
-    </a>
+      <div class="blogger_info">
+        <label class="bloger_name"><%= @blogger.human_name %></label>
+        <div class="ranking">
+          第<span class="ranking_number"><%= " #{@blogger.ranking} " %></span>位会员
+        </div>
 
-    <div class="bloger_name">
-      <%= @blogger.human_name %>
+        <div class="visits">
+          <label>浏览</label>:
+          <span class="visits_number"><%= " #{@blogger.visits} " %></span>次
+        </div>
+
+        <div class="city_name">
+          <label>城市</label>:<%= " #{@blogger.city}" %>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="blogger_info">
-    <p class="text-center">
-      第<span class="ranking_number"><%= " #{@blogger.ranking} " %></span>位会员
-    </p>
-    <p>
-      浏览:<span class="visits_number"><%= " #{@blogger.visits} " %></span>次
-    </p>
-    <p>城市:<%= " #{@blogger.city}" %></p>
-  </div>
-</div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+          全部分类
+        </a>
+      </h4>
+    </div>
 
-<div class="sidebar-module">
-  <h4>全部分类</h4>
-  <ol class="list-unstyled">
-    <li><%= link_to "全部文章 (#{@blogger.posts.count})", frontend_user_path(@blogger) %></li>
-    <% @categories.each do |category| %>
-      <li>
-        <%= link_to "#{category.name} (#{Post.where(category: category).count})", frontend_user_category_path(@blogger, category) %>
-      </li>
-    <% end %>
-  </ol>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <ul>
+          <li><%= link_to "全部文章 (#{@blogger.posts.count})", frontend_user_path(@blogger) %></li>
+          <% @categories.each do |category| %>
+            <li>
+              <%= link_to "#{category.name} (#{Post.where(category: category).count})", frontend_user_category_path(@blogger, category) %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

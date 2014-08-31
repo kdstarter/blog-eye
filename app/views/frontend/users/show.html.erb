@@ -1,3 +1,7 @@
 
-<h3>全部文章列表</h3>
-<%= render partial: 'frontend/shared/posts', locals: { posts: @posts } %>
+<% if @posts.size > 0 %>
+	<label>全部文章列表</label>
+	<%= render partial: 'frontend/shared/posts', locals: { posts: @posts } %>
+<% else %>
+	<label>暂时没有任何文章。</label>
+<% end %>

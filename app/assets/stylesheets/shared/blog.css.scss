@@ -46,7 +46,7 @@ h6, .h6 {
   a {
     position: relative;
     display: inline-block;
-    padding: 8px 5px;
+    padding: 10px 5px;
     font-weight: 500;
     color: #cdddeb;
   }
@@ -85,7 +85,6 @@ h6, .h6 {
   padding-bottom: 20px;
 }
 .blog-title {
-  font-size: 35px;
   margin-bottom: 0;
   font-weight: normal;
 }
@@ -139,18 +138,21 @@ h6, .h6 {
  * Blog posts
  */
 
-.blog-post {
-  margin-bottom: 60px;
-}
-.blog-post-title {
-  margin-bottom: 5px;
-  // font-size: 40px;
-}
-.blog-post-meta {
-  margin-bottom: 20px;
-  color: #999;
-}
+.blog-main {
+  .blog-post {
+    margin-bottom: 60px;
+  }
 
+  .blog-post-title {
+    font-size: larger;
+    margin-bottom: 5px;
+  }
+
+  .blog-post-meta {
+    margin-bottom: 20px;
+    color: #999;
+  }
+}
 
 /*
  * Footer

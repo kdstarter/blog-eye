@@ -1,126 +1,131 @@
 
 @import "shared/utils";
 
-body {
-  >.container {
-    padding: 0px 15px;
+.jumbotron {
+  .blogger_title {
+    font-size: x-large;
+    text-decoration: none;
+  }
+}
 
-    .blog-sidebar {
-      .bloger_name {
+.container {
+  padding: 0px 15px;
+
+  .blog-sidebar {
+    .bloger_name {
+      font-size: larger;
+    }
+
+    .blogger_info {
+      margin-left: 10px;
+
+      .ranking_number {
+        color: #428bca;
         font-size: larger;
       }
 
-      .blogger_info {
-        margin-left: 10px;
-
-        .ranking_number {
-          color: #428bca;
-          font-size: larger;
-        }
-
-        .visits_number {
-          font-size: larger;
-        }
+      .visits_number {
+        color: #428bca;
+        font-size: larger;
       }
     }
+  }
 
-    .blog-post {
-      margin: auto;
-      border-bottom: 1px dotted;
-      padding: 10px 11px 15px;
-      margin-bottom: 10px;
+  .blog-post {
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 10px 11px 15px;
+    border-bottom: 1px solid #e3e3e3;
+  }
+
+  img {
+    max-width: 500px!important;
+    max-height: 500px!important;
+  }
+
+  .post_panel {
+    padding: 10px;
+    margin: 0 0 20px 0;
+    background-color: #fafafa;
+  }
+
+  .panel_post {
+    .user_face {
+      width: 48px;
+      height: 48px;
     }
 
-    img {
-      max-width: 500px!important;
-      max-height: 500px!important;
-    }
-
-    .post_panel {
-      background-color: #fff;
-      padding: 10px;
-      margin: 0 0 20px 0;
-    }
-
-    .panel_post {
-      .user_face {
-        width: 48px;
-        height: 48px;
+    #post-show {
+      h2 {
+        font-size: 22px;
+        color: #333;
+        text-align: left;
+        line-height: 100%;
+        margin-bottom: 8px;
       }
 
-      #post-show {
-        h2 {
-          font-size: 22px;
-          color: #333;
-          text-align: left;
-          line-height: 100%;
-          margin-bottom: 8px;
-        }
+      .infos {
+        padding: 10px;
+        position: relative;
+        margin-bottom: 10px;
+        margin-right: 56px;
+        margin: -10px -10px 0;
+        background: #f9f9f9;
+        border-radius: 3px 3px 0 0;
+        border-bottom: 1px solid #eaeaea;
 
-        .infos {
-          padding: 10px;
-          position: relative;
-          margin-bottom: 10px;
-          margin-right: 56px;
-          margin: -10px -10px 0;
-          background: #fafafa;
-          border-radius: 3px 3px 0 0;
-          border-bottom: 1px solid #eaeaea;
+        .info {
+          color: #d0d0d0;
+          font-size: 15px;
+          margin-bottom: 2px;
 
-          .info {
-            color: #d0d0d0;
-            font-size: 15px;
-            margin-bottom: 2px;
-
-            .reply-floor {
-              color: #bbb;
-              margin-right: 0;
-              text-decoration: none;
-            }
+          .reply-floor {
+            color: #bbb;
+            margin-right: 0;
+            text-decoration: none;
           }
         }
-
-        .body {
-          margin-top: 8px;
-          margin-bottom: 10px;
-          position: relative;
-          line-height: 1.8em;
-          word-wrap: break-word;
-          text-overflow: ellipsis;
-          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-        }
       }
 
-      .panel_new_reply {
-        #reply_content {
-          width: 80%;
-          height: 80px;
-        }
+      .body {
+        margin-top: 8px;
+        margin-bottom: 10px;
+        position: relative;
+        line-height: 1.8em;
+        word-wrap: break-word;
+        text-overflow: ellipsis;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+      }
+    }
+
+    .panel_new_reply {
+      #reply_content {
+        width: 80%;
+        height: 80px;
+      }
+    }
+
+    .post-replies {
+      .total {
+        color: #999;
+        // margin: 0 -10px;
+        padding: 0 10px 6px 10px;
+        border-bottom: 1px solid #eaeaea;
       }
 
-      .post-replies {
-        .total {
-          color: #999;
-          margin: 0 -10px;
-          padding: 0 10px 6px 10px;
-          border-bottom: 1px solid #eaeaea;
-        }
+      .post_reply {
+        padding: 8px 10px;
+        background-color: #f9f9f9;
+        border-bottom: 1px solid #f0f0f0;
 
-        .post_reply {
-          background: #FFF;
-          padding: 8px 10px;
-          background-color: #fcfcfc;
-          border-bottom: 1px solid #f0f0f0;
+        .infos {
+          padding-left: 58px;
 
-          .infos {
-            padding-left: 58px;
+          .info {
+            font-size: 15px;
 
-            .info {
-              font-size: 15px;
-
-              .time {
-                color: #bbb;
-              }
+            .time {
+              color: #bbb;
             }
           }
         }
@@ -128,3 +133,4 @@ body {
     }
   }
 }
+

@@ -47,6 +47,10 @@ class User < ActiveRecord::Base
     self.city_name.blank? ? '未知' : self.city_name
   end
 
+  def blogger_title
+    self.signature.blank? ? "#{self.human_name}的博客" : self.signature
+  end
+
   def avatar_url
     self.avatar.url || self.avatar.default_url
   end

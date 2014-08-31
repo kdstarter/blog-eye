@@ -1,26 +1,23 @@
 
 <div class="blog-posts">
-  <% if posts.size > 0 %>
-    <% posts.each do |post| %>
-      <div class="blog-post">
-        <h3 class="blog-post-title">
-          <%= link_to omited_str(post.title), frontend_post_path(post) %>
-        </h3>
-        <p class="blog-post-meta">
-          <%= post.published_time %>
-          <a href="#"><%= post.tags %></a>
-        </p>
-
-        <div class="blog-post-content">
-          <%= omited_str(post.content, 150) %>
-        </div>
+  <% posts.each do |post| %>
+    <div class="blog-post">
+      <div class="blog-post-title">
+        <%= link_to omited_str(post.title), frontend_post_path(post) %>
       </div>
-    <% end %>
 
-    <div class="pager">
-      <%= paginate posts %>
+      <p class="blog-post-meta">
+        <%= post.published_time %>
+        <a href="#"><%= post.tags %></a>
+      </p>
+
+      <div class="blog-post-content">
+        <%= omited_str(post.content, 150) %>
+      </div>
     </div>
-  <% else %>
-    暂时没有任何文章。
   <% end %>
+
+  <div class="pager">
+    <%= paginate posts %>
+  </div>
 </div>

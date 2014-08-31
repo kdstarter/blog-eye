@@ -42,6 +42,11 @@ ul, ol {
   }
 }
 
+.jumbotron {
+  padding: 30px;
+  margin-bottom: 0px;
+}
+
 .bloger_photo {
   width: 230px;
   height: 230px;
@@ -59,7 +64,6 @@ ul, ol {
   padding: 10px;
   margin: 0 0 20px 0;
   border-radius: 3px;
-  background-color: #fff;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   box-shadow: 0 0px 2px rgba(0,0,0,0.07);
