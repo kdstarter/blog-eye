@@ -33,10 +33,9 @@ class Post < ActiveRecord::Base
   end
 
   def validate_sensitive
-    Settings.sensitive_words ||= YAML::load(File.read(File.join(Rails.root, "config", "sensitive.yml")))["words"]
     Settings.sensitive_words.each do |word|
-      if self.content.include?(word)
-        errors.add(:content, "文章内容包含敏感词汇: #{word}")
+      if self.inspect.include?(word)
+        errors.add(:base, "文章内容包含敏感词汇: #{word}")
         return false
       end
     end

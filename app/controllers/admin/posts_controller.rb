@@ -21,7 +21,7 @@ class Admin::PostsController < AdminController
     if @post.save
       redirect_to admin_post_path(@post)
     else
-      notice_if_sensitive
+      add_error_to_flash
       render action: "new"
     end
   end
@@ -37,8 +37,7 @@ class Admin::PostsController < AdminController
       flash[:notice] = '你已经成功修改了文章。'
       redirect_to action: 'show'
     else
-      flash[:error] = '请注意以下提示，再保存文章。'
-      notice_if_sensitive
+      add_error_to_flash
       render action: 'edit'
     end
   end
@@ -61,7 +60,11 @@ class Admin::PostsController < AdminController
     params.require(:post).permit(:user_id, :point_id, :category_id, :source, :title, :content, :tags)
   end
 
-  def notice_if_sensitive
-    flash[:error] = @post.errors[:content].first if @post.errors[:content].present?
+  def add_error_to_flash
+    if @post.errors[:base].present?
+      flash.now[:error] = @post.errors[:base].first
+    else
+      flash.now[:error] = '请注意以下内容，再保存文章。'
+    end
   end
 end

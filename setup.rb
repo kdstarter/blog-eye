@@ -55,6 +55,7 @@ end
 puts_line "Copy settings from sample files...\n" do
   `cp config/settings.yml.sample config/settings.yml`
   `cp config/database.yml.sample config/database.yml`
+  `cp config/sensitive.yml.sample config/sensitive.yml`
 end
 
 puts_line "Create databases...\n" do

@@ -26,6 +26,9 @@ module BlogEye
     SimpleCaptcha.store = Settings.cache_store.name
     config.cache_store = Settings.cache_store.store, Settings.cache_store.store_dir, { expires_in: Settings.cache_store.expires_in.to_f.minutes }
 
+    Settings.add_source!("#{Rails.root}/config/sensitive.yml")
+    Settings.reload!
+
     config.to_prepare do
       devise_layout = 'admin/session'
       Devise::SessionsController.layout devise_layout

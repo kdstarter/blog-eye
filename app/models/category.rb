@@ -4,7 +4,7 @@ class Category < ActiveRecord::Base
   # friendly_id :name, use: :finders
 
   belongs_to :user
-  has_many :posts#, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   validates :user_id, presence: true
   validates :name, presence: true, allow_blank: false
