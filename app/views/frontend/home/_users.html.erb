@@ -5,7 +5,7 @@
     <% users.each do |user| %>
       <div class="newer_row blog-user">
         <h4 class="blog-user-name">
-          <%= link_to omited_str(user.name), frontend_user_path(user) %>
+          <%= link_to omited_str(user.name), frontend_path(user) %>
         </h4>
         <p class="blog-user-meta">
           <%= user.created_time %>

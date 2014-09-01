@@ -1,7 +1,7 @@
 <div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-body text-center">
-      <a target="_blank" href="<%= frontend_user_path(@blogger) %>">
+      <a target="_blank" href="<%= frontend_path(@blogger) %>">
         <%= image_tag(@blogger.avatar_url, class: 'bloger_photo') %>
       </a>
 
@@ -35,10 +35,10 @@
     <div id="collapse1" class="panel-collapse collapse in">
       <div class="panel-body">
         <ul>
-          <li><%= link_to "全部文章 (#{@blogger.posts.count})", frontend_user_path(@blogger) %></li>
+          <li><%= link_to "全部文章 (#{@blogger.posts.count})", frontend_path(@blogger) %></li>
           <% @categories.each do |category| %>
             <li>
-              <%= link_to "#{category.name} (#{Post.where(category: category).count})", frontend_user_category_path(@blogger, category) %>
+              <%= link_to "#{category.name} (#{Post.where(category: category).count})", frontend_category_path(@blogger, category) %>
             </li>
           <% end %>
         </ul>

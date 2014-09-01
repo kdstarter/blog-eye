@@ -13,20 +13,6 @@ Rails.application.routes.draw do
 
   get 'update_captcha', to: 'simple_captcha#update_captcha'
 
-  namespace :frontend, path: '/' do
-    root 'home#index'
-
-    resources :posts do
-      resources :replies
-    end
-
-    resources :users, path: 'u' do
-      # resources :posts
-
-      resources :categories
-    end
-  end
-
   namespace :admin, path: '/admin' do
     root 'home#index'
 
@@ -38,6 +24,24 @@ Rails.application.routes.draw do
     resources :replies
 
     resources :categories
+  end
+
+  namespace :frontend, path: '/' do
+    root 'home#index'
+
+    resources :posts do
+      resources :replies
+    end
+
+    scope ":uid" do
+      get "/", to: 'users#show'
+
+      resources :categories
+    end
+
+    # resources :users, path: 'u' do
+    #   resources :categories
+    # end
   end
   
 end

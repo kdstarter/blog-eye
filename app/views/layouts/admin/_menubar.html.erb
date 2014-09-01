@@ -2,7 +2,7 @@
 
   <div class="panel panel-default">
     <div class="panel-body text-center">
-      <a target="_blank" href="<%= frontend_user_path(current_user) %>">
+      <a target="_blank" href="<%= frontend_path(current_user) %>">
         <%= image_tag(current_user.avatar_url, class: 'bloger_photo') %>
       </a>
 

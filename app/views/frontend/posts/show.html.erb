@@ -3,16 +3,16 @@
   <div id="post-show" class="box post_panel">
     <div class="infos">
       <div class="pull-right avatar-large">
-        <a target="_blank" href="<%= frontend_user_path(@blogger) %>">
+        <a target="_blank" href="<%= frontend_path(@blogger) %>">
           <%= image_tag(@blogger.avatar_url, class: 'user_face') %>
         </a>
       </div>
 
       <h2><%= @post.title %></h2>
       <div class="info">
-        <%= link_to @post.category.name, frontend_user_category_path(@blogger, @post.category) %>
+        <%= link_to @post.category.name, frontend_category_path(@blogger, @post.category) %>
          · 
-        <%= link_to @blogger.human_name, frontend_user_path(@blogger), target: "_blank" %>
+        <%= link_to @blogger.human_name, frontend_path(@blogger), target: "_blank" %>
          · 
         <abbr class="timeago" title="<%= @post.published_time %>">
           <%= time_ago_in_words(@post.created_at) %>前
@@ -36,7 +36,7 @@
       <% replier = reply.user %>
       <div class="post_reply" id="reply<%= reply.id %>">
         <div class="pull-left">
-          <a target="_blank" href="<%= frontend_user_path(replier) %>">
+          <a target="_blank" href="<%= frontend_path(replier) %>">
             <%= image_tag(replier.avatar_url, class: 'user_face') %>
           </a>
         </div>
@@ -44,7 +44,7 @@
         <div class="infos">
           <div class="info">
             <span class="name">
-              <%= link_to replier.human_name, frontend_user_path(replier), target: "_blank" %>
+              <%= link_to replier.human_name, frontend_path(replier), target: "_blank" %>
             </span>
 
             <span class="time">

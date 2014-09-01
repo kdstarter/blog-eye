@@ -9,7 +9,7 @@ class Frontend::UsersController < BloggerController
   protected
   # override super method
   def load_blogger
-    @blogger = User.find(params[:id])
+    @blogger = User.find(params[:uid])
   end
 
 end

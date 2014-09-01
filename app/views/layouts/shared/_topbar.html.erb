@@ -9,9 +9,9 @@
       <a class="<%= 'active' if params[:controller] == 'frontend/home' %>" href="<%= frontend_root_path %>"><%= Settings.site_name %></a>
 
       <% if @blogger && @blogger != current_user %>
-        <a class="<%= 'active' if controller.class.superclass.to_s == 'BloggerController' %>" href="<%= frontend_user_path(@blogger) %>"><%= @blogger.human_name %></a>
+        <a class="<%= 'active' if controller.class.superclass.to_s == 'BloggerController' %>" href="<%= frontend_path(@blogger) %>"><%= @blogger.human_name %></a>
       <% elsif current_user %>
-        <a class="<%= 'active' if controller.class.superclass.to_s == 'BloggerController' %>" href="<%= frontend_user_path(current_user) %>">我的主页</a>
+        <a class="<%= 'active' if controller.class.superclass.to_s == 'BloggerController' %>" href="<%= frontend_path(current_user) %>">我的主页</a>
       <% end %>
 
       <a class="" href="#">博 客</a>

@@ -7,7 +7,7 @@ class BloggerController < FrontendController
 
   protected
   def load_blogger
-    @blogger = User.find(params[:user_id])
+    @blogger = User.find(params[:uid])
   end
 
   def load_posts
