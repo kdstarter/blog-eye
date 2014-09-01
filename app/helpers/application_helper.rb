@@ -20,6 +20,10 @@ module ApplicationHelper
     render js: "document.location.reload()"
   end
 
+  def js_reload_without_params
+    render js: "window.location.href = location.href.split('?')[0]"
+  end
+
   def draw_errors_message(ist_model)
     ist_model.errors.messages.map do |key, ms|
       ms.map do |m|

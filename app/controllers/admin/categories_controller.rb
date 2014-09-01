@@ -10,6 +10,24 @@ class Admin::CategoriesController < AdminController
     @posts = @posts.page(params[:page])
   end
 
+  def edit
+    @category = Category.find(params[:id])
+    render action: :index
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    category_name = @category.name
+
+    if @category.update_attributes(category_params)
+      flash[:notice] = "你已经成功修改了分类 #{category_name}。"
+      redirect_to action: :index
+    else
+      flash[:error] = "修改分类 #{category_name} 失败。"
+      render action: :index
+    end
+  end
+
   def create
     @category = Category.new(category_params)
     @category.user_id = current_user.id
@@ -26,12 +44,12 @@ class Admin::CategoriesController < AdminController
   def destroy
     @category = Category.find(params[:id])
     category_name = @category.name
-    @category.destroy
 
-    if @category.persisted?
-      js_alert("删除分类#{category_name}失败！")
+    if @category.posts.size > 0
+      js_alert("分类 #{category_name} 下还有文章，请先转移到其它分类！")
     else
-      flash[:notice] = "成功删除分类#{category_name}。"
+      @category.destroy
+      flash[:notice] = "成功删除分类 #{category_name}。"
       js_reload
     end
   end

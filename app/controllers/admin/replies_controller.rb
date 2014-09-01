@@ -7,4 +7,12 @@ class Admin::RepliesController < AdminController
     @replies = @replies.page(params[:page])
   end
 
+  def destroy
+    @reply = Reply.find(params[:id])
+    @reply.destroy
+
+    flash[:notice] = '你已经成功删除了该评论。'
+    js_reload_without_params
+  end
+
 end

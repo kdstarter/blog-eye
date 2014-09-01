@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base
 
   SOURCES = ['原创或翻译', '转载或分享']
 
-  before_save :validate_tags, :validate_sensitive
+  before_save :validate_tags, :validate_sensitive?
 
   def published_time
     self.created_at.strftime('%Y-%m-%d %H:%M')
@@ -32,7 +32,7 @@ class Post < ActiveRecord::Base
     end
   end
 
-  def validate_sensitive
+  def validate_sensitive?
     Settings.sensitive_words.each do |word|
       if self.inspect.include?(word)
         errors.add(:base, "文章内容包含敏感词汇: #{word}")

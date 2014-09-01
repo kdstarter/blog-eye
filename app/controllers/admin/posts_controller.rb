@@ -22,7 +22,7 @@ class Admin::PostsController < AdminController
       redirect_to admin_post_path(@post)
     else
       add_error_to_flash
-      render action: "new"
+      render action: :new
     end
   end
 
@@ -35,10 +35,10 @@ class Admin::PostsController < AdminController
 
     if @post.update_attributes(post_params)
       flash[:notice] = '你已经成功修改了文章。'
-      redirect_to action: 'show'
+      redirect_to action: :show
     else
       add_error_to_flash
-      render action: 'edit'
+      render action: :edit
     end
   end
 
@@ -50,7 +50,7 @@ class Admin::PostsController < AdminController
       flash[:error] = '因为以下原因，删除文章失败。'
       render action: :show
     else
-      flash[:notice] = '你已经成功删除了文章。'
+      flash[:notice] = '你已经成功删除了该文章。'
       redirect_to admin_root_path
     end
   end

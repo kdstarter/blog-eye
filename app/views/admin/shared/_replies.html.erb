@@ -19,13 +19,13 @@
           <td><%= reply.user.human_name %></td>
           <td><%= reply.published_time %></td>
           <td>
-            <%= link_to '删 除', admin_reply_path(reply), data: { confirm: "你确定要删除这条评论吗？" }, method: :delete, class: "btn btn-xs btn-danger" %>
+            <%= link_to '删 除', admin_reply_path(reply), data: { confirm: "你确定要删除这条评论吗？" }, method: :delete, remote: true, class: "btn btn-xs btn-danger" %>
           </td>
         </tr>
       <% end %>
 
       <tr>
-        <td colspan='2'><%= paginate replies %></td>
+        <td colspan='2'><%= paginate replies, param_name: "page_reply" %></td>
         <td colspan='2' class="text_middle">
           <div class="pull-right">
             <%= link_to('查看所有', admin_replies_path) unless url_for == admin_replies_path %>

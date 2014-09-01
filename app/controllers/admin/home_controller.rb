@@ -6,7 +6,7 @@ class Admin::HomeController < AdminController
     @replies = Reply.where(post_id: @posts.pluck(:id))
 
     @posts = @posts.page(params[:page])
-    @replies = @replies.page(params[:page])
+    @replies = @replies.page(params[:page_reply])
   end
 
   def profile
