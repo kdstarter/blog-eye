@@ -43,6 +43,18 @@ context 'Blogger regular operation flows', type: :feature do
       expect(link_category.exists?).to be(true)
     end
 
+    Then 'Edit last category info' do
+      link_edit_category.click
+      expect(btn_update_category.exists?).to be(true)
+    end
+
+    # Then 'Update last category info' do
+    #   valid_category = attributes_for(:valid_category)
+
+    #   edit_category_with valid_category
+    #   expect(btn_update_category.exists?).to be(false)
+    # end
+
     Then 'Go to new post page' do
       link_new_post.click
 

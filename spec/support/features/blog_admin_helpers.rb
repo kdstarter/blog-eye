@@ -13,14 +13,28 @@ module Features
       browser.link(class: 'link_new_category')
     end
 
-    def btn_new_category
-      browser.input(class: 'btn_new_category')
+    def link_edit_category
+      browser.link(class: 'link_edit_category')
+    end
+
+    def btn_create_category
+      browser.input(class: 'btn_create_category')
+    end
+
+    def btn_update_category
+      browser.input(class: 'btn_update_category')
     end
 
     def new_category_with(category)
       browser.text_field(id: 'category_name').set(category[:name])
       browser.text_field(id: 'category_description').set(category[:description])
-      btn_new_category.click
+      btn_create_category.click
+    end
+
+    def edit_category_with(category)
+      browser.text_field(id: 'category_name').set(category[:name])
+      browser.text_field(id: 'category_description').set(category[:description])
+      btn_update_category.click
     end
 
     def link_new_post
