@@ -65,10 +65,16 @@
   </div>
 
   <div class="box panel_new_reply">
-    <%= simple_form_for [:frontend, @post, @reply], html: { class: "form-inline form_new_reply" } do |f| %>
-      <%= f.input_field :content, as: :text, class: "form-control" %>
+    <% if current_user.blank? %>
+      需要登录之后才能评论。
+      <%= link_to "登录", new_user_session_path %> | 
+      <%= link_to "注册", new_user_registration_path %>
+    <% else %>
+      <%= simple_form_for [:frontend, @post, @reply], html: { class: "form-inline form_new_reply" } do |f| %>
+        <%= f.input_field :content, as: :text, class: "form-control" %>
 
-      <%= f.button :submit, "提交回复", class: "btn btn-primary btn_new_reply" %>
+        <%= f.button :submit, "提交回复", class: "btn btn-primary btn_new_reply" %>
+      <% end %>
     <% end %>
   </div>
 </div>
