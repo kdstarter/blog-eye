@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def site_intro
+    "博客信息技术分享平台"
+  end
+
   def site_fullname
     "#{Settings.site_name}(#{Settings.site_name_zh})"
   end

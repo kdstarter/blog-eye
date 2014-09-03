@@ -8,6 +8,9 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  def title
+    site_intro
+  end
 
   protected
   # configure devise permitted parameters
