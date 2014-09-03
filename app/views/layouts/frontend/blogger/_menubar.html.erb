@@ -1,12 +1,14 @@
 <div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-body text-center">
-      <a target="_blank" href="<%= frontend_path(@blogger) %>">
+      <a href="<%= frontend_path(@blogger) %>">
         <%= image_tag(@blogger.avatar_url, class: 'bloger_photo') %>
       </a>
 
       <div class="blogger_info">
-        <label class="bloger_name"><%= @blogger.human_name %></label>
+        <label class="bloger_name">
+          <%= link_to @blogger.human_name, frontend_path(@blogger) %>
+        </label>
 
         <!-- <div class="visits">
           <label>浏览</label>:
@@ -21,10 +23,8 @@
           第<span class="ranking_number"><%= " #{@blogger.ranking} " %></span>位会员
         </div>
 
-        <div class="user_email">
-          <% if @blogger.is_email_public %>
-            <%= @blogger.email %>
-          <% end %>
+        <div class="text_bold">
+          <%= link_to "查看详细资料", frontend_profile_path(@blogger) %>
         </div>
       </div>
     </div>

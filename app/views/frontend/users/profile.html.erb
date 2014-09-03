@@ -1,0 +1,24 @@
+
+<div class="row">
+  <label class="col-sm-3"> </label>
+  <div class="col-sm-9">
+    <h3>个人资料</h3>
+  </div>
+</div>
+
+<%= simple_form_for @blogger, url: "#", html: { class: "form-horizontal" } do |f| %>
+  <%= f.input :uid, disabled: true %>
+  <%= f.input :name, disabled: true %>
+  
+  <% if @blogger.is_email_public %>
+    <%= f.input :email, disabled: true %>
+  <% end %>
+
+  <%= f.input :signature, disabled: true %>
+  <%= f.input :city_name, disabled: true %>
+  <%= f.input :company, disabled: true %>
+
+  <%= f.input :github, disabled: true, input_html: { value: @blogger.github_page } %>
+  <%= f.input :homepage, disabled: true %>
+  <%= f.input :description, disabled: true %>
+<% end %>

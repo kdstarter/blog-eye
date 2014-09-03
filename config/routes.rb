@@ -35,6 +35,7 @@ Rails.application.routes.draw do
 
     scope ":uid" do
       get "/", to: 'users#show'
+      get '/profile', to: 'users#profile'
 
       resources :categories
     end

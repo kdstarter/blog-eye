@@ -43,6 +43,10 @@ class User < ActiveRecord::Base
     self.created_at.strftime('%Y-%m-%d %H:%M')
   end
 
+  def github_page
+    "https://github.com/#{self.github}"
+  end
+
   def city
     self.city_name.blank? ? '未知' : self.city_name
   end
