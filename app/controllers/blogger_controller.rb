@@ -5,6 +5,10 @@ class BloggerController < FrontendController
 
   before_action :load_blogger, :load_posts
 
+  def title
+    "#{@blogger.signature} - #{@blogger.whose_blogger}"
+  end
+
   protected
   def load_blogger
     @blogger = User.find(params[:uid])

@@ -1,6 +1,10 @@
 
 class Frontend::PostsController < BloggerController
 
+  def title
+    "#{@post.title} - #{@blogger.whose_blogger}"
+  end
+
   def show
     @post = @posts.find(params[:id])
     @reply = Reply.new(post_id: @post.id)

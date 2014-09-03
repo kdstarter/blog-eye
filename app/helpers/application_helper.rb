@@ -1,18 +1,26 @@
 module ApplicationHelper
 
+  def site_fullname
+    "#{Settings.site_name}(#{Settings.site_name_zh})"
+  end
+
   def default_title
     "#{controller_name}/#{action_name}"
   end
 
-  def page_title_tag(action_title=nil)
-    "<title>#{Settings.site_name}(#{Settings.site_name_zh}) - #{action_title || default_title}</title>".html_safe
+  def controller_title
+    controller.try(:title) || default_title
+  end
+
+  def page_title
+    "#{controller_title} - #{site_fullname}"
   end
 
   def omited_str(str, length=60)
-    str.truncate(length, separator: ' ', omission: '...')
+    str.truncate(length, separator: " ", omission: "...")
   end
 
-  def js_alert(message='非常遗憾，操作失败.')
+  def js_alert(message="非常遗憾，操作失败.")
     render js: "alert('#{message}')"
   end
 
