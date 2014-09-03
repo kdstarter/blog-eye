@@ -36,4 +36,7 @@ module ApplicationHelper
     end.flatten
   end
 
+  def post_tags_from_str(str)
+    str.split(',').map{|tag| "&nbsp;<a href='#'><span class='badge'>#{tag}</span></a>"}.join.html_safe
+  end
 end

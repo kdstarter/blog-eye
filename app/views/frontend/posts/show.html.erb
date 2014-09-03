@@ -18,7 +18,7 @@
           <%= time_ago_in_words(@post.created_at) %>前
         </abbr>发布
          · <%= "#{@post.visits} 次阅读" %>
-         · <a href="#"><span class="badge"><%= @post.tags %></span></a>
+         · <%= post_tags_from_str(@post.tags) %>
       </div>
     </div>
 
