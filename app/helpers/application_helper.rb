@@ -16,6 +16,10 @@ module ApplicationHelper
     "#{controller_title} - #{site_fullname}"
   end
 
+  def meat_keywords
+    "#{Settings.site_name_zh}, #{Settings.site_name}, 博客平台, 个人博客, 技术博客, 信息技术分享"
+  end
+
   def omited_str(str, length=60)
     str.truncate(length, separator: " ", omission: "...")
   end
