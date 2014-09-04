@@ -7,6 +7,7 @@ class Post < ActiveRecord::Base
   validates :user_id, presence: true
   validates :point_id, presence: true
   validates :category_id, presence: true
+
   validates :source, presence: true
   validates :title, presence: true, allow_blank: false
   validates :content, presence: true, allow_blank: false

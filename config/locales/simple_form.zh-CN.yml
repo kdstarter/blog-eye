@@ -34,6 +34,12 @@
         source: 文章来源
         title: 文章标题
         tags: 标 签
+      code:
+        language: 编程语言
+        category: 代码分类
+        source: 来源网址
+        title: 代码标题
+        tags: 标 签
 
     placeholders:
       user:
@@ -60,5 +66,11 @@
       post:
         title: 文章标题
         content: 文章内容...
-        tags: 最多5个标签，用','或'，'分割
+        tags: "最多5个标签，用','或'，'分割"
+
+      code:
+        title: 代码标题
+        source: 代码来源网址
+        content: 想收藏的代码...
+        tags: "最多3个标签，用','或'，'分割"
 

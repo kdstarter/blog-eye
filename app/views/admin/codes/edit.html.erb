@@ -1,0 +1,22 @@
+  
+<%= simple_form_for [:admin, @code], html: {class: "form-horizontal form_new_code"} do |f| %>
+  <%= f.association :language, collection: Language.all, label_method: :code, value_method: :id %>
+  <%= f.association :category, collection: @categories %>
+
+  <%= f.input :source %>
+  <%= f.input :title %>
+  <%= f.input :tags %>
+  
+  <div class="form-group">
+    <div class="col-sm-12">
+      <%= f.cktext_area :content, ckeditor: { toolbar: "Easy", height: 380 }  %>
+    </div>
+  </div>
+
+  <div class="form-group form-actions">
+    <label class="col-sm-3"> </label>
+    <div class="col-sm-9">
+      <%= f.button :submit, "更 新", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

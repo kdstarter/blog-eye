@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     resources :replies
 
     resources :categories
+
+    resources :codes
   end
 
   namespace :frontend, path: '/' do

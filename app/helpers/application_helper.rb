@@ -55,4 +55,8 @@ module ApplicationHelper
   def post_tags_from_str(str)
     str.split(',').map{|tag| "&nbsp;<a href='#'><span class='badge'>#{tag}</span></a>"}.join.html_safe
   end
+
+  def code_tags_from_str(str)
+    self.post_tags_from_str(str)
+  end
 end

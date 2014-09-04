@@ -1,0 +1,26 @@
+
+<div class="panel-heading">
+  <div class="heading">
+    <h4><%= @code.title %></h4>
+
+    收藏时间: <%= @code.published_time %>
+    <br/>代码分类: <%= @code.category.name %>
+
+    <br/>代码标签: <%= code_tags_from_str(@code.tags) %>
+  </div>
+</div>
+
+<div class="panel-body">
+  <%= @code.content.html_safe %>
+</div>
+
+<div class="panel-footer">
+  <div class="row pull-right">
+    <a href="<%= edit_admin_code_path(@code) %>" class="btn btn-sm btn-default">
+      <span class="glyphicon glyphicon-edit"></span>编辑
+    </a>
+
+    <%= link_to '删 除', admin_code_path(@code), data: { confirm: "你确定要删除该代码吗？" }, method: :delete, class: "btn btn-sm btn-danger" %>
+  </div>
+</div>
+

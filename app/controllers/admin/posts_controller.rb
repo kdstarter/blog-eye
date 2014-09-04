@@ -19,6 +19,7 @@ class Admin::PostsController < AdminController
     @post.user = current_user
     
     if @post.save
+      flash[:notice] = '你已经成功发布了文章。'
       redirect_to admin_post_path(@post)
     else
       add_error_to_flash
