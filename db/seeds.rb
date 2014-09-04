@@ -24,3 +24,27 @@ poins.each do |p|
   point = Point.find_by(code: p[:code])
   puts "Success create: ", point.inspect
 end
+
+# create default languages
+languages = [
+  { name: 'Java Language', code: 'Java', description: 'ERP级静态语言No1' },
+  { name: 'Ruby Script',   code: 'Ruby', description: '灵活简洁的脚本语言' },
+  { name: 'Html Language', code: 'Html', description: 'Html语言的世界' },
+  { name: 'Javascript',    code: 'Javascript', description: 'Html的脚本语言' },
+  { name: 'CSS Language',  code: 'CSS', description: '颠覆Html页面的Style' },
+  { name: 'SQL Language',  code: 'SQL', description: '关系型数据库查询' },
+  { name: 'C and C++',     code: 'C++', description: '大学必学的编程语言' },
+  { name: 'Python Script', code: 'Python', description: '强大的脚本语言' },
+  { name: 'PHP Script',    code: 'PHP', description: '高效的脚本语言' },
+  { name: 'Other Language',code: 'Other', description: '高效的脚本语言' }
+]
+
+languages.each do |p|
+  Language.find_or_create_by(code: p[:code]) do |language|
+    language.name = p[:name]
+    language.description = p[:description]
+  end
+  language = Language.find_by(code: p[:code])
+  puts "Success create: ", language.inspect
+end
+

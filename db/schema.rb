@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140816015308) do
+ActiveRecord::Schema.define(version: 20140904142343) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -73,6 +73,26 @@ ActiveRecord::Schema.define(version: 20140816015308) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "codes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.integer  "language_id"
+    t.string   "title"
+    t.string   "source"
+    t.string   "tags"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "languages", force: true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "points", force: true do |t|
     t.string   "name"
