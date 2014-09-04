@@ -95,7 +95,7 @@ zh-CN:
       month: 月
       second: 秒
       year: 年
-  errors:
+  errors: &errors
     format: ! '%{attribute}%{message}'
     messages:
       accepted: 必须是可被接受的
@@ -221,6 +221,46 @@ zh-CN:
       long: ! '%Y年%b%d日 %H:%M'
       short: ! '%b%d日 %H:%M'
     pm: 下午
+
+  formtastic:
+    :yes: '是'
+    :no: '否'
+    :create: '创建%{model}'
+    :update: '更新%{model}'
+    :submit: '提交%{model}'
+    :cancel: '取消%{model}'
+    :reset: '取消%{model}'
+    :required: '必需的'
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors
+    models:
+      user: 博客用户
+      admin_user: 管理员
+      category: 文章分类
+      code: 收藏代码
+      language: 编程语言
+      point: 全站分类
+      post: 用户文章
+      reply: 文章评论
+    attributes:
+      user:
+        id: 编号
+        uid: 用户编号
+        name: 真实姓名
+        ranking: 排名
+        visits: 访问数
+        email: Email
+        city_name: 城市名
+        homepage: 个人主页
+        github: Github主页
+        company: 公司名
+        signature: 个人签名
+        avatar: 个人头像
+        description: 详细资料
 
   views:
     pagination:
