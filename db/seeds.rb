@@ -36,7 +36,8 @@ languages = [
   { name: 'C and C++',     code: 'C++', description: '大学必学的编程语言' },
   { name: 'Python Script', code: 'Python', description: '强大的脚本语言' },
   { name: 'PHP Script',    code: 'PHP', description: '高效的脚本语言' },
-  { name: 'Other Language',code: 'Other', description: '高效的脚本语言' }
+  { name: 'Linux Shell',   code: 'Shell', description: 'Mac,Linux的Shell' },
+  { name: 'Other Language',code: 'Other', description: '其它类型的语言' }
 ]
 
 languages.each do |p|
