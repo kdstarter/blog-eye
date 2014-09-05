@@ -32,18 +32,6 @@
     </div>
   <% end %>
 
-  <div class="panel panel-default">
-    <div class="row panel-heading">
-      <div class="col-xs-8">
-        <%= paginate codes, param_name: "page_code" %>
-      </div>
-
-      <div class="col-xs-4">
-        <div class="pull-right">
-          <%= link_to('查看所有', frontend_codes_path) unless url_for == frontend_codes_path %>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= paginate codes, param_name: "page_code" %>
 </div>
 

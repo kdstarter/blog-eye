@@ -15,7 +15,9 @@
 </div>
 
 <div class="panel-footer">
-  <div class="row pull-right">
+  <%= link_to "返回收藏列表", admin_codes_path %>
+
+  <div class="pull-right">
     <a href="<%= edit_admin_code_path(@code) %>" class="btn btn-sm btn-default">
       <span class="glyphicon glyphicon-edit"></span>编辑
     </a>

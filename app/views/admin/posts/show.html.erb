@@ -16,7 +16,9 @@
 </div>
 
 <div class="panel-footer">
-  <div class="row pull-right">
+  <%= link_to "全部文章列表", admin_posts_path %>
+
+  <div class="pull-right">
     <a href="<%= edit_admin_post_path(@post) %>" class="btn btn-sm btn-default">
       <span class="glyphicon glyphicon-edit"></span>编辑
     </a>

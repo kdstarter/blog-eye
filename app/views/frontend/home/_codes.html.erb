@@ -1,0 +1,22 @@
+
+<div class="code-posts">
+  <h4>最近的代码分享: </h4>
+  <% if codes.size > 0 %>
+    <% codes.each do |code| %>
+      <div class="newer_row code-post">
+        <h4 class="code-post-title">
+          <%= link_to omited_str(code.title), frontend_code_path(code.user, code) %>
+        </h4>
+        <p class="code-post-meta">
+          <%= code.published_time %>
+        </p>
+
+        <div class="code-post-content">
+          <%= omited_str(code.content, 150) %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    最近没有任何文章。
+  <% end %>
+</div>
