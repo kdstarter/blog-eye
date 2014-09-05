@@ -1,4 +1,4 @@
-<div class="panel-group">
+<div class="panel-group" id="blogger_accordion">
   <div class="panel panel-default">
     <div class="panel-body text-center">
       <a href="<%= frontend_path(@blogger) %>">
@@ -33,13 +33,13 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-          全部分类
+        <a data-toggle="collapse" href="#category_collapse">
+          文章分类
         </a>
       </h4>
     </div>
 
-    <div id="collapse1" class="panel-collapse collapse in">
+    <div id="category_collapse" class="panel-collapse collapse in">
       <div class="panel-body">
         <ul>
           <li><%= link_to "全部文章 (#{@blogger.posts.count})", frontend_path(@blogger) %></li>
@@ -48,6 +48,24 @@
               <%= link_to "#{category.name} (#{Post.where(category: category).count})", frontend_category_path(@blogger, category) %>
             </li>
           <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#code_collapse">
+          个人收藏
+        </a>
+      </h4>
+    </div>
+
+    <div id="code_collapse" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <ul>
+          <li><%= link_to "代码收藏 (#{@blogger.codes.count})", frontend_codes_path(@blogger) %></li>
         </ul>
       </div>
     </div>

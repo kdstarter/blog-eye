@@ -1,0 +1,49 @@
+
+<div class="panel-group" id="code_accordion">
+  <div class="panel panel-default">
+    <div class="row panel-heading">
+      <div class="col-xs-2">语言</div>
+      <div class="col-xs-5">代码标题</div>
+      <div class="col-xs-5">来源网址</div>
+    </div>
+  </div>
+
+  <% codes.each do |code| %>
+    <div class="panel panel-default">
+      <div class="row panel-heading">
+        <div class="col-xs-2">
+          <%= code.language.code %>
+        </div>
+
+        <h4 class="panel-title col-xs-5">
+          <a data-toggle="collapse" data-parent="#code_accordion" href="#code_<%= code.id %>" class="collapsed">
+            <%= omited_str(code.title) %>
+          </a>
+        </h4>
+
+        <%= link_to omited_str(code.source), code.source, target: "_blank", class: "col-xs-5" %>
+      </div>
+
+      <div id="code_<%= code.id %>" class="panel-collapse collapse" style="height: 0px;">
+        <div class="panel-body">
+          <%= code.content.html_safe %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="panel panel-default">
+    <div class="row panel-heading">
+      <div class="col-xs-8">
+        <%= paginate codes, param_name: "page_code" %>
+      </div>
+
+      <div class="col-xs-4">
+        <div class="pull-right">
+          <%= link_to('查看所有', frontend_codes_path) unless url_for == frontend_codes_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

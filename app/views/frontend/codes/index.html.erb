@@ -1,0 +1,7 @@
+
+<% if @codes.size > 0 %>
+  <label>全部代码收藏</label>
+  <%= render partial: 'frontend/shared/codes', locals: { codes: @codes } %>
+<% else %>
+  <label>暂时没有任何代码收藏。</label>
+<% end %>

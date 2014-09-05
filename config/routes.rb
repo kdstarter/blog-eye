@@ -40,11 +40,9 @@ Rails.application.routes.draw do
       get '/profile', to: 'users#profile'
 
       resources :categories
-    end
 
-    # resources :users, path: 'u' do
-    #   resources :categories
-    # end
+      resources :codes
+    end
   end
   
 end

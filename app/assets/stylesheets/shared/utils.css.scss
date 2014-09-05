@@ -2,12 +2,13 @@
 @import "font-awesome";
 @import "shared/_variables";
 @import "shared/blog";
-@import "shared/sticky-footer-navbar";
+// @import "shared/sticky-footer-navbar";
 @import "shared/bootstrap";
 @import "shared/pnotify.all.min";
 
 body {
-  background: url(asset_path('shared/bg.png')) repeat 0 0;
+  background-color: #f2f2f2;
+  // background: url(asset_path('shared/bg.png')) repeat 0 0;
 }
 
 .panel-body {
