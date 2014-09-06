@@ -238,6 +238,7 @@ zh-CN:
     errors:
       <<: *errors
     models:
+      message: 消息通知
       user: 博客用户
       admin_user: 管理员
       category: 文章分类

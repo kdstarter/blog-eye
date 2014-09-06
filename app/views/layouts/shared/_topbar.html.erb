@@ -20,7 +20,11 @@
 
       <span class="pull-right">
         <% if current_user %>
-          <a class="link_admin_home <%= 'active' if params[:controller].include?('admin/') %>" href="<%= admin_root_path %>"><%= current_user.human_name %></a>
+          <a class="link_admin_messages <%= 'active' if controller.class.to_s == "Admin::MessagesController" %>" href="<%= admin_messages_path %>">
+            <span class="label label-success"><%= @messages.count %></span>
+          </a>
+
+          <a class="link_admin_home <%= 'active' if params[:controller].include?('admin/') && controller.class.to_s != "Admin::MessagesController" %>" href="<%= admin_root_path %>"><%= current_user.human_name %></a>
 
           <a id="link_sign_out" class="" href="<%= destroy_user_session_path %>">注销</a>
         <% else %>

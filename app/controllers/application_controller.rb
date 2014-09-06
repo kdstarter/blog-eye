@@ -6,10 +6,15 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :load_messages, if: Proc.new { current_user.present? }
 
   def title
     site_intro
+  end
+
+  def load_messages
+    @messages = current_user.messages
   end
 
   protected
@@ -29,7 +34,11 @@ class ApplicationController < ActionController::Base
   # for user devise session
   def after_sign_in_path_for(resource_or_scope)
     if resource.class.to_s == "User"
-      admin_root_path
+      if @messages && @messages.count > 0
+        admin_messages_path
+      else
+        admin_root_path
+      end
     else
       super
     end
