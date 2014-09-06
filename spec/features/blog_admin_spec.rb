@@ -48,17 +48,25 @@ context 'Blogger regular operation flows', type: :feature do
       expect(btn_update_category.exists?).to be(true)
     end
 
-    # Then 'Update last category info' do
-    #   valid_category = attributes_for(:valid_category)
+    Then 'Update last category info' do
+      valid_category = attributes_for(:valid_category)
 
-    #   edit_category_with valid_category
-    #   expect(btn_update_category.exists?).to be(false)
-    # end
+      edit_category_with valid_category
+      expect(btn_update_category.exists?).to be(false)
+    end
 
     Then 'Go to new post page' do
       link_new_post.click
 
       expect(form_new_post.exists?).to be(true)
+    end
+
+    Then 'Click to add new post' do
+      valid_post = attributes_for(:valid_new_post)
+
+      new_post_with valid_post
+      expect(btn_new_post.exists?).to be(false)
+      expect(link_edit_post.exists?).to be(true)
     end
   end
 

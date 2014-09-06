@@ -14,10 +14,11 @@
           <%= link_to code.title, frontend_code_path(code.user, code), title: code.title, class: "href_name" %>
         </h4>
         <p class="post-meta">
+          <%= link_to code.user.human_name, frontend_path(code.user), target: "_blank" %>
+           · 
           <abbr class="timeago" title="<%= code.published_time %>">
             <%= time_ago_in_words(code.created_at) %>前
-          </abbr>
-          <%= code_tags_from_str(code.tags) %>
+          </abbr> 收藏
         </p>
 
         <div class="post-content display_none">

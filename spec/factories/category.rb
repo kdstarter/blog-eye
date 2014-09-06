@@ -6,7 +6,7 @@ FactoryGirl.define do
   end
 
   factory :valid_category, class: Category do
-    name 'Ruby Script'
+    name 'Ruby'
     description 'A Script Language'
   end
 end

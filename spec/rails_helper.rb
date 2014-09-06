@@ -52,8 +52,8 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.strategy = :truncation, {:only => %w[users categories posts]}
+    DatabaseCleaner.clean
   end
 
   # config.around(:each) do |example|
