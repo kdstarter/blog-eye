@@ -4,15 +4,24 @@
   <% if codes.size > 0 %>
     <% codes.each do |code| %>
       <div class="newer_row code-post">
-        <h4 class="code-post-title">
-          <%= link_to omited_str(code.title), frontend_code_path(code.user, code) %>
+        <div class="pull-left">
+          <a target="_blank" href="<%= frontend_path(code.user) %>">
+            <%= image_tag(code.user.avatar_url(:thumb), class: 'user_face') %>
+          </a>
+        </div>
+
+        <h4 class="post-title">
+          <%= link_to code.title, frontend_code_path(code.user, code), title: code.title, class: "href_name" %>
         </h4>
-        <p class="code-post-meta">
-          <%= code.published_time %>
+        <p class="post-meta">
+          <abbr class="timeago" title="<%= code.published_time %>">
+            <%= time_ago_in_words(code.created_at) %>前
+          </abbr>
+          <%= code_tags_from_str(code.tags) %>
         </p>
 
-        <div class="code-post-content">
-          <%= omited_str(code.content, 150) %>
+        <div class="post-content display_none">
+          <%#= code.content.html_safe %>
         </div>
       </div>
     <% end %>

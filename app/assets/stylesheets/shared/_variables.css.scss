@@ -1,2 +1,8 @@
 
 $text-bgcolor: rgb(249, 249, 249);
+
+@mixin href_ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

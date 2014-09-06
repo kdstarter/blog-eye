@@ -45,7 +45,7 @@
           <li><%= link_to "全部文章 (#{@blogger.posts.count})", frontend_path(@blogger) %></li>
           <% @categories.each do |category| %>
             <li>
-              <%= link_to "#{category.name} (#{Post.where(category: category).count})", frontend_category_path(@blogger, category) %>
+              <%= link_to "#{category.name} (#{Post.where(category: category).count})", frontend_category_path(@blogger, category), title: "分类 #{category.name}" %>
             </li>
           <% end %>
         </ul>

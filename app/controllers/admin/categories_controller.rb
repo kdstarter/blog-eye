@@ -47,6 +47,8 @@ class Admin::CategoriesController < AdminController
 
     if @category.posts.size > 0
       js_alert("分类 #{category_name} 下还有文章，请先转移到其它分类！")
+    elsif @category.codes.size > 0
+      js_alert("分类 #{category_name} 下还有代码收藏，请先转移到其它分类！")
     else
       @category.destroy
       flash[:notice] = "成功删除分类 #{category_name}。"

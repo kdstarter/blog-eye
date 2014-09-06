@@ -2,17 +2,17 @@
 <div class="blog-posts">
   <% posts.each do |post| %>
     <div class="blog-post">
-      <div class="blog-post-title">
-        <%= link_to omited_str(post.title), frontend_post_path(post) %>
+      <div class="post-title">
+        <%= link_to post.title, frontend_post_path(post), title: post.title, class: "href_name" %>
       </div>
 
-      <p class="blog-post-meta">
+      <p class="post-meta">
         <%= post.published_time %>
         <%= post_tags_from_str(post.tags) %>
       </p>
 
-      <div class="blog-post-content">
-        <%= omited_str(post.content, 150) %>
+      <div class="post-content">
+        <%= omited_str(strip_tags(post.content), 250) %>
       </div>
     </div>
   <% end %>
