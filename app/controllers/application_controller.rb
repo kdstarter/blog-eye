@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_messages
-    @messages = current_user.messages
+    @messages = current_user.messages.unreads
   end
 
   protected

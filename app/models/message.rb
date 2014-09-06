@@ -1,4 +1,7 @@
 class Message < ActiveRecord::Base
+  scope :reads, -> { where(is_read: true) }
+  scope :unreads, -> { where(is_read: false) }
+
   belongs_to :user
   belongs_to :sender, class: User, foreign_key: :from_user_id
   belongs_to :target, polymorphic: true

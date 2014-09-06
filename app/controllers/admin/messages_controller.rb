@@ -18,6 +18,18 @@ class Admin::MessagesController < AdminController
     end
   end
 
+  def mark_as_read
+    @message = @messages.find(params[:message_id] || params[:id])
+
+    respond_to do |format|
+      if @message.update_attributes(is_read: true)
+        format.json { render json: { count: @messages.unreads.count } }
+      else
+        format.json { render json: draw_errors_message(@message), status: 403}
+      end
+    end
+  end
+
   def destroy
     @message = Message.find(params[:id])
     @message.destroy

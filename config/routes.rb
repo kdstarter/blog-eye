@@ -19,7 +19,9 @@ Rails.application.routes.draw do
     get '/profile', to: 'home#profile'
     post '/update_profile', to: 'home#update_profile'
 
-    resources :messages
+    resources :messages do
+      post 'mark_as_read', to: 'messages#mark_as_read'
+    end
 
     resources :posts
 
