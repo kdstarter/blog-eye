@@ -15,8 +15,8 @@
     <tbody>
       <% posts.each do |post| %>
         <tr>
-          <td>
-            <%= link_to post.title, admin_post_path(post), title: post.title, class: "href_name" %>
+          <td class="href_name">
+            <%= link_to post.title, admin_post_path(post), title: post.title %>
           </td>
           <td><%= post.published_time %></td>
           <td><%= post.category.name %></td>

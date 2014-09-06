@@ -14,8 +14,8 @@
     <tbody>
       <% codes.each do |code| %>
         <tr>
-          <td>
-            <%= link_to code.title, admin_code_path(code), title: code.title, class: "href_name" %>
+          <td class="href_name">
+            <%= link_to code.title, admin_code_path(code), title: code.title %>
           </td>
           <td><%= code.category.name %></td>
           <td><%= code.language.code %></td>

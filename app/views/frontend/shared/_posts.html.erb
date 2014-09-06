@@ -2,8 +2,8 @@
 <div class="blog-posts">
   <% posts.each do |post| %>
     <div class="blog-post">
-      <div class="post-title">
-        <%= link_to post.title, frontend_post_path(post), title: post.title, class: "href_name" %>
+      <div class="href_name post-title">
+        <%= link_to post.title, frontend_post_path(post), title: post.title %>
       </div>
 
       <p class="post-meta">
@@ -12,7 +12,7 @@
       </p>
 
       <div class="post-content">
-        <%= omited_str(strip_tags(post.content), 250) %>
+        <%= omited_str(strip_tags(post.content), 240) %>
       </div>
     </div>
   <% end %>

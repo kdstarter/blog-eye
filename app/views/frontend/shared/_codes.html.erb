@@ -15,13 +15,15 @@
           <%= code.language.code %>
         </div>
 
-        <h4 class="panel-title col-xs-6">
+        <h4 class="href_name panel-title col-xs-6">
           <a title="<%= code.title %>" data-toggle="collapse" data-parent="#code_accordion" href="#code_<%= code.id %>" class="collapsed">
             <%= code.title %>
           </a>
         </h4>
 
-        <%= link_to code.source, code.source, target: "_blank", class: "col-xs-4 href_name", title: code.source %>
+        <div class="href_name col-xs-4">
+          <%= link_to code.source, code.source, target: "_blank", title: code.source %>
+        </div>
       </div>
 
       <div id="code_<%= code.id %>" class="panel-collapse collapse" style="height: 0px;">

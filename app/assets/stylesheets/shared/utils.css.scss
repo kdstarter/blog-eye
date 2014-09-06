@@ -10,6 +10,10 @@ body {
   // background: url(asset_path('shared/bg.png')) repeat 0 0;
 }
 
+td {
+  max-width: 400px;
+}
+
 .footer {
   padding: 30px 0px;
   text-align: center;

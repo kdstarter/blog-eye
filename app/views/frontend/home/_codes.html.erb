@@ -10,8 +10,8 @@
           </a>
         </div>
 
-        <h4 class="post-title">
-          <%= link_to code.title, frontend_code_path(code.user, code), title: code.title, class: "href_name" %>
+        <h4 class="href_name post-title">
+          <%= link_to code.title, frontend_code_path(code.user, code), title: code.title %>
         </h4>
         <p class="post-meta">
           <%= link_to code.user.human_name, frontend_path(code.user), target: "_blank" %>

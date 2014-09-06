@@ -74,6 +74,7 @@ Rails.application.configure do
     admin/sessions.css admin/home.css
   )
   config.assets.precompile += %w(
+    shared/html5.js
     frontend/home.js frontend/blogger.js
     admin/sessions.js admin/home.js
   )

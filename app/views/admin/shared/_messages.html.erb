@@ -16,15 +16,15 @@
         <tr>
           <% if message.target_type == "Reply" %>
             <td>
-              <span class="label label-success">新评论</span>
+              <span class="label label-success">文章评论</span>
             </td>
-            <td>
-              <%= link_to message.body, admin_message_path(message), title: message.body, class: "href_name" %>
+            <td class="href_name">
+              <%= link_to message.body, admin_message_path(message), title: message.body %>
             </td>
           <% else %>
             <td><%= message.target_type %></td>
-            <td>
-              <%= link_to message.body, "#", title: message.body, class: "href_name" %>
+            <td class="href_name">
+              <%= link_to message.body, "#", title: message.body %>
             </td>
           <% end %>
 
