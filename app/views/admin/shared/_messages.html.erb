@@ -14,10 +14,20 @@
     <tbody>
       <% messages.each do |message| %>
         <tr>
-          <td><%= message.target_type %></td>
-          <td>
-            <%= link_to message.body, "#", title: message.body, class: "href_name" %>
-          </td>
+          <% if message.target_type == "Reply" %>
+            <td>
+              <span class="label label-success">新评论</span>
+            </td>
+            <td>
+              <%= link_to message.body, admin_message_path(message), title: message.body, class: "href_name" %>
+            </td>
+          <% else %>
+            <td><%= message.target_type %></td>
+            <td>
+              <%= link_to message.body, "#", title: message.body, class: "href_name" %>
+            </td>
+          <% end %>
+
           <td><%= message.sender.human_name %></td>
           <td><%= message.is_read %></td>
           <td>
