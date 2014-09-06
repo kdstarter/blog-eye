@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 
   before_create :update_ranking
   before_create :init_name, if: Proc.new { |u| u.name.blank? }
+  after_create :create_default_category
   after_create :init_avatar, if: Proc.new { |u| u.email =~ %r(@gmail.com\z) }
 
   attr_accessor :login
@@ -99,5 +100,10 @@ class User < ActiveRecord::Base
   def init_avatar
     temp_url = "#{self.gravatar_url}?s=512"
     self.update_attributes(remote_avatar_url: temp_url)
+  end
+
+  def create_default_category
+    category = self.categories.build(name: '我的文章', description: '默认文章分类')
+    category.save
   end
 end

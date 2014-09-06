@@ -21,6 +21,8 @@ gem 'devise', '~> 3.3.0'
 gem 'devise-i18n', '~> 0.11.0'
 gem 'friendly_id', '~> 5.0.4'
 gem 'simple_form', '~> 3.1.0.rc2'
+gem 'paranoia', '~> 2.0.2'
+# gem 'acts_as_paranoid', '~> 0.5.0.beta1', github: 'ActsAsParanoid/acts_as_paranoid'
 
 gem 'rails-i18n', '>= 4.0.2'
 gem 'rails_config', '~> 0.4.2'
@@ -65,8 +67,8 @@ group :test do
   gem 'watir-webdriver', '~> 0.6.10'
   gem 'rspec-example_steps', '~> 3.0.2'
 
-  gem 'rspec-expectations', '~> 3.0.0'
   gem 'coveralls', '~> 0.7.1'
+  gem 'rspec-expectations', '~> 3.0.0'
   gem 'rails_best_practices', '~> 1.15.4'
 end
 

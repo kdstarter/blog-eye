@@ -18,15 +18,13 @@ class Reply < ActiveRecord::Base
 
   private
   def message_to_blogger
-    Message.create(
+    message = self.messages.build(
       is_read: false,
-      target_id: self.id,
-      target_type: self.class.to_s,
       user_id: self.blogger.id,
       from_user_id: self.user.id,
       body: self.content
-      # body: "#{self.user.human_name} 评论了你的文章 #{self.post.title}"
     )
+    message.save
   end
 
   def validate_sensitive
