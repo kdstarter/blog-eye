@@ -1,4 +1,6 @@
 class Reply < ActiveRecord::Base
+  acts_as_paranoid
+
   belongs_to :user
   belongs_to :post
 
@@ -9,8 +11,10 @@ class Reply < ActiveRecord::Base
   validates :post_id, presence: true
   validates :content, presence: true, allow_blank: false
 
+  default_scope { order('created_at desc') }
+
   before_save :validate_sensitive
-  after_create :message_to_blogger
+  after_create :message_to_blogger, if: Proc.new { |r| r.blogger.id != self.user.id }
 
   def published_time
     self.created_at.strftime('%Y-%m-%d %H:%M')

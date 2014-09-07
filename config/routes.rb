@@ -25,7 +25,12 @@ Rails.application.routes.draw do
 
     resources :posts
 
-    resources :replies
+    resources :replies do
+      member do
+        post 'hide', to: 'replies#hide'
+        post 'restore', to: 'replies#restore'
+      end
+    end
 
     resources :categories
 

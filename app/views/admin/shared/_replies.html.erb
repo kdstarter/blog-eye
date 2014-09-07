@@ -19,7 +19,8 @@
           <td><%= reply.user.human_name %></td>
           <td><%= reply.published_time %></td>
           <td>
-            <%= link_to '删 除', admin_reply_path(reply), data: { confirm: "你确定要删除这条评论吗？" }, method: :delete, remote: true, class: "btn btn-xs btn-danger" %>
+            <%= link_to '隐 藏', hide_admin_reply_path(reply), data: { confirm: "你确定要隐藏这条评论吗？" }, method: :post, remote: true, class: "btn btn-xs btn-danger" if !reply.destroyed? %>
+            <%= link_to '恢 复', restore_admin_reply_path(reply), data: { confirm: "你确定要恢复这条评论吗？" }, method: :post, remote: true, class: "btn btn-xs btn-default" if reply.destroyed? %>
           </td>
         </tr>
       <% end %>

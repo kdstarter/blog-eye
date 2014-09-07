@@ -6,7 +6,7 @@
         <th>标题</th>
         <th>分类</th>
         <th>语言</th>
-        <th>标签</th>
+        <th>收藏时间</th>
         <th>管理</th>
       </tr>
     </thead>
@@ -19,7 +19,7 @@
           </td>
           <td><%= code.category.name %></td>
           <td><%= code.language.code %></td>
-          <td><%= code.tags %></td>
+          <td><%= code.published_time %></td>
           <td>
             <%= link_to '编 辑', edit_admin_code_path(code), class: "btn btn-xs btn-primary" %>
             <%= link_to '删 除', admin_code_path(code), data: { confirm: "你确定要删除这篇文章吗？" }, method: :delete, class: "btn btn-xs btn-danger" %>

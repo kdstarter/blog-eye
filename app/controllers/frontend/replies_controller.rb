@@ -7,7 +7,7 @@ class Frontend::RepliesController < BloggerController
 
     if @reply.save
       flash[:notice] = '你已经成功提交了回复。'
-      redirect_to frontend_post_path(@post)
+      redirect_to "#{frontend_post_path(@post)}#reply#{@reply.id}"
     else
       add_error_to_flash
       redirect_to frontend_post_path(@post)

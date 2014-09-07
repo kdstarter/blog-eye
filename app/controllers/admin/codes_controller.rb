@@ -3,7 +3,7 @@ class Admin::CodesController < AdminController
 
   def index
     @codes = current_user.codes
-    @codes = @codes.page(params[:page])
+    @codes = @codes.page(params[:page]).per(15)
   end
 
   def show

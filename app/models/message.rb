@@ -10,4 +10,6 @@ class Message < ActiveRecord::Base
   validates :from_user_id, presence: true
   # validates :target, presence: true
 
+  default_scope { order('created_at desc') }
+
 end

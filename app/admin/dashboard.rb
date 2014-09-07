@@ -14,7 +14,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Recent Users" do
           ul do
-            User.order("created_at desc").map do |user|
+            User.order('created_at desc').limit(10).map do |user|
               li link_to(user.email, system_user_path(user))
             end
           end
@@ -24,7 +24,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Recent Posts" do
           ul do
-            Post.order("created_at desc").map do |post|
+            Post.limit(10).map do |post|
               omited_title = post.title.truncate(99, separator: ' ', omission: '...')
               li link_to(omited_title, system_post_path(post))
             end
@@ -35,7 +35,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Recent Replies" do
           ul do
-            Reply.order("created_at desc").map do |reply|
+            Reply.limit(10).map do |reply|
               omited_content = reply.content.truncate(99, separator: ' ', omission: '...')
               li link_to(omited_content, system_reply_path(reply))
             end

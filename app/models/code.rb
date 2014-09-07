@@ -10,6 +10,8 @@ class Code < ActiveRecord::Base
   validates :title, presence: true, allow_blank: false
   validates :content, presence: true, allow_blank: false
 
+  default_scope { order('created_at desc') }
+
   before_save :validate_tags
 
   def published_time

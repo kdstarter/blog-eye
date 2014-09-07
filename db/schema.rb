@@ -127,10 +127,7 @@ ActiveRecord::Schema.define(version: 20140906172325) do
     t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "deleted_at"
   end
-
-  add_index "posts", ["deleted_at"], name: "index_posts_on_deleted_at", using: :btree
 
   create_table "replies", force: true do |t|
     t.integer  "user_id"
@@ -140,7 +137,10 @@ ActiveRecord::Schema.define(version: 20140906172325) do
     t.boolean  "is_public",     default: true
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
+
+  add_index "replies", ["deleted_at"], name: "index_replies_on_deleted_at", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",   null: false

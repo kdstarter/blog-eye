@@ -1,6 +1,4 @@
 class Post < ActiveRecord::Base
-  acts_as_paranoid
-
   belongs_to :user
   belongs_to :point
   belongs_to :category
@@ -15,6 +13,8 @@ class Post < ActiveRecord::Base
   validates :content, presence: true, allow_blank: false
 
   SOURCES = ['原创或翻译', '转载或分享']
+
+  default_scope { order('created_at desc') }
 
   before_save :validate_tags, :validate_sensitive?
 
