@@ -16,13 +16,13 @@ td {
 }
 
 .site-footer {
+  color: #777;
+  line-height: 1.5;
   text-align: center;
   position: relative;
   margin-top: 40px;
   padding-top: 40px;
   padding-bottom: 40px;
-  line-height: 1.5;
-  color: #777;
   border-top: 1px solid #eee;
 }
 
@@ -30,12 +30,33 @@ td {
   @include href_ellipsis();
 }
 
+.well {
+  background-color: $bgcolor-fc;
+}
+
+.panel-heading {
+  background-color: $bgcolor-fb;
+}
+
+.panel-default>.panel-heading {
+  background-color: $bgcolor-fb;
+}
+
 .panel-body {
-  background-color: $text-bgcolor;
+  background-color: $bgcolor-fc;
+}
+
+.panel-footer {
+  background-color: $bgcolor-fa;
 }
 
 .form-control {
-  background-color: $text-bgcolor;
+  background-color: $bgcolor-fc;
+}
+
+.panel-group .panel + .panel {
+  margin-top: 0px;
+  border-top: 0px;
 }
 
 .display_none {

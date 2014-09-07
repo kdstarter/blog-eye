@@ -6,17 +6,20 @@
   <div class="container">
     <nav class="blog-nav text_bold">
 
-      <a class="<%= 'active' if params[:controller] == 'frontend/home' %>" href="<%= frontend_root_path %>"><%= Settings.site_name %></a>
+      <a class="<%= 'active' if action_name == 'index' && params[:controller] == 'frontend/home' %>" href="<%= frontend_root_path %>"><%= Settings.site_name %></a>
 
       <% if @blogger && @blogger != current_user %>
+        <% if current_user %>
+          <a href="<%= frontend_path(current_user) %>">我的主页</a>
+        <% end %>
+
+        <!-- visit other's blogger -->
         <a class="<%= 'active' if controller.class.superclass.to_s == 'BloggerController' %>" href="<%= frontend_path(@blogger) %>"><%= @blogger.human_name %></a>
       <% elsif current_user %>
         <a class="<%= 'active' if controller.class.superclass.to_s == 'BloggerController' %>" href="<%= frontend_path(current_user) %>">我的主页</a>
       <% end %>
 
-      <a class="" href="#">博 客</a>
-      <a class="" href="#">新功能</a>
-      <a class="" href="#">关 于</a>
+      <a class="<%= 'active' if action_name == 'about_us' && params[:controller] == 'frontend/home' %>" href="<%= frontend_about_us_path %>">关于本站</a>
 
       <span class="pull-right">
         <% if current_user %>

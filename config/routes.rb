@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   # devise_for :users, path: 'user'
-  devise_for :users, path: 'user', controllers: {registrations: "users/registrations"}
+  devise_for :users, path: 'user', controllers: {registrations: 'users/registrations'}
   devise_scope :user do
     post '/admin/is_uid_exist', to: 'users/registrations#is_uid_exist'
   end
@@ -42,12 +42,14 @@ Rails.application.routes.draw do
   namespace :frontend, path: '/' do
     root 'home#index'
 
+    get '/about_us', to: 'home#about_us'
+
     resources :posts do
       resources :replies
     end
 
-    scope ":uid" do
-      get "/", to: 'users#show'
+    scope ':uid' do
+      get '/', to: 'users#show'
       get '/profile', to: 'users#profile'
 
       resources :categories

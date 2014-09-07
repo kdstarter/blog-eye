@@ -32,7 +32,7 @@
   .blog-post {
     margin: auto;
     margin-bottom: 10px;
-    padding: 5px 5px 5px;
+    padding: 0px 5px 15px 5px;
     border-bottom: 1px solid #e3e3e3;
   }
 
@@ -44,7 +44,7 @@
   .post_panel {
     padding: 10px;
     margin: 0 0 20px 0;
-    background-color: #fafafa;
+    // background-color: $bgcolor-fa;
   }
 
   .panel_post {
@@ -63,7 +63,7 @@
         margin-bottom: 10px;
         margin-right: 56px;
         margin: -10px -10px 0;
-        background: #f9f9f9;
+        // background: $bgcolor-f9;
         border-radius: 3px 3px 0 0;
         border-bottom: 1px solid #eaeaea;
 
@@ -108,7 +108,7 @@
 
       .post_reply {
         padding: 8px 10px;
-        background-color: #f9f9f9;
+        background-color: $bgcolor-fb;
         border-bottom: 1px solid #f0f0f0;
 
         .infos {

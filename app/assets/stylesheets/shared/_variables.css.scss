@@ -1,5 +1,8 @@
 
-$text-bgcolor: rgb(249, 249, 249);
+$bgcolor-f9: #f9f9f9;
+$bgcolor-fa: #fafafa;
+$bgcolor-fb: #fbfbfb;
+$bgcolor-fc: #fcfcfc;
 
 @mixin href_ellipsis() {
   overflow: hidden;

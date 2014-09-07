@@ -47,7 +47,7 @@ h6, .h6 {
     position: relative;
     display: inline-block;
     padding: 10px 5px;
-    font-weight: 500;
+    font-weight: 400;
     color: #cdddeb;
   }
 
@@ -144,12 +144,12 @@ h6, .h6 {
   }
 
   .post-title {
-    font-size: larger;
+    font-size: large;
     margin-bottom: 5px;
   }
 
   .post-meta {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     color: #999;
   }
 
@@ -166,7 +166,7 @@ h6, .h6 {
   padding: 40px 0;
   color: #999;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: $bgcolor-f9;
   border-top: 1px solid #e5e5e5;
 }
 .blog-footer p:last-child {

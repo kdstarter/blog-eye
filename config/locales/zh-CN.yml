@@ -238,15 +238,15 @@ zh-CN:
     errors:
       <<: *errors
     models:
-      message: 消息通知
-      user: 博客用户
+      message: 通知
+      user: 用户
       admin_user: 管理员
-      category: 文章分类
-      code: 收藏代码
-      language: 编程语言
-      point: 全站分类
-      post: 用户文章
-      reply: 文章评论
+      category: 分类
+      code: 代码
+      language: 语言
+      point: 节点
+      post: 文章
+      reply: 评论
     attributes:
       user:
         id: 编号

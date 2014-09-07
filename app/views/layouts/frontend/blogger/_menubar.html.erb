@@ -20,12 +20,29 @@
         </div>
 
         <div class="ranking">
-          第<span class="ranking_number"><%= " #{@blogger.ranking} " %></span>位会员
+          第<span class="ranking_number">
+            <%= " #{@blogger.ranking} " %>
+          </span>位会员
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="text_bold">
-          <%= link_to "查看详细资料", frontend_profile_path(@blogger) %>
-        </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#code_collapse">
+          博主信息
+        </a>
+      </h4>
+    </div>
+
+    <div id="code_collapse" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <ul>
+          <li><%= link_to "详细信息", frontend_profile_path(@blogger) %></li>
+          <li><%= link_to "代码收藏 (#{@blogger.codes.count})", frontend_codes_path(@blogger) %></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -48,24 +65,6 @@
               <%= link_to "#{category.name} (#{Post.where(category: category).count})", frontend_category_path(@blogger, category), title: "分类 #{category.name}" %>
             </li>
           <% end %>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#code_collapse">
-          个人收藏
-        </a>
-      </h4>
-    </div>
-
-    <div id="code_collapse" class="panel-collapse collapse in">
-      <div class="panel-body">
-        <ul>
-          <li><%= link_to "代码收藏 (#{@blogger.codes.count})", frontend_codes_path(@blogger) %></li>
         </ul>
       </div>
     </div>
