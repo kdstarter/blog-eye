@@ -12,4 +12,8 @@ class Message < ActiveRecord::Base
 
   default_scope { order('created_at desc') }
 
+  def created_time
+    self.created_at.strftime('%Y-%m-%d %H:%M')
+  end
+
 end

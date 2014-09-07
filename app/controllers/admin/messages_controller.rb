@@ -2,11 +2,12 @@
 class Admin::MessagesController < AdminController
 
   def index
-    @messages = @messages.order('created_at desc').page(params[:page]).per(15)
+    @messages = @messages.page(params[:page]).per(15)
   end
 
   def show
     @message = Message.find(params[:id])
+    @message.update_attributes(is_read: true)
 
     case @message.target_type
     when 'Reply'
@@ -19,7 +20,7 @@ class Admin::MessagesController < AdminController
   end
 
   def mark_as_read
-    @message = @messages.find(params[:message_id] || params[:id])
+    @message = @messages.find(params[:id])
 
     respond_to do |format|
       if @message.update_attributes(is_read: true)

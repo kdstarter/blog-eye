@@ -8,7 +8,7 @@ class Frontend::PostsController < BloggerController
   def show
     @post = @posts.find(params[:id])
     @reply = Reply.new(post_id: @post.id)
-    @replies = @post.replies.order('created_at asc')
+    @replies = @post.replies
   end
 
   protected

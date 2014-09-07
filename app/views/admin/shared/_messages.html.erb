@@ -6,7 +6,7 @@
         <th>类型</th>
         <th>内容</th>
         <th>发送人</th>
-        <th>已读</th>
+        <th>通知时间</th>
         <th>管理</th>
       </tr>
     </thead>
@@ -27,12 +27,14 @@
             <%= link_to message.sender.human_name, frontend_path(message.sender), target: "_blank" %>
           </td>
           <td>
-            <div class="btn-group">
-              <button type="button" class="btn btn-xs btn-success btn_mark_read">未读</button>
-            </div>
+            <%= message.created_time %>
           </td>
           <td>
-            <%= link_to '删 除', admin_message_path(message), data: { confirm: "你确定要删除这条消息吗？" }, method: :delete, class: "btn btn-xs btn-danger" %>
+            <% if message.is_read %>
+              <button type="button" class="btn btn-xs" disabled="disabled">已读</button>
+            <% else %>
+              <button type="button" class="btn btn-xs btn-success btn_mark_read">标已读</button>
+            <% end %>
           </td>
         </tr>
       <% end %>

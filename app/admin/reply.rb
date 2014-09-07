@@ -14,6 +14,7 @@ ActiveAdmin.register Reply do
     column :is_public
     column :content
     column :created_at
+    column :deleted_at
     actions
   end
 

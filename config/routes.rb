@@ -20,7 +20,9 @@ Rails.application.routes.draw do
     post '/update_profile', to: 'home#update_profile'
 
     resources :messages do
-      post 'mark_as_read', to: 'messages#mark_as_read'
+      member do
+        post 'mark_as_read', to: 'messages#mark_as_read'
+      end
     end
 
     resources :posts

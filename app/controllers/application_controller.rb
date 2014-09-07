@@ -7,14 +7,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :load_messages, if: Proc.new { current_user.present? }
 
   def title
     site_intro
-  end
-
-  def load_messages
-    @messages = current_user.messages.unreads
   end
 
   protected

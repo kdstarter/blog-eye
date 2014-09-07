@@ -1,4 +1,4 @@
-class AdminController < ApplicationController
+class AdminController < FrontendController
   include ApplicationHelper
   include AdminHelper
 

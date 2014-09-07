@@ -32,7 +32,7 @@
       一共 <b><%= @replies.count %></b> 条回复
     </div>
 
-    <% @replies.each_with_index do |reply, index| %>
+    <% @replies.reverse.each_with_index do |reply, index| %>
       <% replier = reply.user %>
       <div class="post_reply" id="reply<%= reply.id %>">
         <div class="pull-left">
