@@ -40,8 +40,8 @@ gem 'carrierwave-qiniu', '~> 0.1.3'
 gem 'redis-rails', '~> 4.0.0'
 gem 'redis-namespace', '~> 1.4.1'
 gem 'redis-semaphore', '~> 0.2.2'
-# gem 'rack-cache', '~> 1.2'
-# gem 'redis-rack-cache', '~> 1.2.2'
+gem 'daemons', '~> 1.1.9'
+gem 'delayed_job_active_record', '~> 4.0.2'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'

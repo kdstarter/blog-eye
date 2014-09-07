@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   before_create :update_ranking
   before_create :init_name, if: Proc.new { |u| u.name.blank? }
   after_create :create_default_category
-  after_create :init_avatar, if: Proc.new { |u| u.email =~ %r(@gmail.com\z) }
+  after_create :init_avatar#, if: Proc.new { |u| u.email =~ %r(@gmail.com\z) }
 
   attr_accessor :login
 
@@ -98,9 +98,11 @@ class User < ActiveRecord::Base
   end
 
   def init_avatar
+    return if self.avatar.present?
     temp_url = "#{self.gravatar_url}?s=512"
     self.update_attributes(remote_avatar_url: temp_url)
   end
+  handle_asynchronously :init_avatar, queue: 'init_avatar', priority: 20, run_at: Proc.new { 0.1.seconds.from_now }
 
   def create_default_category
     category = self.categories.build(name: '我的文章', description: '默认文章分类')
