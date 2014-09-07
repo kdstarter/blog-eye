@@ -19,6 +19,8 @@ gem 'font-awesome-sass-rails', '~> 3.0.2.2'
 
 gem 'devise', '~> 3.3.0'
 gem 'devise-i18n', '~> 0.11.0'
+gem 'devise-async', '~> 0.9.0'
+
 gem 'friendly_id', '~> 5.0.4'
 gem 'simple_form', '~> 3.1.0.rc2'
 gem 'paranoia', '~> 2.0.2'

@@ -15,9 +15,14 @@ Make sure mysql already started.
 ```bash
 git clone git@github.com:agilejzl/blog-eye.git
 cd blog-eye
-# A ruby script to RTF
+
+# A ruby script to make project RTF
 ruby setup.rb
-rails s
+# Then change config at database.yml and settings.yml
+
+RAILS_ENV=development rails s
+# start delayed_job for async sending email and uploading photo
+RAILS_ENV=development bin/delayed_job start
 ```
 
 ## How to Test
@@ -27,4 +32,7 @@ We use rspec & capybara to test.
 RAILS_ENV=test rails s
 # Make sure already installed firefox
 bundle exec rspec -fd
+
+# Or test specified directories
+bundle exec rspec -fd ./spec/features
 ```

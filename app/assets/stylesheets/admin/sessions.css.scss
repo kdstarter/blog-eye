@@ -1,14 +1,17 @@
 
 @import "shared/utils";
 
-.alert-info {
-  margin-top: 30px;
+.container {
+  >.alert-info, >.alert-danger {
+    margin-top: 30px;
+    margin-bottom: 0px;
+  }
 }
 
 .session-form {
   margin: 0 auto;
   max-width: 400px;
-  padding: 20px 0px 15px 0px;
+  padding: 45px 0px 15px 0px;
 }
 .session-form .heading,
 .session-form .checkbox {
