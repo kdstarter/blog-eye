@@ -9,7 +9,6 @@ ActiveAdmin.register Category do
     selectable_column
     column :id
     column :user_id
-    column :point_id
     column :name
     column :description
     column :created_at

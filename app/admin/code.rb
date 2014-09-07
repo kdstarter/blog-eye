@@ -4,4 +4,13 @@ ActiveAdmin.register Code do
     permitted
   end
 
+  index do
+    selectable_column
+    column :id
+    column :title
+    column :tags
+    column :content
+    column :created_at
+    actions
+  end
 end

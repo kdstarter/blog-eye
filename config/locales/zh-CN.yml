@@ -218,7 +218,7 @@ zh-CN:
     am: 上午
     formats:
       default: ! '%Y年%b%d日 %A %H:%M:%S %Z'
-      long: ! '%Y年%b%d日 %H:%M'
+      long: ! '%b%d日 %H:%M'
       short: ! '%b%d日 %H:%M'
     pm: 下午
 
@@ -272,6 +272,7 @@ zh-CN:
       truncate: "&hellip;"
 
   active_admin:
+    dashboard: 控制台
     devise:
       password_confirmation:
         title: 确认密码

@@ -6,16 +6,13 @@ ActiveAdmin.register AdminUser do
     # selectable_column
     column :id
     column :email
-    column :current_sign_in_at
+    column :last_sign_in_at
+    column :failed_attempts
     column :sign_in_count
     column :created_at
+    column :locked_at
     actions
   end
-
-  filter :email
-  filter :current_sign_in_at
-  filter :sign_in_count
-  filter :created_at
 
   form do |f|
     f.inputs "Admin Details" do

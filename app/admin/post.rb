@@ -13,11 +13,8 @@ ActiveAdmin.register Post do
     column :user_id
     column :point_id
     column :category_id
-    column :source
     column :title
     column :tags
-    column :visits
-    column :likes
     column :created_at
     column :status
     actions
