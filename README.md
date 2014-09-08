@@ -15,9 +15,7 @@ Make sure mysql already started.
 ```bash
 git clone git@github.com:agilejzl/blog-eye.git
 cd blog-eye
-
-# A ruby script to make project RTF
-ruby setup.rb
+ruby setup.rb # A ruby script to make project RTF
 # Then change config at database.yml and settings.yml
 
 RAILS_ENV=development rails s
