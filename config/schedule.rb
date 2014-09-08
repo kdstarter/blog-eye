@@ -29,6 +29,6 @@ else
   set :job_template, "/usr/local/bin/bash -l -c ':job'" # for linux
 end
 
-every 30.minutes do
+every 60.minutes do
   rake "page:check_sensitive"
 end

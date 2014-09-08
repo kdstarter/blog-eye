@@ -11,9 +11,15 @@ user:
   skip_captcha: true
 
 test:
-  site_url: http://localhost:3000
+  site_url: 'http://localhost:3000'
 
-site_mailer: 
+sensitive_pages:
+  - 'http://localhost:3000/'
+
+site_mailer:
+  admin_user: agilejzl@gmail.com
+  from: blog_eye@126.com
+  return_path: blog_eye@126.com
   address: smtp.126.com
   user_name: blog_eye@126.com
   password: xxx
