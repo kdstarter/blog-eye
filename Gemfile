@@ -26,6 +26,9 @@ gem 'simple_form', '~> 3.1.0.rc2'
 gem 'paranoia', '~> 2.0.2'
 gem 'browser', '~> 0.6.0'
 
+gem 'whenever', '~> 0.9.2', require: false
+gem 'nokogiri', '~> 1.6.3.1', require: false
+
 gem 'rails-i18n', '>= 4.0.2'
 gem 'rails_config', '~> 0.4.2'
 gem 'kaminari', '~> 0.16.1'
