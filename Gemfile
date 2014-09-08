@@ -24,7 +24,7 @@ gem 'devise-async', '~> 0.9.0'
 gem 'friendly_id', '~> 5.0.4'
 gem 'simple_form', '~> 3.1.0.rc2'
 gem 'paranoia', '~> 2.0.2'
-# gem 'acts_as_paranoid', '~> 0.5.0.beta1', github: 'ActsAsParanoid/acts_as_paranoid'
+gem 'browser', '~> 0.6.0'
 
 gem 'rails-i18n', '>= 4.0.2'
 gem 'rails_config', '~> 0.4.2'

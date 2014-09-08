@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :check_browser
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def title
@@ -13,6 +14,13 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+  def check_browser
+    if !browser.modern? && !cookies[:is_noticed_broswer]
+      cookies[:is_noticed_broswer] = { value: true, expires: 3.day.from_now }
+      flash[:alert] = "你使用的浏览器太老了，本站的很多Html5特性不支持。"
+    end
+  end
+
   # configure devise permitted parameters
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u|
