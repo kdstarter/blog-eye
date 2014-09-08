@@ -27,8 +27,15 @@ class ApplicationController < ActionController::Base
   end
 
   # for user devise session
+  def after_sign_up_path_for(resource_or_scope)
+    session[:redirect_url] || super
+  end
+
   def after_sign_in_path_for(resource_or_scope)
     if resource.class.to_s == "User"
+      redirect_url = session[:redirect_url]
+      return redirect_url unless redirect_url.blank?
+
       if @messages && @messages.count > 0
         admin_messages_path
       else
