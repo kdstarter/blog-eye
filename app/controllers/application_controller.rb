@@ -1,3 +1,4 @@
+
 class ApplicationController < ActionController::Base
   include ApplicationHelper
   include SimpleCaptcha::ControllerHelpers
@@ -16,8 +17,8 @@ class ApplicationController < ActionController::Base
   protected
   def check_browser
     if !browser.modern? && !cookies[:is_noticed_broswer]
-      cookies[:is_noticed_broswer] = { value: true, expires: 3.day.from_now }
-      flash[:alert] = "你使用的浏览器太老了，本站的很多Html5特性不支持。"
+      cookies[:is_noticed_broswer] = { value: true, expires: 1.hour.from_now }
+      flash[:alert] = "你使用的浏览器太老了，本站的很多Html5特性不支持，赶快升级吧！"
     end
   end
 
