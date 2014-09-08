@@ -8,18 +8,18 @@
 
       <a class="<%= 'active' if action_name == 'index' && params[:controller] == 'frontend/home' %>" href="<%= frontend_root_path %>"><%= Settings.site_name %></a>
 
-      <% if @blogger && @blogger != current_user %>
-        <% if current_user %>
-          <a href="<%= frontend_path(current_user) %>">我的主页</a>
-        <% end %>
-
-        <!-- visit other's blogger -->
-        <a class="<%= 'active' if controller.class.superclass.to_s == 'BloggerController' %>" href="<%= frontend_path(@blogger) %>"><%= @blogger.human_name %></a>
-      <% elsif current_user %>
-        <a class="<%= 'active' if controller.class.superclass.to_s == 'BloggerController' %>" href="<%= frontend_path(current_user) %>">我的主页</a>
+      <% if current_user %>
+        <a class="<%= 'active' if @blogger == current_user && controller.class.superclass.to_s == 'BloggerController' %>" href="<%= frontend_path(current_user) %>">我的主页</a>
+      <% else %>
+        <a href="<%= new_user_session_path %>">我的博客</a>
       <% end %>
 
-      <a class="<%= 'active' if action_name == 'about_us' && params[:controller] == 'frontend/home' %>" href="<%= frontend_about_us_path %>">关于本站</a>
+      <% if @blogger && @blogger != current_user %>
+        <!-- visit other's blogger -->
+        <a class="<%= 'active' if controller.class.superclass.to_s == 'BloggerController' %>" href="<%= frontend_path(@blogger) %>"><%= @blogger.human_name %></a>
+      <% end %>
+
+      <a class="<%= 'active' if action_name == 'about_us' && params[:controller] == 'frontend/home' %>" href="<%= frontend_about_us_path %>">关 于</a>
 
       <span class="pull-right">
         <% if current_user %>
@@ -29,11 +29,11 @@
 
           <a class="link_admin_home <%= 'active' if params[:controller].include?('admin/') && controller.class.to_s != "Admin::MessagesController" %>" href="<%= admin_root_path %>"><%= current_user.human_name %></a>
 
-          <a id="link_sign_out" class="" href="<%= destroy_user_session_path %>">注销</a>
+          <a id="link_sign_out" class="" href="<%= destroy_user_session_path %>">注 销</a>
         <% else %>
-          <a id="link_sign_up" class="<%= 'active' if params[:controller] == 'users/registrations' %>" href="<%= new_user_registration_path %>">注册</a>
+          <a id="link_sign_up" class="<%= 'active' if params[:controller] == 'users/registrations' %>" href="<%= new_user_registration_path %>">注 册</a>
 
-          <a id="link_sign_in" class="<%= 'active' if params[:controller] == 'devise/sessions' %>" href="<%= new_user_session_path %>">登录</a>
+          <a id="link_sign_in" class="<%= 'active' if params[:controller] == 'devise/sessions' %>" href="<%= new_user_session_path %>">登 录</a>
         <% end %>
       </span>
     </nav>
