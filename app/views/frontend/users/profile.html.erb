@@ -2,7 +2,11 @@
 <div class="row">
   <label class="col-sm-3"> </label>
   <div class="col-sm-9">
-    <h3>个人资料</h3>
+    <% if @blogger != current_user %>
+      <h4><%= link_to @blogger.human_name, url_for %> 的个人资料</h4>
+    <% else %>
+      <h4><%= link_to @blogger.human_name, admin_profile_path %> 的个人资料</h4>
+    <% end %>
   </div>
 </div>
 
