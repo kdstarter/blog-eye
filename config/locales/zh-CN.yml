@@ -248,8 +248,27 @@ zh-CN:
       post: 文章
       reply: 评论
     attributes:
+      admin_user:
+        id: ID
+        created_at: 创建时间
+        updated_at: 更新时间
+        email: Email
+        encrypted_password: 加密后的密码
+        reset_password_token: 重置密码Token
+        reset_password_sent_at: 重置密码时间
+        remember_created_at: 上次免登录于
+        sign_in_count: 登录次数
+        current_sign_in_at: 本次登录时间
+        last_sign_in_at: 上次登录时间
+        current_sign_in_ip: 当前登录IP
+        last_sign_in_ip: 上次登录IP
+        failed_attempts: 登录失败次数
+        unlock_token: 解锁码
+        locked_at: 被锁时间
       user:
-        id: 编号
+        id: ID
+        created_at: 创建时间
+        updated_at: 更新时间
         uid: 用户编号
         name: 真实姓名
         ranking: 排名
@@ -262,6 +281,109 @@ zh-CN:
         signature: 个人签名
         avatar: 个人头像
         description: 详细资料
+        is_email_public: 公开邮箱
+        encrypted_password: 加密后的密码
+        reset_password_token: 重置密码Token
+        reset_password_sent_at: 重置密码时间
+        remember_created_at: 上次免登录时间
+        sign_in_count: 登录次数
+        current_sign_in_at: 本次登录时间
+        last_sign_in_at: 上次登录时间
+        current_sign_in_ip: 当前登录IP
+        last_sign_in_ip: 上次登录IP
+        failed_attempts: 登录失败次数
+        unlock_token: 解锁码
+        locked_at: 被锁时间
+        messages: 消息
+        posts: 文章
+        codes: 代码
+        replies: 评论
+        categories: 分类
+      code:
+        id: ID
+        created_at: 创建时间
+        updated_at: 更新时间
+        title:  标题
+        tags: 标签
+        content: 内容
+        source: 来源
+        user: 用户
+        language: 语言
+        category: 分类
+        user_id: 用户
+        language_id: 语言
+        category_id: 分类
+      category:
+        id: ID
+        created_at: 创建时间
+        updated_at: 更新时间
+        name: 名称
+        description: 描述
+        user: 用户
+        user_id: 用户
+        posts: 文章
+        codes: 代码
+      post:
+        id: ID
+        created_at: 创建时间
+        updated_at: 更新时间
+        title: 标题
+        content: 内容
+        tags: 标签
+        source: 来源
+        status: 状态
+        visits: 访问数
+        likes: 点赞数
+        user: 用户
+        point: 节点
+        category: 分类
+        replies: 评论
+        user_id: 用户
+        point_id: 节点
+        category_id: 分类
+      point:
+        id: ID
+        created_at: 创建时间
+        updated_at: 更新时间
+        name: 名称
+        code: 程序码
+        description: 描述
+        posts: 文章
+      reply:
+        id: ID
+        created_at: 创建时间
+        updated_at: 更新时间
+        content: 内容
+        is_public: 是否公开
+        deleted_at: 隐藏时间
+        last_reply_id: 回复的ID
+        user: 评论人
+        post: 文章
+        blogger: 博主
+        messages: 消息
+        user_id: 评论人
+        post_id: 文章
+      language:
+        id: ID
+        created_at: 创建时间
+        updated_at: 更新时间
+        name: 名称
+        code: 程序码
+        description: 描述
+        user_codes: 代码
+      message:
+        id: ID
+        created_at: 创建时间
+        updated_at: 更新时间
+        code: 程序码
+        body: 消息内容
+        target_id: 目标ID
+        target_type: 目标类型
+        is_read: 已读
+        user: 接收人
+        sender: 发送人
+        user_id: 接收人
+        from_user_id: 发送人
 
   views:
     pagination:

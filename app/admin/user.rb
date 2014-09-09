@@ -11,14 +11,14 @@ ActiveAdmin.register User do
    index do
     # selectable_column
     column :id # column_id
-    column :ranking
     column :visits
     column :uid
     column :email
     column :name
     column :city_name
-    column :homepage
     column :company
+    column :created_at
+    column :locked_at
     actions
   end
 

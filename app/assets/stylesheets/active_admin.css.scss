@@ -27,3 +27,16 @@ table {
     @include href_ellipsis();
   }
 }
+
+.panel > div {
+  padding: 3px 15px 1px 15px;
+}
+
+.panel_contents {
+  ul {
+    li {
+      font-size: 1.1em;
+      padding: 0px 0px 5px 0px;
+    }
+  }
+}

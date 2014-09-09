@@ -6,9 +6,9 @@ ActiveAdmin.register_page "Dashboard" do
 
     columns do
       column do
-        panel "Recent Users" do
+        panel "最近的用户" do
           ul do
-            User.order('created_at desc').limit(15).map do |user|
+            User.order('created_at desc').limit(13).map do |user|
               li link_to(user.email, system_user_path(user))
             end
           end
@@ -16,9 +16,9 @@ ActiveAdmin.register_page "Dashboard" do
       end
 
       column do
-        panel "Recent Posts" do
+        panel "最近的文章" do
           ul do
-            Post.limit(15).map do |post|
+            Post.limit(13).map do |post|
               omited_title = post.title.truncate(99, separator: ' ', omission: '...')
               li link_to(omited_title, system_post_path(post))
             end
@@ -27,9 +27,9 @@ ActiveAdmin.register_page "Dashboard" do
       end
 
       column do
-        panel "Recent Codes" do
+        panel "最近的代码" do
           ul do
-            Code.limit(15).map do |code|
+            Code.limit(13).map do |code|
               omited_title = code.title.truncate(99, separator: ' ', omission: '...')
               li link_to(omited_title, system_code_path(code))
             end
