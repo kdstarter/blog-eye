@@ -36,6 +36,10 @@ td {
 
 .panel-heading {
   background-color: $bgcolor-fd;
+
+  .panel-title {
+    font-size: 14px;
+  }
 }
 
 .panel-default>.panel-heading {
