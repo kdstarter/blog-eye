@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The change you wanted was rejected (422)</title>
+  <title>你的请求被拒绝 (422)</title>
+  <meta content="text/html;charset=utf-8" http-equiv="content-type">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   body {
@@ -10,6 +12,10 @@
     text-align: center;
     font-family: arial, sans-serif;
     margin: 0;
+  }
+
+  p {
+    line-height: 1.8;
   }
 
   div.dialog {
@@ -58,10 +64,14 @@
   <!-- This file lives in public/422.html -->
   <div class="dialog">
     <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
+      <h1>你的请求被拒绝 (422)</h1>
+      <p>
+        很抱歉，也许你请求了没有权限的操作。<br>
+        <a href="javascript: window.history.go(-1);">点这里返回</a>
+        或者 <a href="/">返回首页</a>。
+      </p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <p>如果是系统错误，会自动报告给管理员的。</p>
   </div>
 </body>
 </html>

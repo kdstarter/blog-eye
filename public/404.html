@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>你要访问的页面不存在 (404)</title>
+  <meta content="text/html;charset=utf-8" http-equiv="content-type">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   body {
@@ -10,6 +12,10 @@
     text-align: center;
     font-family: arial, sans-serif;
     margin: 0;
+  }
+
+  p {
+    line-height: 1.8;
   }
 
   div.dialog {
@@ -58,10 +64,14 @@
   <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+      <h1>你要访问的页面不存在 (404)</h1>
+      <p>
+        你敲错了网址或者这个页面已经移除。<br>
+        <a href="javascript: window.history.go(-1);">点这里返回</a>
+        或者 <a href="/">返回首页</a>。
+      </p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <p>另外你不用担心，错误会自动报告给管理员的。</p>
   </div>
 </body>
 </html>
