@@ -7,8 +7,11 @@ site_domain: blog-eye.com
 baidu:
   tongji_ua: xxx
 
+bugsnag:
+  api_key: xxx
+
 user:
-  skip_captcha: true
+  skip_captcha: false
 
 test:
   site_url: 'http://localhost:3000'
