@@ -30,6 +30,9 @@ gem 'bugsnag', '~> 2.4.1'
 gem 'whenever', '~> 0.9.2', require: false
 gem 'nokogiri', '~> 1.6.3.1', require: false
 
+gem 'actionpack-action_caching', '~> 1.1.1'
+# gem 'actionpack-page_caching', '~> 1.0.2'
+
 gem 'rails-i18n', '>= 4.0.2'
 gem 'rails_config', '~> 0.4.2'
 gem 'kaminari', '~> 0.16.1'
