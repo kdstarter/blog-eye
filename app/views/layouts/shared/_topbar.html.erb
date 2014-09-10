@@ -24,7 +24,7 @@
       <span class="pull-right">
         <% if current_user %>
           <a class="link_admin_messages <%= 'active' if controller.class.to_s == "Admin::MessagesController" %>" href="<%= admin_messages_path %>">
-            <span class="label label-success"><%= @messages.unreads.count %></span>
+            <span class="label label-success"><%= @messages.unreads.count if @messages.present? %></span>
           </a>
 
           <a class="link_admin_home <%= 'active' if params[:controller].include?('admin/') && controller.class.to_s != "Admin::MessagesController" %>" href="<%= admin_root_path %>"><%= current_user.human_name %></a>

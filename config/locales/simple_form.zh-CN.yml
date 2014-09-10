@@ -47,7 +47,7 @@
         name: 真实姓名
         email: 你的邮箱地址
         login: 用户名或Email
-        password: 设置你的密码
+        password: 你的登录密码
         password_confirmation: 确认上面的密码
         signature: 用一句话来彰显个性
         city_name: 用中文填写所在城市
