@@ -9,12 +9,17 @@ class ApplicationController < ActionController::Base
 
   before_action :check_browser
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :load_messages, if: Proc.new { current_user.present? && !controller_path.start_with?("system") }
 
   def title
     site_intro
   end
 
   protected
+  def load_messages
+    @messages = current_user.messages
+  end
+
   def check_browser
     if !browser.modern? && !cookies[:is_noticed_broswer]
       cookies[:is_noticed_broswer] = { value: true, expires: 1.hour.from_now }

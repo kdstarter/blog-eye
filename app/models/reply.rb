@@ -18,14 +18,24 @@ class Reply < ActiveRecord::Base
   default_scope { order('created_at desc') }
 
   before_save :validate_sensitive
-  after_create :message_to_blogger, if: Proc.new { |r| r.blogger.id != self.user.id }
+  after_create :message_to_at_users
 
   def published_time
     self.created_at.strftime('%Y-%m-%d %H:%M')
   end
 
-  private
+  def message_to_at_user(at_user)
+    message = self.messages.build(
+      is_read: false,
+      user_id: at_user.id,
+      from_user_id: self.user.id,
+      body: "#{self.user.uid} 在评论中提到了你，快去查看吧！"
+    )
+    message.save
+  end
+
   def message_to_blogger
+    return if self.blogger.id != self.user.id
     message = self.messages.build(
       is_read: false,
       user_id: self.blogger.id,
@@ -33,6 +43,19 @@ class Reply < ActiveRecord::Base
       body: self.content
     )
     message.save
+  end
+
+  private
+  def message_to_at_users
+    at_users = []
+    self.content.gsub(/(@\w+ )/){
+      uid = "#{$1.strip.sub('@', '')}"
+      user = User.find_by(uid: uid)
+      at_users << user if user.present?
+    }
+
+    at_users.each { |at_user| self.message_to_at_user(at_user) }
+    self.message_to_blogger unless at_users.include?(self.blogger)
   end
 
   def validate_sensitive
