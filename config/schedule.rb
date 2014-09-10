@@ -29,6 +29,10 @@ else
   set :job_template, "/usr/local/bin/bash -l -c ':job'" # for linux
 end
 
-every 60.minutes do
+every 1.day do
+  rake "page:renew_max_notice_times"
+end
+
+every 30.minutes do
   rake "page:check_sensitive"
 end

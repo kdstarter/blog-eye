@@ -16,6 +16,8 @@ user:
 test:
   site_url: 'http://localhost:3000'
 
+max_notice_times: 3
+
 sensitive_pages:
   - 'http://localhost:3000/'
 
