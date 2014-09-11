@@ -4,11 +4,11 @@ require 'open-uri'
 require 'word_check'
 include WordCheck
 
-namespace :page do
+namespace :system do
   desc 'Renew max_notice_times everyday'
   task :renew_max_notice_times => :environment do
     redis = RedisClient.instance
-    redis.set('max_notice_times', Settings.max_notice_times)
+    redis.set('max_notice_times', 0)
     Rails.logger.info "Renew max_notice_times as #{redis.get('max_notice_times')}"
   end
 
@@ -31,13 +31,13 @@ namespace :page do
       send_to = Settings.site_mailer.admin_user
 
       redis = RedisClient.instance
-      max_times = redis.get('max_notice_times').to_i
-      if max_times > 0
-        max_times -= 1
-        redis.set('max_notice_times', max_times)
+      count_times = redis.incr('max_notice_times').to_i
 
-        Rails.logger.info "Send mail to #{send_to} #{message.inspect}"
+      if count_times <= Settings.max_notice_times
+        Rails.logger.info "#{count_times}th send mail to #{send_to} #{message.inspect}"
         SystemMailer.delay.send_sensitive_mail(send_to, message)
+      else
+        Rails.logger.warn "#{count_times}th not send mail to #{send_to} #{message.inspect}"
       end
     end
   end

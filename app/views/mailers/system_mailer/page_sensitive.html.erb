@@ -1,6 +1,6 @@
 
-<p>尊敬的<%= Settings.site_name_zh %>管理员 <%= @send_to %>，你好!</p>
+<p>尊敬的<%= link_to Settings.site_name_zh, frontend_root_url %>管理员 <%= @send_to %>，你好!</p>
 
-<p>网站 <%= link_to Settings.site_domain, frontend_root_url %> 敏感词检测报告如下: </p>
+<p>网站 <%= link_to Settings.site_domain, frontend_root_url %> 敏感词检测结果如下: </p>
 
-<p><%= @content %></p>
+<p><%= @content.html_safe %></p>
