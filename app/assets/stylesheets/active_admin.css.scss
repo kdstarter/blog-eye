@@ -10,7 +10,6 @@
 // Active Admin's got SASS!
 @import "active_admin/mixins";
 @import "active_admin/base";
-@import "shared/_variables";
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
@@ -21,10 +20,16 @@
   text-align: center;
 }
 
+h2, h3 {
+  font-size: 1.0em!important;
+}
+
 table {
   th, td {
     max-width: 222px;
-    @include href_ellipsis();
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 
