@@ -47,17 +47,27 @@ set :keep_releases, 5
 namespace :deploy do
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
+    on roles(:app), in: :sequence, wait: 3 do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
-      execute :rake, 'system:renew_max_notice_times RAILS_ENV=production'
     end
   end
+
+  desc 'Some commands before publishing'
+  task :rake_commands do
+    on roles(:db), in: :groups, wait: 3 do
+      within release_path do
+        execute :rake, 'system:renew_max_notice_times RAILS_ENV=production'
+      end
+    end
+  end
+
+  before :publishing, :rake_commands
 
   after :publishing, :restart
 
   after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
+    on roles(:web), in: :groups, limit: 3, wait: 3 do
       # Here we can do anything such as:
     end
   end
