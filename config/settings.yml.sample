@@ -1,8 +1,11 @@
 
-site_name: Blog Eye
-site_name_zh: "\u535a\u5ba2\u773c"
-site_ip: 121.40.94.192
-site_domain: blog-eye.com
+site:
+  name: Blog Eye
+  name_zh: "\u535a\u5ba2\u773c"
+  ip: 121.40.94.192
+  domain: blog-eye.com
+  owner_en: Teddy Jiang
+  owner_email: agilejzl@gmail.com
 
 baidu:
   tongji_ua: xxx
@@ -59,3 +62,4 @@ devise:
   secret_key: xxx
 
 SECRET_KEY_BASE: xxx
+

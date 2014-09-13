@@ -6,7 +6,7 @@
   <div class="container">
     <nav class="blog-nav">
 
-      <a class="<%= 'active' if action_name == 'index' && params[:controller] == 'frontend/home' %>" href="<%= frontend_root_path %>"><%= Settings.site_name %></a>
+      <a class="<%= 'active' if action_name == 'index' && params[:controller] == 'frontend/home' %>" href="<%= frontend_root_path %>"><%= Settings.site.name %></a>
 
       <% if current_user %>
         <a class="<%= 'active' if @blogger == current_user && controller.class.superclass.to_s == 'BloggerController' %>" href="<%= frontend_path(current_user) %>">我的主页</a>

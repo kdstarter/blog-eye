@@ -2,8 +2,8 @@
 <div class="site-footer">
   <div class="container">
     <div class="text-muted">
-      © 2014 <%= Settings.site_domain %>.
-      <a href="mailto:agilejzl@gmail.com">Teddy Jiang</a>. 
+      © 2014 <%= Settings.site.domain %>.
+      <%= link_to Settings.site.owner_en, "mailto:#{Settings.site.owner_email}" %>. 
       All rights reserved. 
       <a href="#">返回顶部</a>
     </div>
