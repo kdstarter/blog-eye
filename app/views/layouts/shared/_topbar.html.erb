@@ -19,7 +19,7 @@
         <a class="<%= 'active' if controller.class.superclass.to_s == 'BloggerController' %>" href="<%= frontend_path(@blogger) %>"><%= @blogger.human_name %></a>
       <% end %>
 
-      <a class="<%= 'active' if action_name == 'about_us' && params[:controller] == 'frontend/home' %>" href="<%= frontend_about_us_path %>">关 于</a>
+      <a class="<%= 'active' if action_name == 'about' && params[:controller] == 'frontend/home' %>" href="<%= frontend_site_about_path %>">关 于</a>
 
       <span class="pull-right">
         <% if current_user %>

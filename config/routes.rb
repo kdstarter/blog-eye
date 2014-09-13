@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   namespace :frontend, path: '/' do
     root 'home#index'
 
-    get '/about_us', to: 'home#about_us'
+    get 'site/about', to: 'home#about'
 
     resources :posts do
       resources :replies
