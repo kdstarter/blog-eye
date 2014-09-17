@@ -59,7 +59,8 @@ end
 
 group :development do
   gem 'hirb', '~> 0.7.2'
-  gem 'debugger-pry', '~> 0.1.1'
+  gem 'byebug', '~> 3.2.0'
+  # gem 'debugger-pry', '~> 0.1.1'
   gem 'better_errors', '~> 1.1.0'
   gem 'binding_of_caller', '~> 0.7.2'
 
