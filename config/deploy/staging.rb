@@ -3,7 +3,7 @@ set :rails_env, :production
 set :enable_ssl, false
 
 set :user, "root"
-set :server_name, "121.40.94.192"
+set :server_name, "www.blog-eye.com"
 
 ask_secretly(:password)
 server fetch(:server_name), user: fetch(:user), port: 22, password: fetch(:password), roles: %w{web app db}

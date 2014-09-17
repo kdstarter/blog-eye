@@ -47,7 +47,9 @@ gem 'carrierwave-qiniu', '~> 0.1.3'
 gem 'redis-rails', '~> 4.0.0'
 gem 'redis-namespace', '~> 1.4.1'
 gem 'redis-semaphore', '~> 0.2.2'
+
 gem 'daemons', '~> 1.1.9'
+gem 'unicorn', '~> 4.8.3'
 gem 'delayed_job_active_record', '~> 4.0.2'
 
 group :development, :test do
@@ -64,7 +66,6 @@ group :development do
   gem 'capistrano', '~> 3.1.0'
   gem 'capistrano-rails', '~> 1.1.0'
   gem 'capistrano-bundler', '~> 1.1.3'
-  gem 'unicorn', '~> 4.8.3'
   gem 'highline', '~> 1.6.21'
 end
 
