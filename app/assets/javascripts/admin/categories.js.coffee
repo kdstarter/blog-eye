@@ -5,16 +5,16 @@ class root.CategoryListView extends Backbone.View
 
   events:
     'click .link_new_category'   : 'new_one'
-    'submit .form_new_category' : 'create_one'
+    'submit .form_new_category'  : 'create_one'
 
   initialize: (options) ->
     _.extend(@, options)
     @new_category_el = @$el.find('.template_new_category')
 
-  new_one: () ->
+  new_one: (event) ->
     @new_category_el.slideToggle()
 
-  create_one: () ->
+  create_one: (event) ->
     $form = @$el.find('.form_new_category')
     url = $form.attr('action')
 

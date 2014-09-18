@@ -9,7 +9,7 @@ class root.MessageListView extends Backbone.View
   events:
     'click tr .btn_mark_read' : 'mark_as_read'
 
-  mark_as_read: () ->
+  mark_as_read: (event) ->
     @btn_mark_read = $(event.target)
     @btn_mark_read.attr('disabled', 'disabled')
 

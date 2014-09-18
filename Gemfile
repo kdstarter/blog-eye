@@ -48,7 +48,7 @@ gem 'redis-rails', '~> 4.0.0'
 gem 'redis-namespace', '~> 1.4.1'
 gem 'redis-semaphore', '~> 0.2.2'
 
-gem 'puma', '~> 2.9.0'
+gem 'puma', '~> 2.9.1'
 gem 'unicorn', '~> 4.8.3'
 gem 'daemons', '~> 1.1.9'
 gem 'delayed_job_active_record', '~> 4.0.2'

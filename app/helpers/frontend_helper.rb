@@ -1,2 +1,3 @@
 module FrontendHelper
+  
 end

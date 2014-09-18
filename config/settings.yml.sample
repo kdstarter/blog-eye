@@ -2,7 +2,7 @@
 site:
   name: Blog Eye
   name_zh: "\u535a\u5ba2\u773c"
-  ip: 121.40.94.192
+  ip: 106.185.46.140
   domain: www.blog-eye.com
   owner_en: Teddy Jiang
   owner_email: agilejzl@gmail.com
@@ -22,7 +22,7 @@ test:
 max_notice_times: 2
 
 sensitive_pages:
-  - 'http://localhost:3000/'
+  - 'http://www.blog-eye.com/'
 
 site_mailer:
   admin_user: agilejzl@gmail.com
@@ -34,7 +34,7 @@ site_mailer:
 
 cache_store:
   name: redis
-  expires_in: 90
+  expires_in: 120
   store: redis_store
   store_dir: redis://localhost:6379/0/cache
 

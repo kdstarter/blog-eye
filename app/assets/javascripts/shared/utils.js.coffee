@@ -1,10 +1,9 @@
 
 #= require jquery
-#= require jquery-ui
 #= require jquery_ujs
+#= require shared/bootstrap
 #= require shared/underscore
 #= require shared/backbone
-#= require shared/bootstrap
 #= require shared/pnotify.all.min
 #= require ckeditor/init
 

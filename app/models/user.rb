@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   end
 
   def whose_blogger
-    "#{self.uid}的博客"
+    "#{self.uid} 的博客"
   end
 
   def created_time

@@ -2,7 +2,7 @@
 class Frontend::PostsController < BloggerController
 
   def title
-    "#{@post.title} - #{@blogger.whose_blogger}"
+    "#{@post.title} | #{@blogger.whose_blogger}"
   end
 
   def show

@@ -21,9 +21,12 @@ class ApplicationController < ActionController::Base
   end
 
   def check_browser
-    if !browser.modern? && !cookies[:is_noticed_broswer]
-      cookies[:is_noticed_broswer] = { value: true, expires: 1.hour.from_now }
-      flash[:alert] = "你使用的浏览器太老了，本站的很多Html5特性不支持，赶快升级吧！"
+    # notice if browser lt IE9
+    if browser.ie? && broswer.verion < 9
+      if !cookies[:is_noticed_broswer]
+        cookies[:is_noticed_broswer] = { value: true, expires: 1.hour.from_now }
+        flash[:alert] = "你使用的浏览器太老了，博客眼的很多Html5特性不支持，赶快升级吧！"
+      end
     end
   end
 

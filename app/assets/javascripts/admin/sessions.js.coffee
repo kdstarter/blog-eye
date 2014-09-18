@@ -11,7 +11,7 @@ class root.UserRegisterView extends Backbone.View
   initialize: () ->
     @last_uid = null
 
-  is_uid_exist: () ->
+  is_uid_exist: (event) ->
     uid = $(event.target).val().trim()
     # check if uid changed and length eg 3
     return unless uid.length >= 3 && uid != @last_uid

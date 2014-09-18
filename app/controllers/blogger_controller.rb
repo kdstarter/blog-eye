@@ -6,7 +6,7 @@ class BloggerController < FrontendController
   before_action :load_blogger, :load_posts
 
   def title
-    "#{@blogger.whose_blogger} - #{@blogger.signature}"
+    "#{@blogger.whose_blogger} | #{@blogger.signature}"
   end
 
   protected

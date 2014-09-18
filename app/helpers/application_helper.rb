@@ -5,7 +5,8 @@ module ApplicationHelper
   end
 
   def site_fullname
-    "#{Settings.site.name}(#{Settings.site.name_zh})"
+    # "#{Settings.site.name}(#{Settings.site.name_zh})"
+    Settings.site.name_zh
   end
 
   def default_title
@@ -17,11 +18,11 @@ module ApplicationHelper
   end
 
   def page_title
-    "#{controller_title} - #{site_fullname}"
+    "#{site_fullname} | #{controller_title}"
   end
 
   def meat_keywords
-    "#{Settings.site.name_zh}, #{Settings.site.name}, 博客平台, 个人博客, 技术博客, 信息技术分享"
+    "#{Settings.site.name_zh}, #{Settings.site.name}, 博客平台, IT博客, 个人博客, 技术博客, 信息分享, 技术分享"
   end
 
   def omited_str(str, length=60)
