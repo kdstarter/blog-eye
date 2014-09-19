@@ -143,6 +143,11 @@ ul, ol {
     display: table;
   }
 
+  #captcha {
+    height: 30px;
+    width: 171px;
+  }
+
   .simple_captcha_field, .simple_captcha_image {
     padding: 0px;
     cursor: pointer;
@@ -150,10 +155,15 @@ ul, ol {
     margin: 0px 0px 2px 0px;
   }
 
-  .simple_captcha_image img {
-    margin: 0px;
-    padding: 0px;
-    height: 36px;
+  .simple_captcha_image {
+    min-height: 38px;
+    min-width: 171px;
+
+    img {
+      margin: 0px;
+      padding: 0px;
+      height: 36px;
+    }
   }
 }
 
