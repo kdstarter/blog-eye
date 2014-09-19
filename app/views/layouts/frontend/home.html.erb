@@ -3,8 +3,8 @@
 <head>
   <%= render partial: 'layouts/shared/head' %>
 
-  <%= stylesheet_link_tag    'frontend/home', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'frontend/home', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'frontend/home', media: 'all', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
 </head>
 
@@ -20,5 +20,8 @@
   </div>
 
   <%= render partial: 'layouts/shared/footer' %>
+
+  <%= javascript_include_tag 'frontend/home', 'data-turbolinks-track' => true %>
+  <%= render partial: 'layouts/shared/javascript' %>
 </body>
 </html>
