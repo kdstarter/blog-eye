@@ -2,26 +2,26 @@
 <div class="panel-group" id="code_accordion">
   <div class="panel panel-default">
     <div class="row panel-heading">
-      <div class="col-xs-2">语言</div>
-      <div class="col-xs-6">代码标题</div>
-      <div class="col-xs-4">来源网址</div>
+      <div class="col-md-2">语言</div>
+      <div class="col-md-6">代码标题</div>
+      <div class="col-md-4">来源网址</div>
     </div>
   </div>
 
   <% codes.each do |code| %>
     <div class="panel panel-default">
       <div class="row panel-heading">
-        <div class="col-xs-2">
+        <div class="col-md-2">
           <%= code.language.code %>
         </div>
 
-        <h4 class="href_name panel-title col-xs-6">
+        <h4 class="href_name panel-title col-md-6">
           <a title="<%= code.title %>" data-toggle="collapse" data-parent="#code_accordion" href="#code_<%= code.id %>" class="collapsed">
             <%= code.title %>
           </a>
         </h4>
 
-        <div class="href_name col-xs-4">
+        <div class="href_name col-md-4">
           <%= link_to code.source, code.source, target: "_blank", title: code.source %>
         </div>
       </div>

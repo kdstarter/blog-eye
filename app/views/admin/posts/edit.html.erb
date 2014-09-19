@@ -8,20 +8,20 @@
   <%= f.input :tags %>
 
   <div class="form-group">
-    <div class="col-sm-12">
+    <div class="col-md-12">
       <%= f.cktext_area :content, ckeditor: { toolbar: "Easy", height: 380 }  %>
     </div>
   </div>
 
   <div class="form-group">
-    <div class="col-sm-12">
+    <div class="col-md-12">
       可上传的文件格式: <%= Ckeditor.attachment_file_types + Ckeditor.image_file_types %>
     </div>
   </div>
 
   <div class="form-group form-actions">
-    <label class="col-sm-3"> </label>
-    <div class="col-sm-9">
+    <label class="col-md-3"> </label>
+    <div class="col-md-9">
       <%= link_to "取 消", :back, class: "btn btn-inverse" %>
       <%= f.button :submit, "保 存", class: "btn btn-primary" %>
     </div>

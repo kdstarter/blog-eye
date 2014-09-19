@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def site_intro
-    "博客信息技术分享平台"
+    "#{Settings.site.name_zh} · 博客信息技术分享平台"
   end
 
   def site_fullname

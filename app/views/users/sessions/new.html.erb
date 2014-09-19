@@ -10,16 +10,16 @@
     <%= f.input :password %>
 
     <div class="form-group">
-      <label class="col-sm-3"> </label>
-      <div class="col-sm-9">
+      <label class="col-md-3"> </label>
+      <div class="col-md-9">
         <%= f.input_field :remember_me, as: :boolean if devise_mapping.rememberable? %>
         <%= f.label :remember_me, label: "一周之内免登录" %>
       </div>
     </div>
 
     <div class="form-group form-actions">
-      <label class="col-sm-3"> </label>
-      <div class="col-sm-9">
+      <label class="col-md-3"> </label>
+      <div class="col-md-9">
         <%= f.button :submit, "登 录", id: "btn_sign_in" %>
       </div>
     </div>

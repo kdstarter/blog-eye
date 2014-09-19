@@ -1,15 +1,15 @@
 <div class="row">
-  <div class="col-xs-9">
+  <div class="col-md-9">
     <label>博客分类管理: </label>
   </div>
 
-  <div class="col-xs-3 text-right">
+  <div class="col-md-3 text-right">
     <%= link_to "添加新分类", "#", class: "link_new_category" %>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-xs-12 template_new_category display_none">
+  <div class="col-md-12 template_new_category display_none">
     <%= simple_form_for [:admin, Category.new], html: { class: "form-inline form_new_category" } do |f| %>
       <%= f.input_field :name, class: "form-control" %>
       <%= f.input_field :description, class: "form-control" %>
@@ -21,7 +21,7 @@
 
 <% if @category.present? %>
   <div class="row">
-    <div class="col-xs-12 template_edit_category">
+    <div class="col-md-12 template_edit_category">
       <%= simple_form_for [:admin, @category], html: { class: "form-inline form_edit_category" } do |f| %>
         <%= f.input_field :name, class: "form-control" %>
         <%= f.input_field :description, class: "form-control" %>
