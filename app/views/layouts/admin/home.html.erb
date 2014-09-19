@@ -5,6 +5,9 @@
 
   <%= stylesheet_link_tag 'admin/home', media: 'all', 'data-turbolinks-track' => true %>
 
+  <%= javascript_include_tag 'admin/home', 'data-turbolinks-track' => true %>
+  <%= render partial: 'layouts/shared/javascript' %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -26,8 +29,5 @@
   </div>
 
   <%= render partial: 'layouts/shared/footer' %>
-
-  <%= javascript_include_tag 'admin/home', 'data-turbolinks-track' => true %>
-  <%= render partial: 'layouts/shared/javascript' %>
 </body>
 </html>

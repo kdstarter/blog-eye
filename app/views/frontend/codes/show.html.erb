@@ -7,6 +7,7 @@
     <br/>代码分类: <%= @code.category.name %>
 
     <br/>代码标签: <%= code_tags_from_str(@code.tags) %>
+    <br/>来源网址: <%= link_to @code.source, @code.source, target: "_blank", class: "href_name" %>
   </div>
 </div>
 
