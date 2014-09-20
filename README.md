@@ -7,7 +7,7 @@ Blog Eye: A platform for sharing blogs
 [codeclimate]: https://codeclimate.com/github/agilejzl/blog-eye
 
 Blog Eye, you know, a platform for sharing blog.
-Site url: [http://www.blog-eye.com/](http://121.40.94.192/)
+Site url: [http://www.blog-eye.com/](http://www.blog-eye.com/)
 
 ## How to Install
 
