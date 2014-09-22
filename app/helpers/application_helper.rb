@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def seo_intro
-    "#{page_title} #{meat_keywords}".gsub(' | ', ' · ')
+    "#{Settings.site.name_zh}, #{Settings.site.name}, #{controller_title}, #{meat_keywords}".gsub(' | ', ', ')
   end
 
   def default_title
@@ -25,14 +25,14 @@ module ApplicationHelper
   end
 
   def meat_keywords
-    "关注最近的独家博文、代码分享，在这里搭建博客、分享博文，收藏并分享代码，结识兴趣相投的博主，相互分享IT信息和技术..."
+    "关注最近的独家博文、代码分享, 在这里搭建博客、分享博文, 收藏并分享代码, 结识兴趣相投的博主, 相互分享IT信息和技术..."
   end
 
   def omited_str(str, length=60)
     str.truncate(length, separator: " ", omission: "...")
   end
 
-  def js_alert(message="非常遗憾，操作失败.")
+  def js_alert(message="非常遗憾, 操作失败.")
     render js: "alert('#{message}')"
   end
 
