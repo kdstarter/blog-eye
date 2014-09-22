@@ -5,8 +5,11 @@ module ApplicationHelper
   end
 
   def site_fullname
-    # "#{Settings.site.name}(#{Settings.site.name_zh})"
-    Settings.site.name_zh
+    "#{Settings.site.name}(#{Settings.site.name_zh})"
+  end
+
+  def seo_intro
+    "#{page_title} #{meat_keywords}".gsub(' | ', ' · ')
   end
 
   def default_title
@@ -18,11 +21,11 @@ module ApplicationHelper
   end
 
   def page_title
-    "#{site_fullname} | #{controller_title}"
+    "#{Settings.site.name_zh} | #{controller_title}"
   end
 
   def meat_keywords
-    "#{Settings.site.name_zh}, #{Settings.site.name}, 博客平台, IT博客, 个人博客, 技术博客, 信息分享, 技术分享"
+    "关注最近的独家博文、代码分享，在这里搭建博客、分享博文，收藏并分享代码，结识兴趣相投的博主，相互分享IT信息和技术..."
   end
 
   def omited_str(str, length=60)
