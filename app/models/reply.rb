@@ -24,23 +24,26 @@ class Reply < ActiveRecord::Base
     self.created_at.strftime('%Y-%m-%d %H:%M')
   end
 
+  # send messages to at_user
   def message_to_at_user(at_user)
+    # return if self.user.id == at_user.id
     message = self.messages.build(
       is_read: false,
       user_id: at_user.id,
       from_user_id: self.user.id,
-      body: "#{self.user.uid} 在评论中提到了你，快去查看吧！"
+      body: "#{self.user.uid} @了你: #{self.content}"
     )
     message.save
   end
 
+  # send message to blogger
   def message_to_blogger
-    return if self.blogger.id != self.user.id
+    return if self.user.id == self.blogger.id
     message = self.messages.build(
       is_read: false,
       user_id: self.blogger.id,
       from_user_id: self.user.id,
-      body: self.content
+      body: "#{self.user.uid} 回复了你: #{self.content}"
     )
     message.save
   end
@@ -50,8 +53,11 @@ class Reply < ActiveRecord::Base
     at_users = []
     self.content.gsub(/(@\w+ )/){
       uid = "#{$1.strip.sub('@', '')}"
-      user = User.find_by(uid: uid)
-      at_users << user if user.present?
+      user = User.find(uid)
+
+      if user.present? && !at_users.include?(user)
+        at_users << user
+      end
     }
 
     at_users.each { |at_user| self.message_to_at_user(at_user) }

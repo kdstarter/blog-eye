@@ -16,7 +16,7 @@
           <td class="href_name">
             <%= link_to reply.content, "#{frontend_post_path(reply.post)}#reply#{reply.id}", title: reply.content %>
           </td>
-          <td><%= reply.user.human_name %></td>
+          <td><%= link_to reply.user.human_name, frontend_path(reply.user), target: "_blank" %></td>
           <td><%= reply.published_time %></td>
           <td>
             <%= link_to '隐 藏', hide_admin_reply_path(reply), data: { confirm: "你确定要隐藏这条评论吗？" }, method: :post, remote: true, class: "btn btn-xs btn-danger" if !reply.destroyed? %>
