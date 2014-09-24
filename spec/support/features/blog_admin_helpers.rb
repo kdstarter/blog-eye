@@ -1,3 +1,4 @@
+# coding: utf-8
 
 module Features
   module BlogAdminHelpers
@@ -27,15 +28,15 @@ module Features
 
     def new_category_with(category)
       div_new_category = browser.div(class: 'template_new_category')
-      div_new_category.text_field(id: 'category_name').set(category[:name])
-      div_new_category.text_field(id: 'category_description').set(category[:description])
+      div_new_category.text_field(name: 'category[name]').set(category[:name])
+      div_new_category.text_field(name: 'category[description]').set(category[:description])
       btn_create_category.click
     end
 
     def edit_category_with(category)
       div_edit_category = browser.div(class: 'template_edit_category')
-      div_edit_category.text_field(id: 'category_name').set(category[:name])
-      div_edit_category.text_field(id: 'category_description').set(category[:description])
+      div_edit_category.text_field(name: 'category[name]').set(category[:name])
+      div_edit_category.text_field(name: 'category[description]').set(category[:description])
       btn_update_category.click
     end
 

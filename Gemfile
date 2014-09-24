@@ -48,10 +48,13 @@ gem 'redis-rails', '~> 4.0.0'
 gem 'redis-namespace', '~> 1.4.1'
 gem 'redis-semaphore', '~> 0.2.2'
 
-gem 'puma', '~> 2.9.1'
-gem 'unicorn', '~> 4.8.3'
 gem 'daemons', '~> 1.1.9'
 gem 'delayed_job_active_record', '~> 4.0.2'
+
+group :production do
+  gem 'puma', '~> 2.9.1'
+  gem 'unicorn', '~> 4.8.3'
+end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
@@ -61,7 +64,6 @@ end
 group :development do
   gem 'hirb', '~> 0.7.2'
   gem 'byebug', '~> 3.2.0'
-  # gem 'debugger-pry', '~> 0.1.1'
   gem 'better_errors', '~> 1.1.0'
   gem 'binding_of_caller', '~> 0.7.2'
 
@@ -73,9 +75,9 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 2.4.1'
+  gem 'capybara', '~> 2.4.3'
   gem 'database_cleaner', '~> 1.3.0'
-  gem 'watir-webdriver', '~> 0.6.10'
+  gem 'watir-webdriver', '~> 0.6.11'
   gem 'rspec-example_steps', '~> 3.0.2'
 
   gem 'coveralls', '~> 0.7.1'
