@@ -53,7 +53,7 @@ class Reply < ActiveRecord::Base
     at_users = []
     self.content.gsub(/(@\w+ )/){
       uid = "#{$1.strip.sub('@', '')}"
-      user = User.find(uid)
+      user = User.find_by(uid: uid)
 
       if user.present? && !at_users.include?(user)
         at_users << user

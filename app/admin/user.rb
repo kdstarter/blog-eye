@@ -17,8 +17,8 @@ ActiveAdmin.register User do
     column :name
     column :city_name
     column :company
+    column :last_sign_in_at
     column :created_at
-    column :locked_at
     actions
   end
 
