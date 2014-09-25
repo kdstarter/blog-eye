@@ -13,7 +13,7 @@
 
 </div>
 
-  <%= render partial: 'layouts/shared/topbar' %>
+  <%= render partial: 'layouts/shared/topbar', locals: { blogger: @blogger, messages: @messages } %>
 
   <div class="container">
     <%= render partial: 'layouts/shared/flash' %>

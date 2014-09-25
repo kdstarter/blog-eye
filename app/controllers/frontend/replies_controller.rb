@@ -2,8 +2,8 @@ class Frontend::RepliesController < BloggerController
   
   def create
     @reply = Reply.new(reply_params)
-    @reply.user_id = current_user.id
-    @reply.post_id = @post.id
+    @reply.user = current_user
+    @reply.post = @post
 
     if @reply.save
       flash[:notice] = '你已经成功提交了回复。'

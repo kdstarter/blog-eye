@@ -12,7 +12,7 @@ class Admin::CategoriesController < AdminController
 
   def edit
     @category = Category.find(params[:id])
-    render action: :index
+    render :index
   end
 
   def update
@@ -24,13 +24,13 @@ class Admin::CategoriesController < AdminController
       redirect_to action: :index
     else
       flash[:error] = "修改分类 #{category_name} 失败。"
-      render action: :index
+      render :index
     end
   end
 
   def create
     @category = Category.new(category_params)
-    @category.user_id = current_user.id
+    @category.user = current_user
 
     respond_to do |format|
       if @category.save

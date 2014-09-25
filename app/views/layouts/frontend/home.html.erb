@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <%= render partial: 'layouts/shared/topbar' %>
+  <%= render partial: 'layouts/shared/topbar', locals: { blogger: @blogger, messages: @messages } %>
 
   <%= render partial: 'layouts/frontend/home/hero_content' %>
 

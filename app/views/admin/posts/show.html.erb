@@ -5,7 +5,7 @@
     <h4><%= @post.title %></h4>
 
     发布时间: <%= @post.published_time %>
-    <br/>文章分类: <%= @post.category.name %>
+    <br/>文章分类: <%= @post.category.try(:name) %>
 
     <br/>文章标签: <%= post_tags_from_str(@post.tags) %>
   </div>

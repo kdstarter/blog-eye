@@ -11,9 +11,9 @@
 </head>
 <body>
 
-  <%= render partial: 'layouts/shared/topbar' %>
+  <%= render partial: 'layouts/shared/topbar', locals: { blogger: @blogger, messages: @messages } %>
 
-  <%= render partial: 'layouts/frontend/blogger/hero_content' %>
+  <%= render partial: 'layouts/frontend/blogger/hero_content', locals: { blogger: @blogger } %>
 
   <div class="container">
     <div class="row">
@@ -23,7 +23,7 @@
       </div>
       
       <div class="col-md-3 blog-sidebar">
-        <%= render partial: 'layouts/frontend/blogger/menubar' %>
+        <%= render partial: 'layouts/frontend/blogger/menubar', locals: { blogger: @blogger, categories: @categories } %>
       </div>
     </div>
   </div>

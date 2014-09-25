@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     get '/profile', to: 'home#profile'
     post '/update_profile', to: 'home#update_profile'
 
-    resources :messages do
+    resources :messages, only: [:show, :destroy, :index] do
       member do
         post 'mark_as_read', to: 'messages#mark_as_read'
       end
@@ -27,14 +27,14 @@ Rails.application.routes.draw do
 
     resources :posts
 
-    resources :replies do
+    resources :replies, only: [:destroy, :index] do
       member do
         post 'hide', to: 'replies#hide'
         post 'restore', to: 'replies#restore'
       end
     end
 
-    resources :categories
+    resources :categories, except: [:new]
 
     resources :codes
   end
@@ -44,17 +44,17 @@ Rails.application.routes.draw do
 
     get 'site/about', to: 'home#about'
 
-    resources :posts do
-      resources :replies
+    resources :posts, only: [:show] do
+      resources :replies, only: [:create]
     end
 
     scope ':uid' do
       get '/', to: 'users#show'
       get '/profile', to: 'users#profile'
 
-      resources :categories
+      resources :categories, only: [:show]
 
-      resources :codes
+      resources :codes, only: [:show, :index]
     end
   end
   

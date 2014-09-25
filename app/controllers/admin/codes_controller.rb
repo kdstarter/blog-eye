@@ -23,7 +23,7 @@ class Admin::CodesController < AdminController
       redirect_to admin_code_path(@code)
     else
       flash[:error] = '收藏代码失败，请注意以下提示！'
-      render action: :new
+      render :new
     end
   end
 
@@ -39,7 +39,7 @@ class Admin::CodesController < AdminController
       redirect_to action: :show
     else
       flash[:error] = '修改代码失败，请注意以下提示！'
-      render action: :edit
+      render :edit
     end
   end
 
@@ -49,7 +49,7 @@ class Admin::CodesController < AdminController
 
     if @code.persisted?
       flash[:error] = '因为以下原因，删除代码失败。'
-      render action: :show
+      render :show
     else
       flash[:notice] = '你已经成功删除了该代码。'
       redirect_to admin_codes_path

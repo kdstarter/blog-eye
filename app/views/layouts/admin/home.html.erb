@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <%= render partial: 'layouts/shared/topbar' %>
+  <%= render partial: 'layouts/shared/topbar', locals: { blogger: @blogger, messages: @messages } %>
   <%= render partial: 'layouts/admin/hero_content' %>
 
   <div class="container">
@@ -22,7 +22,7 @@
       </div>
 
       <div class="col-md-3">
-        <%= render partial: 'layouts/admin/menubar' %>
+        <%= render partial: 'layouts/admin/menubar', locals: { categories: @categories } %>
       </div>
     </div>
   </div>

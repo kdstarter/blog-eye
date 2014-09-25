@@ -18,9 +18,9 @@ class Frontend::UsersController < BloggerController
     @blogger = User.find(params[:uid])
   end
 
-  def update_visits
-    if @blogger != current_user
-      @blogger.update_attributes(visits: @blogger.visits + 1)
-    end
-  end
+  # def update_visits
+  #   if @blogger != current_user
+  #     @blogger.update_attributes(visits: @blogger.visits + 1)
+  #   end
+  # end
 end

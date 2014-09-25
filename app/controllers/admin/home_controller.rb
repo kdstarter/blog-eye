@@ -21,7 +21,7 @@ class Admin::HomeController < AdminController
       redirect_to admin_profile_path
     else
       flash[:error] = '未能成功更新个人资料，请查看以下错误。'
-      render action: :profile
+      render :profile
     end
   end
 

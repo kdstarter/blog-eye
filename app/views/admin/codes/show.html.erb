@@ -3,10 +3,10 @@
   <div class="heading">
     <h4><%= @code.title %></h4>
 
-    收藏时间: <%= @code.published_time %>
-    <br/>代码分类: <%= @code.category.name %>
-
-    <br/>代码标签: <%= code_tags_from_str(@code.tags) %>
+    收藏时间: <%= @code.published_time %><br/>
+    代码分类: <%= @code.category.try(:name) %>
+    <br/>
+    代码标签: <%= code_tags_from_str(@code.tags) %>
   </div>
 </div>
 

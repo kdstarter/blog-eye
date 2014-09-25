@@ -1,5 +1,5 @@
 class Message < ActiveRecord::Base
-  scope :reads, -> { where(is_read: true) }
+  # scope :reads, -> { where(is_read: true) }
   scope :unreads, -> { where(is_read: false) }
 
   belongs_to :user

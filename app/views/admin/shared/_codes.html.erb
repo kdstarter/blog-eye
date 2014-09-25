@@ -17,8 +17,8 @@
           <td class="href_name">
             <%= link_to code.title, admin_code_path(code), title: code.title %>
           </td>
-          <td><%= code.category.name %></td>
-          <td><%= code.language.code %></td>
+          <td><%= code.category.try(:name) %></td>
+          <td><%= code.language.try(:code) %></td>
           <td><%= code.published_time %></td>
           <td>
             <%= link_to '编 辑', edit_admin_code_path(code), class: "btn btn-xs btn-primary" %>

@@ -19,7 +19,7 @@
             <%= link_to post.title, admin_post_path(post), title: post.title %>
           </td>
           <td><%= post.published_time %></td>
-          <td><%= post.category.name %></td>
+          <td><%= post.category.try(:name) %></td>
           <td><%= post.visits %></td>
           <td><%= post.replies.size %></td>
           <td>

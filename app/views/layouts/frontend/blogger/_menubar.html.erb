@@ -1,27 +1,28 @@
+
 <div class="panel-group" id="blogger_accordion">
   <div class="panel panel-default">
     <div class="panel-body text-center">
-      <a href="<%= frontend_path(@blogger) %>">
-        <%= image_tag(@blogger.avatar_url, class: 'bloger_photo') %>
+      <a href="<%= frontend_path(blogger) %>">
+        <%= image_tag(blogger.avatar_url, class: 'bloger_photo') %>
       </a>
 
       <div class="blogger_info">
         <label class="bloger_name">
-          <%= link_to @blogger.human_name, frontend_path(@blogger) %>
+          <%= link_to blogger.human_name, frontend_path(blogger) %>
         </label>
 
         <!-- <div class="visits">
           <label>浏览</label>:
-          <span class="visits_number"><%= " #{@blogger.visits} " %></span>次
+          <span class="visits_number"><%= " #{blogger.visits} " %></span>次
         </div> -->
 
         <div class="city_name">
-          <label>城市</label>:<%= " #{@blogger.city}" %>
+          <label>城市</label>:<%= " #{blogger.city}" %>
         </div>
 
         <div class="ranking">
           第<span class="ranking_number">
-            <%= " #{@blogger.ranking} " %>
+            <%= " #{blogger.ranking} " %>
           </span>位会员
         </div>
       </div>
@@ -40,8 +41,8 @@
     <div id="code_collapse" class="panel-collapse collapse in">
       <div class="panel-body">
         <ul>
-          <li><%= link_to "个人资料", frontend_profile_path(@blogger) %></li>
-          <li><%= link_to "代码收藏 (#{@blogger.codes.count})", frontend_codes_path(@blogger) %></li>
+          <li><%= link_to "个人资料", frontend_profile_path(blogger) %></li>
+          <li><%= link_to "代码收藏 (#{blogger.codes.count})", frontend_codes_path(blogger) %></li>
         </ul>
       </div>
     </div>
@@ -59,10 +60,10 @@
     <div id="category_collapse" class="panel-collapse collapse in">
       <div class="panel-body">
         <ul>
-          <li><%= link_to "全部文章 (#{@blogger.posts.count})", frontend_path(@blogger) %></li>
-          <% @categories.each do |category| %>
+          <li><%= link_to "全部文章 (#{blogger.posts.count})", frontend_path(blogger) %></li>
+          <% categories.each do |category| %>
             <li>
-              <%= link_to "#{category.name} (#{Post.where(category: category).count})", frontend_category_path(@blogger, category), title: "分类 #{category.name}" %>
+              <%= link_to "#{category.name} (#{Post.where(category: category).count})", frontend_category_path(blogger, category), title: "分类 #{category.name}" %>
             </li>
           <% end %>
         </ul>
