@@ -75,10 +75,10 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 2.4.3'
   gem 'database_cleaner', '~> 1.3.0'
-  gem 'watir-webdriver', '~> 0.6.11'
-  gem 'rspec-example_steps', '~> 3.0.2'
+  gem 'capybara', '~> 2.4.3', require: false
+  gem 'watir-webdriver', '~> 0.6.11', require: false
+  gem 'rspec-example_steps', '~> 3.0.2', require: false
 
   gem 'coveralls', '~> 0.7.1'
   gem 'rspec-expectations', '~> 3.0.0'
