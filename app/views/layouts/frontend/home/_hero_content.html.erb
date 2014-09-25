@@ -1,6 +1,14 @@
 
 <div class="pagehead">
   <div class="container">
-    <h4><%= "#{Settings.site.name_zh} · #{site_intro}" %></h4>
+    <div class="col-md-8">
+      <h4><%= "#{Settings.site.name_zh} · #{site_intro}" %></h4>
+    </div>
+
+    <div class="col-md-4">
+      <form action="https://wen.lu/?#q=site:<%= Settings.site.domain %>+" class="navbar-search" method="get">
+        <input type="text" name="q" class="search-query form-control" value="" placeholder="搜索">
+      </form>
+    </div>
   </div>
 </div>
