@@ -57,7 +57,7 @@ module ApplicationHelper
   end
 
   def post_tags_from_str(str)
-    str.split(',').map{|tag| "&nbsp;<a href='#'><span class='badge'>#{tag}</span></a>"}.join.html_safe
+    str.split(',').map{|tag| "&nbsp;<a target='_blank' href='https://wen.lu/?#q=site:#{Settings.site.domain}+#{tag}'><span class='badge'>#{tag}</span></a>"}.join.html_safe
   end
 
   def code_tags_from_str(str)

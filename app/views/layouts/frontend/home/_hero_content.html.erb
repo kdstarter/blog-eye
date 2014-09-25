@@ -12,3 +12,12 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(function(){
+    $("form.navbar-search").on("submit", function(){
+      keyword = $(this).find("input.search-query").val().trim();
+      $(this).attr('action', $(this).attr('action') + keyword);
+    });
+  });
+</script>
