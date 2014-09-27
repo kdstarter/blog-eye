@@ -238,6 +238,7 @@ zh-CN:
     errors:
       <<: *errors
     models:
+      blog: 日志
       message: 通知
       user: 用户
       admin_user: 管理员
@@ -248,6 +249,14 @@ zh-CN:
       post: 文章
       reply: 评论
     attributes:
+      blog:
+        id: ID
+        created_at: 创建时间
+        updated_at: 更新时间
+        title: 标题
+        content: 内容
+        category: 类型
+        status: 状态
       admin_user:
         id: ID
         created_at: 创建时间

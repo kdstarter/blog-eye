@@ -1,0 +1,4 @@
+
+module Frontend::BlogsHelper
+
+end

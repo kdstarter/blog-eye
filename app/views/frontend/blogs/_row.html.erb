@@ -1,0 +1,19 @@
+
+<div id="blog-show" class="newer_row box">
+  <div class="infos">
+    <h3><%= link_to blog.title, frontend_blog_path(blog) %></h3>
+    <p class="info">
+      <span class="label label-success">
+        <%= blog.type %>
+      </span>
+       · 
+      <abbr class="timeago" title="<%= blog.published_time %>">
+        <%= time_ago_in_words(blog.created_at) %>前
+      </abbr>发布
+    </p>
+  </div>
+
+  <div class="body">
+    <%= blog.content.html_safe %>
+  </div>
+</div>

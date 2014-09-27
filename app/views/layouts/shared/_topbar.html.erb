@@ -16,6 +16,8 @@
         <a class="<%= 'active' if controller.class.superclass.to_s == 'BloggerController' %>" href="<%= frontend_path(blogger) %>"><%= blogger.human_name %></a>
       <% end %>
 
+      <a class="<%= 'active' if params[:controller] == 'frontend/blogs' %>" href="<%= frontend_blogs_path %>">日 志</a>
+
       <a class="<%= 'active' if action_name == 'about' && params[:controller] == 'frontend/home' %>" href="<%= frontend_site_about_path %>">关 于</a>
 
       <span class="pull-right">

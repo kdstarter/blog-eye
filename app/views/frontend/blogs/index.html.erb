@@ -1,0 +1,12 @@
+<% blogs = @blogs %>
+
+<div class="row newer_content">
+  <div class="newer_blogs">
+    <% if blogs.size > 0 %>
+      <%= render partial: "row", collection: blogs, as: :blog %>
+      <%= paginate blogs %>
+    <% else %>
+      暂时没有任何网站日志。
+    <% end %>
+  </div>
+</div>

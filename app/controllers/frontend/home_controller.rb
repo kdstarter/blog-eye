@@ -10,4 +10,5 @@ class Frontend::HomeController < FrontendController
   def about
 
   end
+
 end
