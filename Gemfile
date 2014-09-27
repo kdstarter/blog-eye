@@ -57,15 +57,10 @@ gem 'delayed_job_active_record', '~> 4.0.2'
 
 group :production do
   gem 'puma', '~> 2.9.1'
-  gem 'unicorn', '~> 4.8.3'
+  # gem 'unicorn', '~> 4.8.3'
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0'
-  gem 'factory_girl_rails', '~> 4.4.1'
-end
-
-group :development do
   gem 'hirb', '~> 0.7.2'
   gem 'byebug', '~> 3.2.0'
   gem 'better_errors', '~> 1.1.0'
@@ -76,14 +71,16 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.0'
   gem 'capistrano-bundler', '~> 1.1.3'
   gem 'highline', '~> 1.6.21'
-end
 
-group :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl_rails', '~> 4.4.1'
+
   gem 'database_cleaner', '~> 1.3.0'
   gem 'capybara', '~> 2.4.3', require: false
   gem 'watir-webdriver', '~> 0.6.11', require: false
   gem 'rspec-example_steps', '~> 3.0.2', require: false
 
+  gem 'coco', '~> 0.12.0'
   gem 'coveralls', '~> 0.7.1'
   gem 'rspec-expectations', '~> 3.0.0'
   gem 'rails_best_practices', '~> 1.15.4'
