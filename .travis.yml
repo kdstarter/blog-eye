@@ -1,19 +1,21 @@
-bundler_args: --without development
-env:
-  global:
-    - JRUBY_OPTS="$JRUBY_OPTS --debug"
-gemfile:
-  - Gemfile
-  - Gemfile.rack-1.5.x
 language: ruby
-rvm:
-  - 2.0.0
-  - 2.1
-  - jruby-19mode
-  - jruby-head
-  - ruby-head
+bundler_args: --without development
+
+env:
+  - USE_OFFICIAL_GEM_SOURCE=1
+
+services:
+  - redis-server
+
 matrix:
   allow_failures:
-    - rvm: jruby-head
     - rvm: ruby-head
-  fast_finish: true
+
+rvm:
+  - 2.0.0
+
+before_script:
+  - cp config/settings.yml.sample config/settings.yml
+  - cp config/database.yml.sample config/database.yml
+  - cp config/sensitive.yml.sample config/sensitive.yml
+

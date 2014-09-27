@@ -22,7 +22,7 @@ GIT
       sass-rails
 
 GEM
-  remote: http://ruby.taobao.org/
+  remote: https://ruby.taobao.org/
   specs:
     actionmailer (4.1.5)
       actionpack (= 4.1.5)
