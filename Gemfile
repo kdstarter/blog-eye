@@ -63,8 +63,8 @@ end
 group :development, :test do
   gem 'hirb', '~> 0.7.2'
   gem 'byebug', '~> 3.2.0'
-  gem 'better_errors', '~> 1.1.0'
-  gem 'binding_of_caller', '~> 0.7.2'
+  # gem 'better_errors', '~> 1.1.0'
+  # gem 'binding_of_caller', '~> 0.7.2'
 
   gem 'capistrano', '~> 3.1.0'
   gem 'capistrano-rvm', '~> 0.1.1'
@@ -73,15 +73,19 @@ group :development, :test do
   gem 'highline', '~> 1.6.21'
 
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'database_cleaner', '~> 1.3.0'
   gem 'factory_girl_rails', '~> 4.4.1'
 
-  gem 'database_cleaner', '~> 1.3.0'
-  gem 'capybara', '~> 2.4.3', require: false
+  gem 'capybara', '~> 2.4.3'
+  gem 'jasmine-rails', '~> 0.10.2'
   gem 'watir-webdriver', '~> 0.6.11', require: false
   gem 'rspec-example_steps', '~> 3.0.2', require: false
 
-  gem 'coco', '~> 0.12.0'
-  gem 'coveralls', '~> 0.7.1'
+  # gem 'coco', '~> 0.12.0'
+  gem 'coveralls', '~> 0.7.1', require: false
+  gem 'simplecov', '~> 0.9.0', require: false
+
+  gem 'shoulda-matchers', '~> 2.6.2'
   gem 'rspec-expectations', '~> 3.0.0'
   gem 'rails_best_practices', '~> 1.15.4'
 end

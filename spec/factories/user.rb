@@ -1,9 +1,9 @@
 
 FactoryGirl.define do
-  valid_uid = 'valid'
-  valid_email = 'valid@example.com'
-  valid_password = 'password'
-  valid_password_confirmation = 'password'
+  valid_uid = 'test001'
+  valid_email = 'test001@gmail.com'
+  valid_password = 'test001'
+  valid_password_confirmation = 'test001'
 
   invalid_uid = 'www'
   invalid_email = 'invalid'
