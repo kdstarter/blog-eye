@@ -107,7 +107,7 @@ class User < ActiveRecord::Base
     temp_url = "#{self.gravatar_url}?s=512"
     self.update_attributes(remote_avatar_url: temp_url)
   end
-  handle_asynchronously :init_avatar, queue: 'init_avatar', priority: 20, run_at: Proc.new { 0.1.seconds.from_now }
+  # handle_asynchronously :init_avatar, queue: 'init_avatar', priority: 20, run_at: Proc.new { 0.1.seconds.from_now }
 
   def create_default_category
     category = self.categories.build(name: '我的文章', description: '默认文章分类')

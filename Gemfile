@@ -42,10 +42,11 @@ gem 'mini_magick', '3.8.0'
 gem 'qiniu-rs', '3.4.10'
 gem 'carrierwave-qiniu', '0.1.3'
 
+gem 'daemons', '1.1.9'
+gem 'sidekiq', '3.2.5'
 gem 'redis-rails', '4.0.0'
 gem 'redis-namespace', '1.4.1'
-gem 'daemons', '1.1.9'
-gem 'delayed_job_active_record', '4.0.2'
+# gem 'delayed_job_active_record', '4.0.2'
 
 group :development, :test do
   gem 'rspec-rails', '3.0.0'
