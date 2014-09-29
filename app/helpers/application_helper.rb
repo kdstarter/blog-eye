@@ -28,6 +28,10 @@ module ApplicationHelper
     "关注最近的独家博文、代码分享, 在这里搭建博客、分享博文, 收藏并分享代码, 结识兴趣相投的博主, 相互分享IT信息和技术..."
   end
 
+  def base_search_url
+    "https://wen.lu/?gws_rd=cr,ssl#q=site:#{Settings.site.domain}+"
+  end
+
   def omited_str(str, length=60)
     str.truncate(length, separator: " ", omission: "...")
   end
@@ -57,7 +61,7 @@ module ApplicationHelper
   end
 
   def post_tags_from_str(str)
-    str.split(',').map{|tag| "&nbsp;<a target='_blank' href='https://wen.lu/?#q=site:#{Settings.site.domain}+#{tag}'><span class='badge'>#{tag}</span></a>"}.join.html_safe
+    str.split(',').map{|tag| "&nbsp;<a target='_blank' href='#{base_search_url}#{tag}'><span class='badge'>#{tag}</span></a>"}.join.html_safe
   end
 
   def code_tags_from_str(str)

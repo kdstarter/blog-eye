@@ -6,7 +6,7 @@
     </div>
 
     <div class="col-md-4">
-      <form action="https://wen.lu/?#q=site:<%= Settings.site.domain %>+" class="navbar-search" method="get">
+      <form action="#" class="navbar-search" method="get">
         <input type="text" name="q" class="search-query form-control" value="" placeholder="搜索">
       </form>
     </div>
@@ -16,8 +16,9 @@
 <script type="text/javascript">
   $(function(){
     $("form.navbar-search").on("submit", function(){
-      keyword = $(this).find("input.search-query").val().trim();
-      $(this).attr('action', $(this).attr('action') + keyword);
+      var base_url = "<%= base_search_url %>";
+      var keyword = $(this).find("input.search-query").val().trim();
+      $(this).attr('action', base_url + keyword);
     });
   });
 </script>

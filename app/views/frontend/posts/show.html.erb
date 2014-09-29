@@ -10,9 +10,9 @@
 
       <h2><%= @post.title %></h2>
       <div class="info">
-        <%= link_to @post.category.try(:name), frontend_category_path(@blogger, @post.category) %>
-         · 
         <%= link_to @blogger.human_name, frontend_path(@blogger), target: "_blank" %>
+         · 
+        <%= link_to @post.category.try(:name), frontend_category_path(@blogger, @post.category) %>
          · 
         <abbr class="timeago" title="<%= @post.published_time %>">
           <%= time_ago_in_words(@post.created_at) %>前

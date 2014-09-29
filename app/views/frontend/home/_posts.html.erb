@@ -18,7 +18,8 @@
            · 
           <abbr class="timeago" title="<%= post.published_time %>">
             <%= time_ago_in_words(post.created_at) %>前
-          </abbr> 发布
+          </abbr> 发布在 
+          <%= link_to post.category.try(:name), frontend_category_path(post.user, post.category) %>
         </p>
 
         <div class="post-content display_none">
