@@ -1,6 +1,8 @@
 
 :verbose: false
 :concurrency: 3
+:logfile: log/sidekiq.log
+:pidfile: tmp/pids/sidekiq.pid
 :queues:
   - [qiniu, 1]
   - [mailer, 1]

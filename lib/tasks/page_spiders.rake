@@ -35,7 +35,7 @@ namespace :system do
 
       if count_times <= Settings.max_notice_times
         Rails.logger.info "#{count_times}th send mail to #{send_to} #{message.inspect}"
-        SystemMailer.delay.send_sensitive_mail(send_to, message)
+        SystemMailWorker.perform_async('sensitive_mail', send_to: send_to, content: message)
       else
         Rails.logger.warn "#{count_times}th not send mail to #{send_to} #{message.inspect}"
       end

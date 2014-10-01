@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   before_create :init_name, if: Proc.new { |u| u.name.blank? }
   after_create :create_default_category
   after_create :send_welcome_mail
-  after_create :init_avatar#, if: Proc.new { |u| u.email =~ %r(@gmail.com\z) }
+  after_create :update_avatar#, if: Proc.new { |u| u.email =~ %r(@gmail.com\z) }
 
   attr_accessor :login
 
@@ -98,16 +98,13 @@ class User < ActiveRecord::Base
     self.name = self.uid
   end
 
-  def send_welcome_mail
-    SystemMailer.delay.send_welcome_mail(self.email)
+  def update_avatar
+    QiniuWorker.perform_async('update_user_avatar', user_id: self.id)
   end
 
-  def init_avatar
-    return if self.avatar.present?
-    temp_url = "#{self.gravatar_url}?s=512"
-    self.update_attributes(remote_avatar_url: temp_url)
+  def send_welcome_mail
+    SystemMailWorker.perform_async('welcome_mail', send_to: self.email)
   end
-  # handle_asynchronously :init_avatar, queue: 'init_avatar', priority: 20, run_at: Proc.new { 0.1.seconds.from_now }
 
   def create_default_category
     category = self.categories.build(name: '我的文章', description: '默认文章分类')

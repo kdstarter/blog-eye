@@ -44,10 +44,9 @@ gem 'carrierwave-qiniu', '0.1.3'
 
 gem 'daemons', '1.1.9'
 gem 'sidekiq', '3.2.5'
-gem 'sinatra', '1.4.5', require: false # for sidekiq required
+gem 'sinatra', '1.4.5', require: false # 使用自带的监控页面
 gem 'redis-rails', '4.0.0'
 gem 'redis-namespace', '1.4.1'
-# gem 'delayed_job_active_record', '4.0.2'
 
 group :development, :test do
   gem 'rspec-rails', '3.0.0'
