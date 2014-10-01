@@ -8,7 +8,7 @@ class QiniuWorker
     self.send(type, params)
   end
 
-  def update_user_avatar(params)
+  def init_user_avatar(params)
     user = User.find(params["user_id"])
     temp_url = "#{user.gravatar_url}?s=512"
     user.update_attributes(remote_avatar_url: temp_url)

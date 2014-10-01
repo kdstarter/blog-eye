@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   before_create :init_name, if: Proc.new { |u| u.name.blank? }
   after_create :create_default_category
   after_create :send_welcome_mail
-  after_create :update_avatar#, if: Proc.new { |u| u.email =~ %r(@gmail.com\z) }
+  after_create :init_avatar#, if: Proc.new { |u| u.email =~ %r(@gmail.com\z) }
 
   attr_accessor :login
 
@@ -98,8 +98,8 @@ class User < ActiveRecord::Base
     self.name = self.uid
   end
 
-  def update_avatar
-    QiniuWorker.perform_async('update_user_avatar', user_id: self.id)
+  def init_avatar
+    QiniuWorker.perform_async('init_user_avatar', user_id: self.id)
   end
 
   def send_welcome_mail
