@@ -1,0 +1,7 @@
+
+:verbose: false
+:concurrency: 3
+:queues:
+  - [qiniu, 1]
+  - [mailer, 1]
+  - [default, 1]

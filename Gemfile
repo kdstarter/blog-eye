@@ -44,6 +44,7 @@ gem 'carrierwave-qiniu', '0.1.3'
 
 gem 'daemons', '1.1.9'
 gem 'sidekiq', '3.2.5'
+gem 'sinatra', '1.4.5', require: false # for sidekiq required
 gem 'redis-rails', '4.0.0'
 gem 'redis-namespace', '1.4.1'
 # gem 'delayed_job_active_record', '4.0.2'
@@ -58,8 +59,11 @@ group :development, :test do
   gem 'watir-webdriver', '0.6.11', require: false
   gem 'rspec-example_steps', '3.0.2', require: false
   
-  gem 'hirb', '0.7.2'
   gem 'byebug', '3.2.0'
+  gem 'better_errors', '1.1.0'
+  gem 'binding_of_caller', '0.7.2'
+
+  gem 'hirb', '0.7.2'
   gem 'rails_best_practices', '1.15.4'
   gem 'simplecov', '0.9.0', require: false
 

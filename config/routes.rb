@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-  # require 'sidekiq/web'
-  # mount Sidekiq::Web => '/sidekiq'
   mount Ckeditor::Engine => '/ckeditor'
+  get 'update_captcha', to: 'simple_captcha#update_captcha'
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -13,7 +12,11 @@ Rails.application.routes.draw do
     post '/admin/is_uid_exist', to: 'users/registrations#is_uid_exist'
   end
 
-  get 'update_captcha', to: 'simple_captcha#update_captcha'
+  require 'sidekiq/web'
+  constraint = lambda { |request| request.env["warden"].authenticate? and request.env['warden'].user.present? }
+  constraints constraint do
+    mount Sidekiq::Web => 'sidekiq' # only for logged user
+  end
 
   namespace :admin, path: '/admin' do
     root 'home#index'
@@ -61,5 +64,5 @@ Rails.application.routes.draw do
       resources :codes, only: [:show, :index]
     end
   end
-  
+
 end
