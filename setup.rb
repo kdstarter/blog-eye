@@ -67,7 +67,6 @@ puts_line "Create databases...\n" do
     puts "Now running RAILS_ENV=#{rails_env} rake assets:precompile..."
     `RAILS_ENV=#{rails_env} rake assets:precompile`
   end
-  # `RAILS_ENV=#{rails_env} rails s`
 end
 
 puts "\n#{APP_NAME} Successfully Installed."

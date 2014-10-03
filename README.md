@@ -34,12 +34,14 @@ USE_OFFICIAL_GEM_SOURCE=1
 
 We use rspec & capybara to test.
 ```bash
+# create db, load schema, and initialize with seed
+RAILS_ENV=test rake db:setup
+
 RAILS_ENV=test rails s
-# Make sure already installed firefox
-bundle exec rspec -fd
+bundle exec rspec -fd # Run all test in spec folder
 
 # Or test specified directories
-bundle exec rspec -fd ./spec/features
+bundle exec rspec -fd ./spec/features # Make sure already installed firefox
 ```
 
 ## Contributors
