@@ -9,7 +9,7 @@ context 'User session operation flows', type: :feature do
   end
 
   after :all do
-    sleep 3
+    sleep 1
     browser.close
   end
 

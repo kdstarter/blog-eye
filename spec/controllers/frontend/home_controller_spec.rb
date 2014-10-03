@@ -10,7 +10,7 @@ RSpec.describe Frontend::HomeController, :type => :controller do
       expect(response.status).to be(200)
     end
 
-    it "should show index page if user signed in" do
+    it "should also show index page if user signed in" do
       sign_in
 
       get :index
