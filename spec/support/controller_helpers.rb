@@ -1,6 +1,6 @@
  
  module ControllerHelpers
-  def sign_in(user = double('user'))
+  def sign_in(user = create(:valid_user))
     if user.nil?
       allow(request.env['warden']).to receive(:authenticate!).and_throw(:warden, {:scope => :user})
       allow(controller).to receive(:current_user).and_return(nil)

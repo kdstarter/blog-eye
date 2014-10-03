@@ -48,7 +48,7 @@ context 'User session operation flows', type: :feature do
     end
 
     Then 'sign up with valid info' do
-      valid_user = attributes_for(:valid_register_user)
+      valid_user = attributes_for(:valid_user)
       sign_up_with valid_user
 
       expect(btn_sign_up.exists?).to be(false)

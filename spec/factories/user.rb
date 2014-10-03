@@ -47,7 +47,7 @@ FactoryGirl.define do
   end
 
   # for valid register
-  factory :valid_register_user, class: User do
+  factory :valid_user, class: User do
     uid valid_uid
     email valid_email
     password valid_password
