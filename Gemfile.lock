@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 8299dee5bd08c78cea7d216382dfc183fef60934
+  revision: 0c83cfe0b9b43a4a27a63c13f27d6682b0ff6cae
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0, >= 1.0.2)
@@ -102,7 +102,7 @@ GEM
       qiniu (~> 6.2.4)
     celluloid (0.15.2)
       timers (~> 1.1.0)
-    childprocess (0.5.3)
+    childprocess (0.5.5)
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.10.2)
     ckeditor (4.0.11)
@@ -144,7 +144,7 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
-    ffi (1.9.4)
+    ffi (1.9.5)
     font-awesome-sass-rails (3.0.2.2)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
@@ -181,7 +181,7 @@ GEM
     mini_magick (3.8.0)
       subexec (~> 0.2.1)
     mini_portile (0.6.0)
-    minitest (5.4.0)
+    minitest (5.4.2)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     mysql2 (0.3.16)
@@ -296,7 +296,7 @@ GEM
       rspec-support (~> 3.0.0)
     rspec-support (3.0.4)
     ruby-hmac (0.4.0)
-    ruby-progressbar (1.5.1)
+    ruby-progressbar (1.6.0)
     rubyzip (1.1.6)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -333,7 +333,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.1.3)
+    sprockets-rails (2.1.4)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
