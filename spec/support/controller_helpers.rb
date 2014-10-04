@@ -1,6 +1,12 @@
  
  module ControllerHelpers
-  def sign_in(user = create(:valid_user))
+
+  def current_user
+    user = User.find_by(email: attributes_for(:valid_user)[:email])
+    user || create(:valid_user)
+  end
+
+  def sign_in(user = current_user)
     if user.nil?
       allow(request.env['warden']).to receive(:authenticate!).and_throw(:warden, {:scope => :user})
       allow(controller).to receive(:current_user).and_return(nil)

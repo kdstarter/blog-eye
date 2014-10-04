@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Admin::MessagesController, :type => :controller do
   let(:message) {
     create(:valid_message,
-        user: User.find_by(email: attributes_for(:valid_user)[:email]),
+        user: current_user,
         sender: build_stubbed(:valid_user),
         target: build_stubbed(:valid_reply)
   ) }

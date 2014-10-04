@@ -4,7 +4,7 @@ RSpec.describe Admin::RepliesController, :type => :controller do
   let(:user) { create(:valid_random_user) }
   let(:post) {
     create(:valid_post,
-        user: User.find_by(email: attributes_for(:valid_user)[:email]),
+        user: current_user,
         point: build_stubbed(:valid_point),
         category: build_stubbed(:valid_category)
   ) }

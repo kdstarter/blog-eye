@@ -1,12 +1,13 @@
 
 class Admin::MessagesController < AdminController
+  before_action :load_messages
 
   def index
     @messages = @messages.page(params[:page]).per(15)
   end
 
   def show
-    @message = current_user.messages.find(params[:id])
+    @message = @messages.find(params[:id])
     @message.update_attributes(is_read: true)
 
     case @message.target_type
@@ -32,7 +33,7 @@ class Admin::MessagesController < AdminController
   end
 
   def destroy
-    @message = current_user.messages.find(params[:id])
+    @message = @messages.find(params[:id])
     @message.destroy
 
     if @message.persisted?
@@ -42,5 +43,10 @@ class Admin::MessagesController < AdminController
       flash[:notice] = '你已经成功删除了该消息。'
       redirect_to admin_messages_path
     end
+  end
+
+  protected
+  def load_messages
+    @messages = current_user.messages
   end
 end

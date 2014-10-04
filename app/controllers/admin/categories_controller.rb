@@ -5,18 +5,18 @@ class Admin::CategoriesController < AdminController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @category = @categories.find(params[:id])
     @posts = current_user.posts.where(category: @category)
     @posts = @posts.page(params[:page])
   end
 
   def edit
-    @category = Category.find(params[:id])
+    @category = @categories.find(params[:id])
     render :index
   end
 
   def update
-    @category = Category.find(params[:id])
+    @category = @categories.find(params[:id])
     category_name = @category.name
 
     if @category.update_attributes(category_params)
@@ -42,7 +42,7 @@ class Admin::CategoriesController < AdminController
   end
 
   def destroy
-    @category = Category.find(params[:id])
+    @category = @categories.find(params[:id])
     category_name = @category.name
 
     if @category.posts.size > 0

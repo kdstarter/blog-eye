@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Admin::PostsController, :type => :controller do
   let(:post) {
     create(:valid_post,
-        user: build_stubbed(:valid_user),
+        user: current_user,
         point: build_stubbed(:valid_point),
         category: build_stubbed(:valid_category)
   ) }
@@ -68,7 +68,7 @@ RSpec.describe Admin::PostsController, :type => :controller do
   describe ":update" do
     it "should update post failed with invalid field" do
       sign_in
-      invalid_post = post.as_json.merge("point_id" => nil)
+      invalid_post = post.as_json.merge(point_id: nil)
       put :update, id: post.id, post: invalid_post
       visit admin_post_path(post)
 

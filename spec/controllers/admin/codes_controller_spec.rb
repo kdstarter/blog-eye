@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Admin::CodesController, :type => :controller do
   let(:code) {
     create(:valid_code,
-        user: build_stubbed(:valid_user),
+        user: current_user,
         category: build_stubbed(:valid_category),
         language: build_stubbed(:valid_language)
   ) }
@@ -68,7 +68,7 @@ RSpec.describe Admin::CodesController, :type => :controller do
   describe ":update" do
     it "should update code failed with invalid field" do
       sign_in
-      invalid_code = code.as_json.merge("language_id" => nil)
+      invalid_code = code.as_json.merge(language_id: nil)
       put :update, id: code.id, code: invalid_code
       visit admin_code_path(code)
 

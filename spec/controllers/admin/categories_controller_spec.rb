@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Admin::CategoriesController, :type => :controller do
 
-  let(:category) { create(:valid_category, user: build_stubbed(:valid_user)) }
+  let(:category) { create(:valid_category, user: current_user) }
 
   describe ":index" do
     it "should show all categories" do
@@ -32,11 +32,23 @@ RSpec.describe Admin::CategoriesController, :type => :controller do
   end
 
   describe ":update" do
-    it "should update category success" do
+    it "should update category failed with invalid field" do
       sign_in
-      put :update, id: category.id, category: { name: "test" }
+      invalid_category = category.as_json.merge(name: nil)
+      put :update, id: category.id, category: invalid_category
       visit admin_category_path(category)
+
+      expect(response.status).to be(200)
+      expect(flash[:error].present?).to be(true)
+    end
+
+    it "should update category success with valid field" do
+      sign_in
+      put :update, id: category.id, category: category.as_json
+      visit admin_category_path(category)
+
       expect(response.status).to be(302)
+      expect(flash[:notice].present?).to be(true)
     end
   end
 
@@ -52,7 +64,7 @@ RSpec.describe Admin::CategoriesController, :type => :controller do
   describe ":create" do
     it "should create category failed with invalid field" do
       sign_in
-      valid_category = attributes_for(:valid_category).merge("name" => nil)
+      valid_category = attributes_for(:valid_category).merge(name: nil)
       xhr :post, :create, category: valid_category
       visit admin_category_path(category)
 
@@ -61,7 +73,7 @@ RSpec.describe Admin::CategoriesController, :type => :controller do
 
     it "should create category success with valid field" do
       sign_in
-      valid_category = attributes_for(:valid_category)
+      valid_category = attributes_for(:valid_random_category).merge(user_id: current_user.id)
       xhr :post, :create, category: valid_category
       visit admin_category_path(category)
 

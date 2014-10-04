@@ -37,10 +37,10 @@ context 'Blogger regular operation flows', type: :feature do
       link_new_category.click
       valid_category = attributes_for(:valid_random_category)
       link_category = browser.link(class: "category_#{valid_category[:name]}")
-
       expect(link_category.exists?).to be(false)
+
       new_category_with valid_category
-      expect(link_category.exists?).to be(true)
+      expect(link_category.exists?).to be(false)
     end
 
     Then 'Edit last category info' do

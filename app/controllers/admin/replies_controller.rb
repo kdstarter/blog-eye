@@ -1,14 +1,15 @@
 class Admin::RepliesController < AdminController
+  before_action :load_replies
 
   def index
     @posts = current_user.posts
-    @replies = Reply.with_deleted.where(post_id: @posts.pluck(:id))
+    @replies = @replies.where(post_id: @posts.pluck(:id))
 
     @replies = @replies.page(params[:page_reply])
   end
 
   def destroy
-    @reply = Reply.find(params[:id])
+    @reply = @replies.find(params[:id])
     @reply.really_destroy!
 
     flash[:notice] = '你已经成功删除了该评论。'
@@ -16,7 +17,7 @@ class Admin::RepliesController < AdminController
   end
 
   def hide
-    @reply = Reply.find(params[:id])
+    @reply = @replies.find(params[:id])
     @reply.destroy
 
     flash[:notice] = '你已经成功隐藏了该评论。'
@@ -24,10 +25,15 @@ class Admin::RepliesController < AdminController
   end
 
   def restore
-    @reply = Reply.with_deleted.find(params[:id])
+    @reply = @replies.find(params[:id])
     Reply.restore(@reply.id)
 
     flash[:notice] = '你已经成功恢复了该评论。'
     js_reload_without_params
+  end
+
+  protected
+  def load_replies
+    @replies = Reply.with_deleted
   end
 end
