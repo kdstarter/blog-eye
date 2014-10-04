@@ -1,6 +1,8 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :language do
+  factory :valid_language, class: Language do
+    code 'go'
+    name 'Go Language'
+    description 'Go Language...'
   end
 end

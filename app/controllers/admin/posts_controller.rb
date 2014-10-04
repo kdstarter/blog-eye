@@ -47,13 +47,8 @@ class Admin::PostsController < AdminController
     @post = Post.find(params[:id])
     @post.destroy
 
-    if @post.persisted?
-      flash[:error] = '因为以下原因，删除文章失败。'
-      render :show
-    else
-      flash[:notice] = '你已经成功删除了该文章。'
-      redirect_to admin_root_path
-    end
+    flash[:notice] = '你已经成功删除了该文章。'
+    redirect_to admin_root_path
   end
 
   private

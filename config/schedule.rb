@@ -1,7 +1,7 @@
 
 env :PATH, ENV['PATH']
 
-if ENV['_system_type'] = 'Darwin'
+if ENV['_system_type'] == 'Darwin'
   set :environment, "development"
   set :job_template, "/bin/bash -l -c ':job'" # for development mode on mac os
 else

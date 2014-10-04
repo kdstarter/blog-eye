@@ -6,7 +6,7 @@ class Admin::MessagesController < AdminController
   end
 
   def show
-    @message = Message.find(params[:id])
+    @message = current_user.messages.find(params[:id])
     @message.update_attributes(is_read: true)
 
     case @message.target_type
@@ -32,7 +32,7 @@ class Admin::MessagesController < AdminController
   end
 
   def destroy
-    @message = Message.find(params[:id])
+    @message = current_user.messages.find(params[:id])
     @message.destroy
 
     if @message.persisted?

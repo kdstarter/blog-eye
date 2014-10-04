@@ -62,7 +62,7 @@ context 'Blogger regular operation flows', type: :feature do
     end
 
     Then 'Click to add new post' do
-      valid_post = attributes_for(:valid_new_post)
+      valid_post = attributes_for(:valid_post)
 
       new_post_with valid_post
       expect(btn_new_post.exists?).to be(false)

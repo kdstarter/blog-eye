@@ -1,6 +1,9 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :code do
+  factory :valid_code, class: Code do
+    source 0
+    title 'one code one day'
+    tags 'code, every day'
+    content 'We should coding every day.'
   end
 end

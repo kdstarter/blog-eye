@@ -23,7 +23,7 @@ RSpec.describe Admin::CategoriesController, :type => :controller do
   end
 
   describe ":edit" do
-    it "should show edit category" do
+    it "should show edit category page" do
       sign_in
       get :edit, id: category.id
       visit edit_admin_category_path(category)
@@ -49,4 +49,24 @@ RSpec.describe Admin::CategoriesController, :type => :controller do
     end
   end
 
+  describe ":create" do
+    it "should create category failed with invalid field" do
+      sign_in
+      valid_category = attributes_for(:valid_category).merge("name" => nil)
+      xhr :post, :create, category: valid_category
+      visit admin_category_path(category)
+
+      expect(response.status).to be(403)
+    end
+
+    it "should create category success with valid field" do
+      sign_in
+      valid_category = attributes_for(:valid_category)
+      xhr :post, :create, category: valid_category
+      visit admin_category_path(category)
+
+      expect(response.status).to be(204)
+      expect(category.errors.present?).to be(false)
+    end
+  end
 end

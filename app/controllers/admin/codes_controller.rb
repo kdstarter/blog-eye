@@ -47,13 +47,8 @@ class Admin::CodesController < AdminController
     @code = Code.find(params[:id])
     @code.destroy
 
-    if @code.persisted?
-      flash[:error] = '因为以下原因，删除代码失败。'
-      render :show
-    else
-      flash[:notice] = '你已经成功删除了该代码。'
-      redirect_to admin_codes_path
-    end
+    flash[:notice] = '你已经成功删除了该代码。'
+    redirect_to admin_codes_path
   end
 
   private
