@@ -65,6 +65,7 @@ group :development, :test do
   gem 'hirb', '0.7.2' # rails c 表格化数据显示
   gem 'rails_best_practices', '1.15.4' # 最佳rails实践风格
   gem 'simplecov', '0.9.0', require: false # 测试覆盖率并生成html报告
+  gem 'coveralls', '0.7.1', require: false # 测试覆盖率并与travis-ci集成
 
   gem 'highline', '1.6.21' # capistrano deploy时不回显密码
   gem 'capistrano', '3.1.0' # 自动化部署支持

@@ -7,6 +7,9 @@ require 'rspec/rails'
 require 'capybara/rspec'
 require 'database_cleaner'
 
+require 'coveralls'
+Coveralls.wear!('rails')
+
 if ENV['RAILS_ENV'] == 'test'
   require 'simplecov'
   SimpleCov.start 'rails'
