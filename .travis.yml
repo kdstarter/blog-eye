@@ -1,7 +1,11 @@
 language: ruby
 bundler_args: --without development
 
+rvm:
+  - 2.0.0
+
 env:
+  - DB=mysql
   - USE_OFFICIAL_GEM_SOURCE=1
 
 services:
@@ -11,15 +15,14 @@ matrix:
   allow_failures:
     - rvm: ruby-head
 
-rvm:
-  - 2.0.0
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - RAILS_ENV=test bundle exec rake db:seed --trace
+  - RAILS_ENV=test bundle exec rake spec spec:javascript
 
 before_script:
-  - mysql -e "create database IF NOT EXISTS `blog-eye_test`;"
   - cp config/settings.yml.sample config/settings.yml
   - cp config/database.yml.sample config/database.yml
   - cp config/sensitive.yml.sample config/sensitive.yml
-  - RAILS_ENV=test bundle exec rake db:setup
-
-script: RAILS_ENV=test bundle exec rake spec spec:javascript
+  - mysql -e 'create database IF NOT EXISTS `blog-eye_test`'
 
