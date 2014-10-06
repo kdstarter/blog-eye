@@ -44,7 +44,7 @@ gem 'carrierwave-qiniu', '0.1.3' # carrierwave与qiniu集成
 
 gem 'daemons', '1.1.9' # 后台进程支持
 gem 'sidekiq', '3.2.5' # 延时任务支持
-gem 'sinatra', '1.4.5', require: false # 使用自带的监控页面
+gem 'sinatra', '1.4.5', require: false # 使用sidekiq自带的监控页面
 gem 'redis-rails', '4.0.0' # rails中redis集成
 gem 'redis-namespace', '1.4.1' # redis namespace支持
 

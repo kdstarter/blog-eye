@@ -36,10 +36,6 @@ module ApplicationHelper
     current_user.present?
   end
 
-  def current_admin?
-    current_admin_user.present?
-  end
-
   def omited_str(str, length=60)
     str.truncate(length, separator: " ", omission: "...")
   end

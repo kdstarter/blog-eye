@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
          authentication_keys: [:login]
 
   validates :ranking, uniqueness: true
+  validates :city_name, allow_blank: true, length: { minimum: 2 }
   validates :avatar, file_size: { maximum: 1.megabytes.to_i }, on: [:update]#, if: Proc.new { |u| u.avatar_changed? }
 
   validates :uid, presence: true, allow_blank: false, uniqueness: { case_sensitive: true },

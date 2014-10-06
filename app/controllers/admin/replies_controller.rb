@@ -26,7 +26,7 @@ class Admin::RepliesController < AdminController
 
   def restore
     @reply = @replies.find(params[:id])
-    Reply.restore(@reply.id)
+    @reply.restore
 
     flash[:notice] = '你已经成功恢复了该评论。'
     js_reload_without_params
@@ -34,6 +34,6 @@ class Admin::RepliesController < AdminController
 
   protected
   def load_replies
-    @replies = Reply.with_deleted
+    @replies = current_user.replies.with_deleted
   end
 end
