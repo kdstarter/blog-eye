@@ -15,17 +15,16 @@ Blog Eye, you know, a platform for sharing blogs. Site url: [http://www.blog-eye
 
 ## How to Install
 
-Make sure mysql already started.
-```bash
-git clone git@github.com:agilejzl/blog-eye.git
-cd blog-eye
-ruby setup.rb # A ruby script to make project RTF
+Make sure mysql already started.  
+```bash  
+git clone git@github.com:agilejzl/blog-eye.git  
+cd blog-eye && ruby setup.rb # Make project RTF  
+# Then change config at database.yml and settings.yml  
 
-# Then change config at database.yml and settings.yml
-RAILS_ENV=development rails s
-# start sidekiq for async sending email and uploading photo
-bundle exec sidekiq -e development
-```
+RAILS_ENV=development rails s  
+# start sidekiq for async sending email and uploading photo  
+bundle exec sidekiq -e development  
+```  
 
 ## Gemfile Source
 
@@ -37,24 +36,22 @@ USE_OFFICIAL_GEM_SOURCE=1
 
 ## How to Test
 
-We use rspec & capybara to test.
-```bash
-# Create db, load schema, and initialize with seed
-RAILS_ENV=test rake db:setup
+We use rspec and capybara to test.  
+```bash  
+# Create db, load schema, and initialize with seed  
+RAILS_ENV=test rake db:setup  
+RAILS_ENV=test rails s  
 
-RAILS_ENV=test rails s
-bundle exec rspec -fd # Run all test examples in ./spec folder
-
-# Or test specified directories
-bundle exec rspec -fd ./spec/features # Make sure already installed firefox
-```
+bundle exec rspec -fd # Make sure already installed firefox  
+bundle exec rspec -fd ./spec/features # Run only features test  
+```  
 
 ## Documents
 
-```bash
-# For online: http://rubydoc.info/github/agilejzl/blog-eye
-yard server # For local, generate documents, then visit http://localhost:8808/
-```
+For online doc: [http://rubydoc.info/github/agilejzl/blog-eye](http://rubydoc.info/github/agilejzl/blog-eye)   
+```bash  
+yard server --reload # For local, visit http://localhost:8808/  
+```  
 
 ## Contributors
 
@@ -63,6 +60,7 @@ yard server # For local, generate documents, then visit http://localhost:8808/
 ## Thanks
 
 * [Twitter Bootstrap](http://getbootstrap.com/)
+* [Qiniu (七牛云存储)](http://www.qiniu.com/)
 
 ## License
 
