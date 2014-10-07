@@ -7,7 +7,6 @@
 .bundle
 .DS_Store
 
-/config/deploy/production.rb
 /config/database.yml
 /config/settings.yml
 /config/sensitive.yml

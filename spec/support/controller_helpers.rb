@@ -1,6 +1,5 @@
  
  module ControllerHelpers
-
   def current_user
     user = User.find_by(email: attributes_for(:valid_user)[:email])
     user || create(:valid_user)

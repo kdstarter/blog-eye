@@ -21,8 +21,10 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-SimpleCov.start 'rails'
-puts "required simplecov"
+SimpleCov.start 'rails' do
+  add_filter 'app/admin'
+  puts "required simplecov"
+end
 # Coveralls.wear!('rails')
 
 RSpec.configure do |config|
