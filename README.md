@@ -4,13 +4,14 @@ Blog Eye: A platform for sharing blogs
 [![Build Status](http://img.shields.io/travis/agilejzl/blog-eye.svg)][travis]
 [![Code Climate](http://img.shields.io/codeclimate/github/agilejzl/blog-eye.svg)][codeclimate]
 [![Coverage Status](http://img.shields.io/coveralls/agilejzl/blog-eye.svg)][coveralls]
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/agilejzl/blog-eye/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Security](https://hakiri.io/github/agilejzl/blog-eye/master.svg)][security]
 
 [travis]: http://travis-ci.org/agilejzl/blog-eye
 [codeclimate]: https://codeclimate.com/github/agilejzl/blog-eye
 [coveralls]: https://coveralls.io/r/agilejzl/blog-eye
+[security]: https://hakiri.io/github/agilejzl/blog-eye/master
 
-Blog Eye, you know, a platform for sharing blog. Site url: [http://www.blog-eye.com/](http://www.blog-eye.com/)
+Blog Eye, you know, a platform for sharing blogs. Site url: [http://www.blog-eye.com/](http://www.blog-eye.com/)
 
 ## How to Install
 
@@ -30,7 +31,7 @@ bundle exec sidekiq -e development
 
 By default bundler installs gems using the ruby.taobao.org source, if you'd rather use the official one, set environment variable `USE_OFFICIAL_GEM_SOURCE`:
 
-```
+```bash
 USE_OFFICIAL_GEM_SOURCE=1
 ```
 
@@ -46,6 +47,13 @@ bundle exec rspec -fd # Run all test examples in ./spec folder
 
 # Or test specified directories
 bundle exec rspec -fd ./spec/features # Make sure already installed firefox
+```
+
+## Documents
+
+```bash
+# For online: http://rubydoc.info/github/agilejzl/blog-eye
+yard server # For local, generate documents, then visit http://localhost:8808/
 ```
 
 ## Contributors

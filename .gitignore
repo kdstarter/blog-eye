@@ -1,16 +1,18 @@
 
-/log
-/tmp
+log
+tmp
+doc
+.yardoc
 
 .keep
 *.tgz
 .bundle
 .DS_Store
 
-/config/database.yml
-/config/settings.yml
-/config/sensitive.yml
+config/database.yml
+config/settings.yml
+config/sensitive.yml
 
-/public/assets
-/public/uploads
-/coverage
+public/assets
+public/uploads
+coverage

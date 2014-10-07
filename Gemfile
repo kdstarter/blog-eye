@@ -59,6 +59,7 @@ group :development, :test do
   gem 'watir-webdriver', '0.6.11', require: false # 驱动浏览器做features测试
   
   gem 'byebug', '3.2.0' # 调试工具
+  gem 'yard', '~> 0.8.7' # 项目文档
   gem 'better_errors', '1.1.0' # 更友好的错误显示页
   gem 'binding_of_caller', '0.7.2' # 在错误页进行调试
 
