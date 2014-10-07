@@ -19,9 +19,9 @@ Blog Eye, you know, a platform for sharing blogs. Site url: [http://www.blog-eye
 * MySQL 5.5 +
 * Ruby 2.0.0 +
 * Rails 4.0.0 +
-* ImageMagick 6.5+
+* ImageMagick 6.5 +
 
-## How to Install
+## Install
 
 Make sure mysql already started.  
 ```bash  
@@ -37,7 +37,13 @@ RAILS_ENV=development rails s
 bundle exec sidekiq -e development # for async sending email and uploading  
 ```  
 
-## Gemfile Source
+## Deploy  
+
+```bash  
+cap production deploy  
+```  
+
+## Gemfile  
 
 By default bundler installs gems using the ruby.taobao.org source,   
 if you'd rather use the official one, set environment variable `USE_OFFICIAL_GEM_SOURCE`:
@@ -46,7 +52,7 @@ if you'd rather use the official one, set environment variable `USE_OFFICIAL_GEM
 USE_OFFICIAL_GEM_SOURCE=1  
 ```  
 
-## How to Test
+## Test
 
 We use rspec and capybara to test.  
 ```bash  
