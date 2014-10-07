@@ -13,36 +13,52 @@ Blog Eye: A platform for sharing blogs
 
 Blog Eye, you know, a platform for sharing blogs. Site url: [http://www.blog-eye.com/](http://www.blog-eye.com/)
 
+## Requirements  
+
+* Redis 2.2 +
+* MySQL 5.5 +
+* Ruby 2.0.0 +
+* Rails 4.0.0 +
+* ImageMagick 6.5+
+
 ## How to Install
 
 Make sure mysql already started.  
 ```bash  
 git clone git@github.com:agilejzl/blog-eye.git  
-cd blog-eye && ruby setup.rb # Make project RTF  
-# Then change config at database.yml and settings.yml  
 
+cd blog-eye && ruby setup.rb # Make project RTF  
+```
+
+Then change config at database.yml and settings.yml  
+```bash  
 RAILS_ENV=development rails s  
-# start sidekiq for async sending email and uploading photo  
-bundle exec sidekiq -e development  
+
+bundle exec sidekiq -e development # for async sending email and uploading  
 ```  
 
 ## Gemfile Source
 
-By default bundler installs gems using the ruby.taobao.org source, if you'd rather use the official one, set environment variable `USE_OFFICIAL_GEM_SOURCE`:
+By default bundler installs gems using the ruby.taobao.org source,   
+if you'd rather use the official one, set environment variable `USE_OFFICIAL_GEM_SOURCE`:
 
-```bash
-USE_OFFICIAL_GEM_SOURCE=1
-```
+```bash  
+USE_OFFICIAL_GEM_SOURCE=1  
+```  
 
 ## How to Test
 
 We use rspec and capybara to test.  
 ```bash  
-# Create db, load schema, and initialize with seed  
 RAILS_ENV=test rake db:setup  
-RAILS_ENV=test rails s  
 
-bundle exec rspec -fd # Make sure already installed firefox  
+RAILS_ENV=test rails s  
+```  
+
+Make sure already installed firefox.  
+```bash  
+bundle exec rspec -fd  
+
 bundle exec rspec -fd ./spec/features # Run only features test  
 ```  
 
@@ -59,6 +75,7 @@ yard server --reload # For local, visit http://localhost:8808/
 
 ## Thanks
 
+* [Font Awesome](http://fontawesome.io/)
 * [Twitter Bootstrap](http://getbootstrap.com/)
 * [Qiniu (七牛云存储)](http://www.qiniu.com/)
 
