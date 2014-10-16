@@ -17,12 +17,11 @@ poins = [
 ]
 
 poins.each do |p|
-  Point.find_or_create_by(code: p[:code]) do |point|
+  point = Point.find_or_create_by(code: p[:code]) do |point|
     point.name = p[:name]
     point.description = p[:description]
   end
-  point = Point.find_by(code: p[:code])
-  puts "Success create: ", point.inspect
+  puts "Successful create: #{point.inspect}"
 end
 
 # create default languages
@@ -41,11 +40,10 @@ languages = [
 ]
 
 languages.each do |p|
-  Language.find_or_create_by(code: p[:code]) do |language|
+  language = Language.find_or_create_by(code: p[:code]) do |language|
     language.name = p[:name]
     language.description = p[:description]
   end
-  language = Language.find_by(code: p[:code])
-  puts "Success create: ", language.inspect
+  puts "Successful create: #{language.inspect}"
 end
 
