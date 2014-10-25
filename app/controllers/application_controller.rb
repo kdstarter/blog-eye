@@ -53,11 +53,7 @@ class ApplicationController < ActionController::Base
       redirect_url = session[:redirect_url]
       return redirect_url unless redirect_url.blank?
 
-      if @messages && @messages.count > 0
-        admin_messages_path
-      else
-        admin_root_path
-      end
+      @messages && @messages.count > 0 ? admin_messages_path : admin_root_path
     else
       super
     end
@@ -66,5 +62,4 @@ class ApplicationController < ActionController::Base
   # def after_sign_out_path_for(resource_or_scope)
   #   frontend_path(current_user)
   # end
-
 end

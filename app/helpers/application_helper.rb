@@ -32,10 +32,6 @@ module ApplicationHelper
     "https://wen.lu/?gws_rd=cr,ssl#q=site:#{Settings.site.domain}+"
   end
 
-  def current_user?
-    current_user.present?
-  end
-
   def omited_str(str, length=60)
     str.truncate(length, separator: " ", omission: "...")
   end

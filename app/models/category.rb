@@ -18,6 +18,7 @@ class Category < ActiveRecord::Base
   end
 
   private
+=begin
   def validate_destroyable?
     # fix me self.posts not working
     if self.posts.size > 0
@@ -25,4 +26,5 @@ class Category < ActiveRecord::Base
       false
     end
   end
+=end
 end
