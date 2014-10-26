@@ -59,8 +59,8 @@ Rails.application.configure do
   # config.log_tags = [ :subdomain, :uuid ]
 
   # Use a different logger for distributed setups.
-  # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
-  config.logger = Logger.new(config.paths["log"].first, 'daily') # daily, weekly or monthly
+  config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
+  # config.logger = Logger.new(config.paths["log"].first, 'daily') # daily, weekly or monthly
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
