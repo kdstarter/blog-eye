@@ -1,4 +1,5 @@
 
+require 'word_check'
 include WordCheck::Worker
 
 class Post < ActiveRecord::Base
