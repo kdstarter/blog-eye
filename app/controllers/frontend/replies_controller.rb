@@ -31,7 +31,7 @@ class Frontend::RepliesController < BloggerController
     if @reply.errors[:base].present?
       flash[:error] = @reply.errors[:base].first
     else
-      flash[:error] = '提交回复失败，请注意以下内容。'
+      flash[:error] = draw_errors_message(@reply)
     end
   end
 end

@@ -64,7 +64,7 @@ class Admin::PostsController < AdminController
     if @post.errors[:base].present?
       flash.now[:error] = @post.errors[:base].first
     else
-      flash.now[:error] = '请注意以下内容，再保存文章。'
+      flash.now[:error] = draw_errors_message(@post)
     end
   end
 end

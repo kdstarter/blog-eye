@@ -21,7 +21,7 @@ module BlogEye
     config.i18n.default_locale = :'zh-CN'
     config.i18n.available_locales = [:'zh-CN', :en]
 
-    # config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += %W(#{config.root}/lib)
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
 
     # fix action_mailer.default_url_options not recognized in production.rb

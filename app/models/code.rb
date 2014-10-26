@@ -20,14 +20,10 @@ class Code < ActiveRecord::Base
 
   private
   def validate_tags
-    tags_str = self.tags.gsub(/，/, ',')
-
-    if tags_str.split(',').size > 3
+    self.tags.gsub!(/，/, ',')
+    if self.tags.split(',').size > 3
       errors.add(:tags, '关键词超过3个了')
       false
-    else
-      self.tags = tags_str
-      true
     end
   end
 end
