@@ -1,6 +1,5 @@
 # encoding: utf-8
-class UserAvatarUploader < CarrierWave::Uploader::Base
-
+class UserAvatarUploader < CommonUploader
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
@@ -29,14 +28,6 @@ class UserAvatarUploader < CarrierWave::Uploader::Base
     end
   end
 
-  # def move_to_cache
-  #   false
-  # end
-
-  # def move_to_store
-  #   false
-  # end
-
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
     # For Rails 3.1+ asset pipeline compatibility:
@@ -64,11 +55,4 @@ class UserAvatarUploader < CarrierWave::Uploader::Base
     # %w(jpg jpeg png)
     Ckeditor.image_file_types
   end
-
-  protected
-  def secure_token(length=16)
-    var = :"@#{mounted_as}_secure_token"
-    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.hex(length/2))
-  end
-
 end

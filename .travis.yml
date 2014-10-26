@@ -17,7 +17,7 @@ matrix:
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - RAILS_ENV=test bundle exec rake db:seed --trace
-  - RAILS_ENV=test bundle exec rspec -fd spec/controllers
+  - RAILS_ENV=test bundle exec rspec -fd spec/controllers spec/helpers spec/models
 
 before_script:
   - cp config/settings.yml.sample config/settings.yml
