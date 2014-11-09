@@ -4,13 +4,11 @@ Blog Eye: A platform for sharing blogs
 [![Build Status](http://img.shields.io/travis/agilejzl/blog-eye.svg)][travis]
 [![Code Climate](http://img.shields.io/codeclimate/github/agilejzl/blog-eye.svg)][codeclimate]
 [![Coverage Status](http://img.shields.io/coveralls/agilejzl/blog-eye.svg)][coveralls]
-[![Security](https://hakiri.io/github/agilejzl/blog-eye/master.svg)][security]
 [![Inline docs](http://inch-ci.org/github/agilejzl/blog-eye.svg)][inch]
 
 [travis]: http://travis-ci.org/agilejzl/blog-eye
 [codeclimate]: https://codeclimate.com/github/agilejzl/blog-eye
 [coveralls]: https://coveralls.io/r/agilejzl/blog-eye
-[security]: https://hakiri.io/github/agilejzl/blog-eye/master
 [inch]: http://inch-ci.org/github/agilejzl/blog-eye
 
 Blog Eye, you know, a platform for sharing blogs. Site url: [http://www.blog-eye.com/](http://www.blog-eye.com/)

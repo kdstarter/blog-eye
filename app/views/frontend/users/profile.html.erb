@@ -24,5 +24,5 @@
 
   <%= f.input :github, disabled: true, input_html: { value: @blogger.github_page } %>
   <%= f.input :homepage, disabled: true %>
-  <%= f.input :description, disabled: true %>
+  <%= f.input :description, disabled: true, as: :text, input_html: { style: "height:200px;" }  %>
 <% end %>

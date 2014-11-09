@@ -17,7 +17,6 @@
         <abbr class="timeago" title="<%= @post.published_time %>">
           <%= time_ago_in_words(@post.created_at) %>前
         </abbr>发布
-         · <%= "#{@post.visits} 次阅读" %>
          · <%= post_tags_from_str(@post.tags) %>
       </div>
     </div>
