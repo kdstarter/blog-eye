@@ -10,6 +10,7 @@ gem 'mysql2', '0.3.16'
 gem 'coffee-rails', '4.0.0'
 gem 'jquery-rails', '3.1.1'
 
+gem 'uglifier', '2.5.1'
 gem 'sass-rails', '4.0.3'
 gem 'bootstrap-sass', '3.2.0.1'
 gem 'font-awesome-sass-rails', '3.0.2.2'
