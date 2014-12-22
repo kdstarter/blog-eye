@@ -2,7 +2,7 @@
 class QiniuWorker
   include Sidekiq::Worker
   sidekiq_options retry: 1
-  sidekiq_options queue: :qiniu
+  sidekiq_options queue: :default
 
   def perform(type, params)
     self.send(type, params)
