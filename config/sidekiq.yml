@@ -4,4 +4,4 @@
 :logfile: log/sidekiq.log
 :pidfile: /tmp/sidekiq.pid
 :queues:
-  - [default, 1]
+  - [mailer, 1]
