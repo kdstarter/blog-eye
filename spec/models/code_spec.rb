@@ -10,8 +10,8 @@ RSpec.describe Code, :type => :model do
 
   describe "function check" do
     it "should return formatted created_at" do
-      code.created_at = Time.new(1990, 1, 1)
-      expect(code.published_time).to eq("1990-01-01 00:00")
+      code.created_at = Time.utc(1990, 1, 1)
+      expect(code.published_time).to eq("1990-01-01 08:00")
     end
   end
 end

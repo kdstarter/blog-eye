@@ -19,8 +19,8 @@ RSpec.describe Message, :type => :model do
 
   describe "function check" do
     it "should return formatted created_at" do
-      message.created_at = Time.new(1990, 1, 1)
-      expect(message.created_time).to eq("1990-01-01 00:00")
+      message.created_at = Time.utc(1990, 1, 1)
+      expect(message.created_time).to eq("1990-01-01 08:00")
     end
   end
 end

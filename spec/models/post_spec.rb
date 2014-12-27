@@ -10,8 +10,8 @@ RSpec.describe Post, :type => :model do
 
   describe "function check" do
     it "should return formatted created_at" do
-      post.created_at = Time.new(1990, 1, 1)
-      expect(post.published_time).to eq("1990-01-01 00:00")
+      post.created_at = Time.utc(1990, 1, 1)
+      expect(post.published_time).to eq("1990-01-01 08:00")
     end
 
     it "should return text_for_status" do
