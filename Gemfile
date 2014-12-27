@@ -53,12 +53,12 @@ group :development, :test do
   gem 'rspec-rails', '3.0.0'
   gem 'rspec-expectations', '3.0.0'
   gem 'rspec-example_steps', '3.0.2', require: false
-  
+
   gem 'capybara', '2.4.3' # 页面测试
   gem 'database_cleaner', '1.3.0' # 自动清除测试数据
   gem 'factory_girl_rails', '4.4.1' # rspec数据工厂
   gem 'watir-webdriver', '0.6.11', require: false # 驱动浏览器做features测试
-  
+
   gem 'byebug', '3.2.0' # 调试工具
   gem 'yard', '~> 0.8.7' # 项目文档
   gem 'better_errors', '1.1.0' # 更友好的错误显示页
