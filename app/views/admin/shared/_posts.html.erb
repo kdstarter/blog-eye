@@ -6,8 +6,8 @@
         <th>标题</th>
         <th>发布时间</th>
         <th>分类</th>
-        <th>浏览</th>
         <th>回复</th>
+        <th>状态</th>
         <th>管理</th>
       </tr>
     </thead>
@@ -20,8 +20,8 @@
           </td>
           <td><%= post.published_time %></td>
           <td><%= post.category.try(:name) %></td>
-          <td><%= post.visits %></td>
           <td><%= post.replies.size %></td>
+          <td><%= post.text_for_status %></td>
           <td>
             <%= link_to '编 辑', edit_admin_post_path(post), class: "btn btn-xs btn-primary" %>
             <%= link_to '删 除', admin_post_path(post), data: { confirm: "你确定要删除这篇文章吗？" }, method: :delete, class: "btn btn-xs btn-danger" %>

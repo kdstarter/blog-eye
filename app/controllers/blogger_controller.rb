@@ -16,6 +16,6 @@ class BloggerController < FrontendController
 
   def load_posts
     @categories = @blogger.categories
-    @posts = @blogger.posts
+    @posts = @blogger.posts.visible
   end
 end

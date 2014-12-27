@@ -17,13 +17,19 @@ class Post < ActiveRecord::Base
   validates :content, presence: true, allow_blank: false
 
   SOURCES = ['原创或翻译', '转载或分享']
+  STATUSES = ['隐藏', '显示']
 
   default_scope { order('created_at desc') }
+  scope :visible, -> { where(status: 1) }
 
   before_save :validate_tags, :validate_sensitive?
 
   def published_time
     self.created_at.strftime('%Y-%m-%d %H:%M')
+  end
+
+  def text_for_status
+    "已#{Post::STATUSES[status.to_i]}"
   end
 
   private

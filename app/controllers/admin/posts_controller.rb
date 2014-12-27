@@ -57,7 +57,7 @@ class Admin::PostsController < AdminController
   end
 
   def post_params
-    params.require(:post).permit(:user_id, :point_id, :category_id, :source, :title, :content, :tags)
+    params.require(:post).permit(:user_id, :point_id, :category_id, :source, :status, :title, :content, :tags)
   end
 
   def add_error_to_flash
