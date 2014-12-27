@@ -36,16 +36,14 @@ class Post < ActiveRecord::Base
   def validate_tags
     self.tags.gsub!(/，/, ',')
     if self.tags.split(',').size > 5
-      errors.add(:tags, '关键词超过5个了')
-      false
+      errors.add(:tags, '关键词超过5个了') and return false
     end
   end
 
   def validate_sensitive?
     word = WordCheck::Worker.first_sensitive(self.inspect)
     if word.present?
-      errors.add(:base, "文章内容包含敏感词汇: #{word}")
-      return false
+      errors.add(:base, "文章内容包含敏感词汇: #{word}") and return false
     end
   end
 end

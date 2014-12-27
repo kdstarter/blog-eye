@@ -80,13 +80,9 @@ class User < ActiveRecord::Base
     "http://www.gravatar.com/avatar/#{self.email_md5}" 
   end
 
-  def self.find_for_database_authentication(warden_conditions)
-    conditions = warden_conditions.dup
-    if login = conditions.delete(:login)
-      where(conditions).where(["uid = :value OR email = :value", { value: login }]).first
-    else
-      where(conditions).first
-    end
+  def self.find_for_database_authentication(warden_conds)
+    conds = warden_conds.dup
+    (login = conds.delete(:login)) ? where(conds).where(["uid = :value OR email = :value", { value: login }]).first : where(conds).first
   end
 
   private

@@ -17,7 +17,7 @@ class Reply < ActiveRecord::Base
 
   default_scope { order('created_at desc') }
 
-  before_save :validate_sensitive
+  before_save :validate_sensitive?
   after_create :message_to_at_users
 
   def published_time
@@ -52,23 +52,18 @@ class Reply < ActiveRecord::Base
   def message_to_at_users
     at_users = []
     self.content.gsub(/(@\w+ )/){
-      uid = "#{$1.strip.sub('@', '')}"
-      user = User.find_by(uid: uid)
-
-      if user.present? && !at_users.include?(user)
-        at_users << user
-      end
+      user = User.find_by(uid: "#{$1.strip.sub('@', '')}")
+      at_users << user if user.present? && !at_users.include?(user)
     }
 
     at_users.each { |at_user| self.message_to_at_user(at_user) }
     self.message_to_blogger unless at_users.include?(self.blogger)
   end
 
-  def validate_sensitive
+  def validate_sensitive?
     word = WordCheck::Worker.first_sensitive(self.inspect)
     if word.present?
-      errors.add(:base, "回复内容包含敏感词汇: #{word}")
-      return false
+      errors.add(:base, "回复内容包含敏感词汇: #{word}") and return false
     end
   end
 end

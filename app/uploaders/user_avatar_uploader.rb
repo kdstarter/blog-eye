@@ -22,10 +22,7 @@ class UserAvatarUploader < CommonUploader
   # end
 
   def filename
-    if original_filename.present?
-      file_prefix = model.avatar.file.path.split('.').last.downcase
-      "#{secure_token}.#{file_prefix}"
-    end
+    "#{secure_token}.#{model.avatar.file.path.split('.').last.downcase}" if original_filename
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
