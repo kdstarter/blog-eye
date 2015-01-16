@@ -55,12 +55,18 @@ Rails.application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
+  # Disable automatic flushing of the log to improve performance.
+  # config.autoflush_log = false
+
+  # Use default logging formatter so that PID and timestamp are not suppressed.
+  config.log_formatter = ::Logger::Formatter.new
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
-  # config.logger = Logger.new(config.paths["log"].first, 'daily') # daily, weekly or monthly
+  config.logger = Logger.new(config.paths["log"].first, 'daily') # daily, weekly or monthly
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -80,19 +86,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: Settings.site.domain }
   config.action_mailer.smtp_settings = Settings.site_mailer.to_h
 
-
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
-
-  # Disable automatic flushing of the log to improve performance.
-  # config.autoflush_log = false
-
-  # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false

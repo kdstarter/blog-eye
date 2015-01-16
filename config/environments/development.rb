@@ -23,8 +23,13 @@ Rails.application.configure do
 
   # config.i18n.fallbacks = false
 
+  config.log_level = :info
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
+
+  # config.log_formatter = ::Logger::Formatter.new
+  # config.logger = Logger.new('log/development.log', 'weekly') # daily, weekly or monthly
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
