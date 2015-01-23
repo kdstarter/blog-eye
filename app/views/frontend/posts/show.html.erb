@@ -42,16 +42,21 @@
 
         <div class="infos">
           <div class="info">
+            <span class="time">
+              #<%= index+1 %> 
+            </span>
             <span class="name">
               <%= link_to replier.human_name, frontend_path(replier), target: "_blank" %>
             </span>
 
             <span class="time">
-              <a class="reply-floor" href="#reply<%= reply.id %>">
-              <%= index+1 %>楼</a> · 
+              <a class="reply-floor" href="#reply<%= reply.id %>"></a> · 
               <abbr class="timeago" title="<%= reply.published_time %>">
                 <%= time_ago_in_words(reply.created_at) %>前
               </abbr>
+            </span>
+            <span class="pull-right fast_reply_at" style="cursor: pointer;">
+              <i data-at=" @<%= replier.uid %> " class="fa fa-reply" title="回复此楼"></i>
             </span>
           </div>
 
@@ -77,3 +82,12 @@
     <% end %>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(function(){
+    new PostBoothView({
+      el: $(".panel_post")
+    });
+  });
+</script>
+

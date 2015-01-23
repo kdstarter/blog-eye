@@ -13,7 +13,7 @@ gem 'jquery-rails', '3.1.1'
 gem 'uglifier', '2.5.1'
 gem 'sass-rails', '4.0.3'
 gem 'bootstrap-sass', '3.2.0.1'
-gem 'font-awesome-sass-rails', '3.0.2.2'
+gem 'font-awesome-rails', '4.1.0'
 gem 'yui-compressor', '0.12.0', require: false # 预编译最大化压缩assets
 
 gem 'devise', '3.3.0' # 用户session管理
