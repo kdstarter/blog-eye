@@ -6,6 +6,7 @@ site:
   domain: www.blog-eye.com
   owner_en: Teddy Jiang
   owner_email: agilejzl@gmail.com
+  search_site: 'https://www.google.com/?gws_rd=cr,ssl#q=site:www.blog-eye.com+'
 
 baidu:
   tongji_ua: xxx

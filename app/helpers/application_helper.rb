@@ -29,7 +29,7 @@ module ApplicationHelper
   end
 
   def base_search_url
-    "https://wen.lu/?gws_rd=cr,ssl#q=site:#{Settings.site.domain}+"
+    Settings.site.search_site
   end
 
   def omited_str(str, length=60)
