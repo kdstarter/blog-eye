@@ -4,6 +4,7 @@ Blog Eye: A platform for sharing blogs
 [![Build Status](http://img.shields.io/travis/agilejzl/blog-eye.svg)][travis]
 [![Code Climate](http://img.shields.io/codeclimate/github/agilejzl/blog-eye.svg)][codeclimate]
 [![Coverage Status](http://img.shields.io/coveralls/agilejzl/blog-eye.svg)][coveralls]
+[![Stories in Ready](https://badge.waffle.io/agilejzl/blog-eye.svg?label=ready&title=Ready)](http://waffle.io/agilejzl/blog-eye)
 [![Inline docs](http://inch-ci.org/github/agilejzl/blog-eye.svg)][inch]
 
 [travis]: http://travis-ci.org/agilejzl/blog-eye
@@ -11,7 +12,9 @@ Blog Eye: A platform for sharing blogs
 [coveralls]: https://coveralls.io/r/agilejzl/blog-eye
 [inch]: http://inch-ci.org/github/agilejzl/blog-eye
 
-Blog Eye, you know, a platform for sharing blogs. Site url: [http://www.blog-eye.com/](http://www.blog-eye.com/)
+For Chinese, you can see wiki: [中文 Wiki](https://github.com/agilejzl/blog-eye/wiki)  
+
+Blog Eye, you know, a platform for sharing blogs. Site url: [http://www.blog-eye.com/](http://www.blog-eye.com/)  
 
 ## Requirements  
 
@@ -87,7 +90,7 @@ yard server --reload # For local, visit http://localhost:8808/
 
 ## License
 
-Copyright (c) 2014 Blog Eye
+Copyright © 2014 Blog Eye
 
 Released under the MIT license:
 
