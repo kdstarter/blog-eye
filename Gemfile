@@ -25,7 +25,6 @@ gem 'simple_form', '3.1.0.rc2'
 gem 'paranoia', '2.0.2'
 gem 'browser', '0.6.0'
 
-gem 'puma', '2.9.1'
 gem 'bugsnag', '2.4.1'
 gem 'whenever', '0.9.2', require: false
 gem 'nokogiri', '1.6.3.1', require: false
