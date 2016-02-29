@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  devise_for :users, path: 'user', controllers: {registrations: 'users/registrations'}
+  devise_for :users, path: 'user', controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+
   devise_scope :user do
     post '/admin/is_uid_exist', to: 'users/registrations#is_uid_exist'
   end
@@ -14,7 +18,7 @@ Rails.application.routes.draw do
   require 'sidekiq/web'
   constraint = lambda { |request|
     # config.default_scope in file devise.rb effects request.env['warden'].user
-    request.env["warden"].authenticate? and request.env['warden'].user.instance_of?(AdminUser) 
+    request.env["warden"].authenticate? and request.env['warden'].user.instance_of?(AdminUser)
   }
   constraints constraint do
     mount Sidekiq::Web => 'system/sidekiq' # only for system user
@@ -50,6 +54,8 @@ Rails.application.routes.draw do
     root 'home#index'
 
     get 'site/about', to: 'home#about'
+
+    get 'onliners/index', to: 'onliners#index'
 
     resources :blogs, only: [:show, :index]
 

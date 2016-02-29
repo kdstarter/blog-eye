@@ -1,5 +1,53 @@
 module ApplicationHelper
 
+  def add_onliner
+    onliners = all_onliners
+    if onliners[session_id] && current_user
+      onliners[session_id][:signed] = true
+      onliners[session_id][:updated_at] = Time.now
+    else
+      onliners[session_id] = {
+        signed: false, updated_at: Time.now, created_at: Time.now#, total_live_time: 0
+      }
+    end
+    
+    Rails.cache.write(onliner_cache_key, onliners)
+  end
+
+  def session_id
+    "#{Rails.env}_#{session.id}"
+  end
+
+  def onliner_cache_key
+    "#{Rails.env}_onliners"
+  end
+
+  def remove_old_onliner
+    onliners = all_onliners
+    onliners.delete session_id
+    Rails.cache.write(onliner_cache_key, onliners)
+  end
+
+  def all_onliners
+    onliners = Rails.cache.fetch(onliner_cache_key) || {}
+  end
+
+  def clear_onliners
+    Rails.cache.write(onliner_cache_key, {})
+  end
+
+  def signed_count
+    all_onliners.values.select { |user| user[:signed] == true }.count
+  end
+
+  def unsigned_count
+    all_onliners.values.select { |user| user[:signed] == false }.count
+  end
+
+  def online_time
+    ((Time.now - all_onliners[session_id][:created_at]) / 60).ceil
+  end
+
   def site_intro
     "博客信息技术分享平台"
   end
