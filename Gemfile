@@ -48,6 +48,10 @@ gem 'sinatra', '1.4.5', require: false
 gem 'redis-rails', '4.0.0'
 gem 'redis-namespace', '1.4.1'
 
+group :production do
+  gem 'oneapm_rpm', '~> 1.3.5'
+end
+
 group :development, :test do
   gem 'rspec-rails', '3.0.0'
   gem 'rspec-expectations', '3.0.0'

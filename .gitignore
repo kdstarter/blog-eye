@@ -12,6 +12,7 @@ doc
 config/database.yml
 config/settings.yml
 config/sensitive.yml
+config/oneapm.yml
 
 public/assets
 public/uploads

@@ -23,5 +23,6 @@ before_script:
   - cp config/settings.yml.sample config/settings.yml
   - cp config/database.yml.sample config/database.yml
   - cp config/sensitive.yml.sample config/sensitive.yml
+  - cp config/oneapm.yml.sample config/oneapm.yml
   - mysql -e 'create database IF NOT EXISTS `blog-eye_test`'
 
