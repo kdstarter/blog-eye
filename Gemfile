@@ -16,6 +16,10 @@ gem 'bootstrap-sass', '3.2.0.1'
 gem 'font-awesome-rails', '4.1.0'
 gem 'yui-compressor', '0.12.0', require: false
 
+gem 'turbolinks', '2.5.3'
+gem 'jquery-turbolinks', '2.1.0'
+gem 'nprogress-rails', '~> 0.1.6.7'
+
 gem 'devise', '3.3.0'
 gem 'devise-i18n', '0.11.0'
 gem 'devise-async', '0.9.0'
