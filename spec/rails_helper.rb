@@ -33,6 +33,9 @@ RSpec.configure do |config|
 
   config.order = :random
 
+  # declare an exclusion filter
+  config.filter_run_excluding broken: true
+
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.

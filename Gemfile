@@ -1,12 +1,13 @@
 # coding: utf-8
+ruby '~> 2.3.0'
 if ENV['USE_OFFICIAL_GEM_SOURCE']
   source 'https://rubygems.org'
 else
-  source 'https://ruby.taobao.org'
+  source 'https://gems.ruby-china.org'
 end
 
-gem 'rails', '4.1.5'
-gem 'mysql2', '0.3.16'
+gem 'rails', '~> 4.1.5'
+gem 'mysql2', '~> 0.3.21'
 gem 'coffee-rails', '4.0.0'
 gem 'jquery-rails', '3.1.1'
 
@@ -27,11 +28,11 @@ gem 'devise-async', '0.9.0'
 gem 'friendly_id', '5.0.4'
 gem 'simple_form', '3.1.0.rc2'
 gem 'paranoia', '2.0.2'
-gem 'browser', '0.6.0'
+gem 'browser', '~> 0.6.0'
 
 gem 'bugsnag', '2.4.1'
 gem 'whenever', '0.9.2', require: false
-gem 'nokogiri', '1.6.3.1', require: false
+gem 'nokogiri', '~> 1.8.1', require: false
 
 gem 'rails-i18n', '4.0.2'
 gem 'rails_config', '0.4.2'

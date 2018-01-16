@@ -20,7 +20,7 @@ Blog Eye, you know, a platform for sharing blogs. Site url: [http://www.blog-eye
 
 * Redis 2.2 +
 * MySQL 5.5 +
-* Ruby 2.0.0 +
+* Ruby 2.1.0 +
 * Rails 4.0.0 +
 * ImageMagick 6.5 +
 

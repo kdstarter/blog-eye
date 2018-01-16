@@ -104,7 +104,7 @@ class User < ActiveRecord::Base
   end
 
   def create_default_category
-    category = self.categories.build(name: '我的文章', description: '默认文章分类')
+    category = self.categories.build(name: 'MyPosts', description: 'Default Categories')
     category.save
   end
 end

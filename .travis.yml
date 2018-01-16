@@ -2,7 +2,7 @@ language: ruby
 bundler_args: --without development
 
 rvm:
-  - 2.0.0
+  - 2.3.0
 
 env:
   - USE_OFFICIAL_GEM_SOURCE=1
@@ -24,5 +24,5 @@ before_script:
   - cp config/database.yml.sample config/database.yml
   - cp config/sensitive.yml.sample config/sensitive.yml
   - cp config/oneapm.yml.sample config/oneapm.yml
-  - mysql -e 'create database IF NOT EXISTS `blog-eye_test`'
+  - mysql -e 'create database IF NOT EXISTS `blog-eye_test` DEFAULT CHARSET utf8 COLLATE utf8_general_ci'
 

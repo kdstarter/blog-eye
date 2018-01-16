@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'watir-webdriver'
 require 'rspec/example_steps'
 
-context 'Blogger regular operation flows', type: :feature do
+context 'Blogger regular operation flows', type: :feature, broken: true do
 
   before :all do
     browser.goto Settings.test.site_url
