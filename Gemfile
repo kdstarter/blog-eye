@@ -53,6 +53,8 @@ gem 'sinatra', '1.4.5', require: false
 gem 'redis-rails', '4.0.0'
 gem 'redis-namespace', '1.4.1'
 
+gem 'puma', '~> 3.11.0'
+
 group :production do
   gem 'oneapm_rpm', '~> 1.3.5'
 end
@@ -77,9 +79,11 @@ group :development, :test do
   gem 'simplecov', '0.9.0', require: false
   gem 'coveralls', '0.7.1', require: false
 
-  gem 'highline', '1.6.21'
-  gem 'capistrano', '3.1.0'
-  gem 'capistrano-rvm', '0.1.1'
-  gem 'capistrano-rails', '1.1.0'
-  gem 'capistrano-bundler', '1.1.3'
+  gem 'capistrano', '3.7.0'
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-rvm'
+  gem 'capistrano-sidekiq'
+  gem 'capistrano3-puma'
+  gem 'sshkit-sudo'
 end

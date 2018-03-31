@@ -1,12 +1,19 @@
-require 'highline/import'
-
-# Load DSL and Setup Up Stages
+# frozen_string_literal: true
+# Load DSL and set up stages
 require 'capistrano/setup'
 
-# Includes default deployment tasks
+# Include default deployment tasks
 require 'capistrano/deploy'
 
-# Includes tasks from other gems included in your Gemfile
+require 'capistrano/puma'
+require 'capistrano/puma/nginx'
+require 'capistrano/puma/jungle'
+install_plugin Capistrano::Puma, load_hooks: false
+
+require 'capistrano/scm/git'
+install_plugin Capistrano::SCM::Git
+
+# Include tasks from other gems included in your Gemfile
 #
 # For documentation on these, see for example:
 #
@@ -15,13 +22,17 @@ require 'capistrano/deploy'
 #   https://github.com/capistrano/chruby
 #   https://github.com/capistrano/bundler
 #   https://github.com/capistrano/rails
+#   https://github.com/capistrano/passenger
 #
 require 'capistrano/rvm'
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
 require 'capistrano/bundler'
-# require 'capistrano/rails/assets'
+require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
+# require 'capistrano/passenger'
 
-# Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
-Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
+require 'sshkit/sudo'
+
+# Load custom tasks from `lib/capistrano/tasks` if you have any defined
+Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
