@@ -7,7 +7,7 @@ class FrontendController < ApplicationController
 
   layout 'frontend/home'
 
-  before_action :keep_redirect_url
+  before_action :keep_redirect_url, :add_onliner
 
   def title
     site_intro

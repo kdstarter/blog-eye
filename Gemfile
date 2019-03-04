@@ -50,8 +50,10 @@ gem 'carrierwave-qiniu', '0.1.3'
 gem 'daemons', '1.1.9'
 gem 'sidekiq', '3.2.5'
 gem 'sinatra', '1.4.5', require: false
+
 gem 'redis-rails', '4.0.0'
 gem 'redis-namespace', '1.4.1'
+gem 'redis-store', '1.1.4'
 
 gem 'puma', '~> 3.11.0'
 

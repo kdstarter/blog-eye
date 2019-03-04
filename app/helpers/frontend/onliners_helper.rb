@@ -1,0 +1,2 @@
+module Frontend::OnlinersHelper
+end

@@ -20,6 +20,8 @@
 
       <a class="<%= 'active' if action_name == 'about' && params[:controller] == 'frontend/home' %>" href="<%= frontend_site_about_path %>">关 于</a>
 
+      <a class="<%= 'active' if action_name == 'index' && params[:controller] == 'frontend/onliners' %>" href="<%= frontend_onliners_index_path %>">在线统计</a>
+
       <span class="pull-right">
         <% if current_user %>
           <a class="link_admin_messages <%= 'active' if controller.class.to_s == "Admin::MessagesController" %>" href="<%= admin_messages_path %>">

@@ -1,0 +1,8 @@
+<% if current_user %>
+<%= current_user.name %> 谢谢你登录了我们网站！你已经登录了 <%= current_user.sign_in_count %> 次，本次登录时间是 <%= online_time %> 分钟。
+<% else %>
+“你好，陌生人！你没有登录，或者你还没有注册，但是你已经浏览这个页面 <%= online_time %> 分钟了。
+<% end %>
+
+<br/><br/>
+现在总共有 <%= signed_count %> 个注册用户在查看这个网站，有 <%= unsigned_count %> 个陌生人在查看这个网站。
